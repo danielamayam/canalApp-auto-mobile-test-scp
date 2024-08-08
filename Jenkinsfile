@@ -5,11 +5,6 @@ def defDate = new Date()
 def defTimestamp = defDateFormat.format(defDate).toString()
 
 pipeline {
-
-    options {
-        buildDiscarder(logRotator(numToKeepStr: '20'))
-    }
-
     stages {
         stage('Build') {
             steps {
