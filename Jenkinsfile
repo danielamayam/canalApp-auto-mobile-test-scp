@@ -5,11 +5,6 @@ def defDate = new Date()
 def defTimestamp = defDateFormat.format(defDate).toString()
 
 pipeline {
-    agent any
-    tools {
-        maven 'M3'
-        jdk 'jdk11'
-    }
 
     options {
         buildDiscarder(logRotator(numToKeepStr: '20'))
