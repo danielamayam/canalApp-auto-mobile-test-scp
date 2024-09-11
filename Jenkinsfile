@@ -34,23 +34,6 @@ pipeline {
                 }
             }
         }
-
-        stage('Reporte') {
-            steps {
-                script {
-                    try {
-                        sh ("mvn serenity:aggregate -DskipTests=true")
-                        echo 'Ejecucion de pruebas sin errores...'
-                        sh ("echo ${defTimestamp}")
-                        publishHTML([allowMissing: true, alwaysLinkToLastBuild: true, keepAll: true, reportDir: "${WORKSPACE}/target/site/serenity", reportFiles: 'index.html', reportName: 'Evidencias de Prueba', reportTitles: 'Reporte de Pruebas'])
-                        echo 'Reporte realizado con exito'
-                    } catch (ex) {
-                        echo 'Reporte realizado con Fallos'
-                        error('Failed')
-                    }
-                }
-            }
-        }
     }
 }
 
