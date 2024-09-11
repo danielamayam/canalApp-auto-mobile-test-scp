@@ -11,30 +11,33 @@ pipeline {
         stage('Build') {
             steps {
                 script {
-                    currentBuild.displayName = "MobileTesting-Rimac-SauceLabs [#${BUILD_NUMBER}]"
+                    // Configura el nombre de la construcción
+                    currentBuild.displayName = "MobileTesting-Rimac-SauceLabs [#${env.BUILD_NUMBER}]"
                 }
-                sh ("mvn -X clean verify -DskipTests=true")
-                archive 'target/*.jar'
+                // Ejecuta Maven para la construcción
+                sh 'mvn -X clean verify -DskipTests=true'
+                // Archiva los artefactos generados
+                archiveArtifacts 'target/*.jar'
             }
         }
 
         stage('Ejecutar Pruebas') {
             steps {
-                withVault([configuration: configuration, vaultSecrets: secrets]) {
-                    script {
-                        try {
-                            catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE', message: 'Test Suite had a failure') {
-                                sh ("mvn test -Denvironment=${v_SaucelabsPlatformName} -Dcucumber.features='src/test/resources/features/' -Dcucumber.filter.tags='${ESCENARIO}' -Dcucumber.plugin=json:target/site/result.json -Dcucumber.glue='stepdefinitions' -P installAppCloudActual")
-                            }
-                        } catch (ex) {
-                            echo 'Finalizo ejecucion con fallos...'
-                            error('Failed')
+                script {
+                    try {
+                        // Captura errores en esta etapa y marca la etapa como fallida si hay errores
+                        catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE', message: 'Test Suite had a failure') {
+                            sh "mvn test -Denvironment=${v_SaucelabsPlatformName} -Dcucumber.features='src/test/resources/features/' -Dcucumber.filter.tags='${ESCENARIO}' -Dcucumber.plugin=json:target/site/result.json -Dcucumber.glue='stepdefinitions' -P installAppCloudActual"
                         }
+                    } catch (ex) {
+                        echo 'Finalizó ejecución con fallos...'
+                        error('Failed')
                     }
                 }
             }
         }
     }
 }
+
 
 
