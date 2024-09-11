@@ -13,9 +13,11 @@ public class UiServiciosVehiculares {
             .locatedForAndroid(AppiumBy.id("android:id/button2"))
             .locatedForIOS(AppiumBy.xpath("//XCUIElementTypeButton[@name='Cancelar']"));
 
-    public static final Target LBL_CALLE = Target.the("Input punto de partida")
-            .locatedForAndroid(AppiumBy.xpath("//android.widget.TextView[@text='Calle Capón']"))
-            .locatedForIOS(AppiumBy.xpath("//XCUIElementTypeStaticText[@name=\"Calle Capón\"]"));
+    public static final Target LBL_CALLE(String text){
+        return Target.the("Input punto de partida")
+                .locatedForAndroid(AppiumBy.xpath("//android.widget.TextView[@text='"+text+"']"))
+                .locatedForIOS(AppiumBy.xpath("//XCUIElementTypeStaticText[@name='"+text+"']"));
+    }
 
     public static final Target TXT_PUNTO_DE_DESTINO = Target.the("Input punto de partida")
             .locatedForAndroid(AppiumBy.xpath("(/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup[2]/androidx.appcompat.widget.LinearLayoutCompat/android.view.ViewGroup/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.EditText) | (/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[3]/android.view.ViewGroup/android.view.ViewGroup[2]/androidx.appcompat.widget.LinearLayoutCompat/android.view.ViewGroup/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.EditText)"))
@@ -108,6 +110,33 @@ public class UiServiciosVehiculares {
     public static final Target BTN_CARD_CHOFER_REMPLAZO = Target.the("Botón card chofer remplazo")
             .locatedForAndroid(AppiumBy.xpath("//android.view.ViewGroup[@content-desc=\"Accidentes personales\"]/android.widget.TextView"))
             .locatedForIOS(AppiumBy.xpath("(//XCUIElementTypeStaticText[@value=\"CHOFER DE REEMPLAZO\"]//parent::XCUIElementTypeButton)[1]"));
+
+    public static final Target CARD_CHOFER_REMPLAZO(String placa){
+        return Target.the("Input punto de partida")
+                .locatedForAndroid(AppiumBy.xpath("(//android.widget.TextView[@text='CHOFER DE REEMPLAZO']//following-sibling::android.widget.TextView[@text='Solicitud para la placa "+placa+"']//following-sibling::android.widget.ImageView)[1]"))
+                .locatedForIOS(AppiumBy.xpath("//XCUIElementTypeStaticText[@name='"+placa+"']"));
+    }
+
+    public static final Target BTN_CANCELAR_SERVICIO = Target.the("Botón cancelar servicio")
+            .locatedForAndroid(AppiumBy.id("com.rimac.rimac_surrogas.qa:id/tv_title"))
+            .locatedForIOS(AppiumBy.xpath("//XCUIElementTypeOther[@name=\"Accidentes personales\"]"));
+
+    public static final Target BTN_SI_CANCELAR = Target.the("Botón si cancelar servicio")
+            .locatedForAndroid(AppiumBy.id("com.rimac.rimac_surrogas.qa:id/tv_title"))
+            .locatedForIOS(AppiumBy.xpath("//XCUIElementTypeOther[@name=\"Accidentes personales\"]"));
+
+    public static final Target LBL_SOLICITUD_CANCELADA = Target.the("Botón si cancelar servicio")
+            .locatedForAndroid(AppiumBy.xpath("//android.widget.TextView[@text='Solicitud cancelada']"))
+            .locatedForIOS(AppiumBy.xpath("//XCUIElementTypeOther[@name=\"Accidentes personales\"]"));
+
+
+    public static final Target BTN_IR_ATRAS = Target.the("Botón si cancelar servicio")
+            .locatedForAndroid(AppiumBy.id("com.rimac.rimac_surrogas.qa:id/assistanceBack"))
+            .locatedForIOS(AppiumBy.xpath("//XCUIElementTypeOther[@name=\"Accidentes personales\"]"));
+
+    public static final Target BTN_CERRAR_ALERTA = Target.the("Botón si cancelar servicio")
+            .locatedForAndroid(AppiumBy.id("com.rimac.rimac_surrogas.qa:id/clHomeEntryPointClose"))
+            .locatedForIOS(AppiumBy.xpath("//XCUIElementTypeOther[@name=\"Accidentes personales\"]"));
 
 
 

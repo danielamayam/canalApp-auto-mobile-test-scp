@@ -1,17 +1,21 @@
 package com.rimac.app.tasks.consultasVida;
 
 import com.rimac.app.exceptions.Assertions;
+import com.rimac.app.interactions.ComandosCapabilities;
 import com.rimac.app.interactions.EsperarElemento;
-import com.rimac.app.interactions.MenuItem;
-import com.rimac.app.util.utilidadTecnica.interactions.builders.Tap;
-import com.rimac.app.util.utilidadTecnica.utils.Mensajes;
+import com.rimac.app.interactions.app.MenuItem;
+import com.rimac.app.interactions.builders.Scroll;
+import com.rimac.app.interactions.builders.Tap;
+import com.rimac.app.util.constantes.Mensajes;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.Tasks;
+import net.serenitybdd.screenplay.conditions.Check;
 import net.serenitybdd.screenplay.matchers.WebElementStateMatchers;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 
 import static com.rimac.app.userInterfaces.UiConsultasVida.*;
+import static com.rimac.app.userInterfaces.UiMenu.BTN_COBERTURA;
 import static com.rimac.app.userInterfaces.UiMenu.BTN_PAGOS;
 
 public class NavegaHastaPagos implements Task {
@@ -29,7 +33,7 @@ public class NavegaHastaPagos implements Task {
                     WaitUntil.the(BTN_VIDA, WebElementStateMatchers.isVisible()).forNoMoreThan(120).seconds(),
                     Tap.on(BTN_VIDA),
                     Tap.on(CARD_SEGURO_VIDA_CONTIGO(vigencia)),
-                    WaitUntil.the(BTN_DESCARGAR_POLIZA_DIGITAL, WebElementStateMatchers.isVisible()).forNoMoreThan(120).seconds(),
+                    WaitUntil.the(BTN_COBERTURA, WebElementStateMatchers.isVisible()).forNoMoreThan(120).seconds(),
                     Tap.on(BTN_PAGOS),
                     EsperarElemento.por(10)
             );

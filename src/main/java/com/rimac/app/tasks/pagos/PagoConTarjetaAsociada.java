@@ -1,10 +1,10 @@
 package com.rimac.app.tasks.pagos;
 
 import com.rimac.app.exceptions.Assertions;
+import com.rimac.app.interactions.ComandosCapabilities;
 import com.rimac.app.interactions.EsperarElemento;
-import com.rimac.app.util.utilidadTecnica.interactions.ComandosCapabilities;
-import com.rimac.app.util.utilidadTecnica.interactions.builders.Tap;
-import com.rimac.app.util.utilidadTecnica.utils.Mensajes;
+import com.rimac.app.interactions.builders.Tap;
+import com.rimac.app.util.constantes.Mensajes;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.Tasks;

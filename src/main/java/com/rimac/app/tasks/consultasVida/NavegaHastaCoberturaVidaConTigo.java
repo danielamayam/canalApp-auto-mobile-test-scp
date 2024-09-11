@@ -1,14 +1,16 @@
 package com.rimac.app.tasks.consultasVida;
 
 import com.rimac.app.exceptions.Assertions;
-import com.rimac.app.interactions.MenuItem;
-import com.rimac.app.util.utilidadTecnica.interactions.TakeScreenshot;
-import com.rimac.app.util.utilidadTecnica.interactions.builders.Scroll;
-import com.rimac.app.util.utilidadTecnica.interactions.builders.Tap;
-import com.rimac.app.util.utilidadTecnica.utils.Mensajes;
+import com.rimac.app.interactions.ComandosCapabilities;
+import com.rimac.app.interactions.TakeScreenshot;
+import com.rimac.app.interactions.app.MenuItem;
+import com.rimac.app.interactions.builders.Scroll;
+import com.rimac.app.interactions.builders.Tap;
+import com.rimac.app.util.constantes.Mensajes;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Interaction;
 import net.serenitybdd.screenplay.Tasks;
+import net.serenitybdd.screenplay.conditions.Check;
 import net.serenitybdd.screenplay.matchers.WebElementStateMatchers;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 
@@ -32,12 +34,12 @@ public class NavegaHastaCoberturaVidaConTigo implements Interaction {
                     WaitUntil.the(BTN_VIDA, WebElementStateMatchers.isVisible()).forNoMoreThan(120).seconds(),
                     Tap.on(BTN_VIDA),
                     Tap.on(CARD_SEGURO_VIDA_CONTIGO(vigencia)),
-                    WaitUntil.the(BTN_DESCARGAR_POLIZA_DIGITAL, WebElementStateMatchers.isVisible()).forNoMoreThan(120).seconds(),
+                    WaitUntil.the(BTN_COBERTURA, WebElementStateMatchers.isVisible()).forNoMoreThan(120).seconds(),
                     Tap.on(BTN_COBERTURA),
                     WaitUntil.the(LBL_DATOS_DEL_ASEGURADO, WebElementStateMatchers.isVisible()).forNoMoreThan(120).seconds(),
-                    Tap.on(BTN_COBERTURA_PRINCIPALES),
+                    Tap.siElElementoEsVisible(BTN_COBERTURA_PRINCIPALES),
                     TakeScreenshot.asEvidence(),
-                    Tap.on(BTN_COBERTURA_ADICIONALES),
+                    Tap.siElElementoEsVisible(BTN_COBERTURA_ADICIONALES),
                     TakeScreenshot.asEvidence(),
                     Scroll.on(LBL_MAS_SOBRE_TU_SEGURO)
             );

@@ -22,9 +22,10 @@ public class UiLogin {
 
     public static final Target LBL_MENSAJE = Target.the("Label mensaje")
             .locatedForAndroid(AppiumBy.id("com.rimac.rimac_surrogas.qa:id/loginTitle"))
-            .locatedForIOS(AppiumBy.xpath("//XCUIElementTypeStaticText[@name='¡Nos alegra verte de nuevo, Mattus!']"));
+            .locatedForIOS(AppiumBy.xpath("(//XCUIElementTypeStaticText[contains(@name,'¡Nos alegra verte de nuevo,')]) | (//XCUIElementTypeStaticText[contains(@name,'Ingresa tu contraseña')])"));
 
-    public static final Target BTN_CAMBIAR_USUARIO = Target.the("Botón cambiar de usuario").locatedBy("//XCUIElementTypeImage[@name=\"solid-gl-md-update\"]//parent::XCUIElementTypeOther//following-sibling::XCUIElementTypeButton");
+    public static final Target BTN_CAMBIAR_USUARIO = Target.the("Botón cambiar de usuario").locatedForAndroid(AppiumBy.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[3]/android.widget.ImageView"))
+            .locatedForIOS(AppiumBy.xpath("//XCUIElementTypeImage[@name=\"solid-gl-md-update\"]//parent::XCUIElementTypeOther//following-sibling::XCUIElementTypeButton"));
 
     public static final Target BTN_ALLOW = Target.the("Botón allow").locatedBy("//XCUIElementTypeButton[@name=\"Allow\"]");
 

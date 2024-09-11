@@ -47,8 +47,8 @@ public class UiSeguros {
             .locatedForIOS(AppiumBy.xpath("//XCUIElementTypeTextField[@name='Apellido']"));
 
     public static final Target TXT_FECHA = Target.the("Input Fecha")
-            .locatedForAndroid(AppiumBy.xpath("//android.widget.EditText[@text='MM/AA']"))
-            .locatedForIOS(AppiumBy.xpath("//XCUIElementTypeTextField[@name='MM/AA']"));
+            .locatedForAndroid(AppiumBy.xpath("(//android.widget.EditText[@text='MM/AA']) | (//android.widget.EditText[@text='Fecha'])"))
+            .locatedForIOS(AppiumBy.xpath("(//XCUIElementTypeTextField[@name='MM/AA']) | (//XCUIElementTypeTextField[@name='Fecha'])"));
 
     public static final Target TXT_CVV = Target.the("Input CVV")
             .locatedForAndroid(AppiumBy.xpath("//android.widget.EditText[@text='CVV']"))
@@ -88,7 +88,7 @@ public class UiSeguros {
             .locatedForIOS(AppiumBy.xpath("//XCUIElementTypeStaticText[@name='Consulta tus pagos']"));
 
     public static final Target BTN_DESCARGAR_HISTORIAL = Target.the("Botón descargar historial")
-            .locatedForAndroid(AppiumBy.id("com.rimac.rimac_surrogas.qa:id/downloadText"))
+            .locatedForAndroid(AppiumBy.xpath("//android.widget.TextView[@text='Descargar historial']"))
             .locatedForIOS(AppiumBy.xpath("((//XCUIElementTypeStaticText[@name='Descargar historial']//parent::XCUIElementTypeButton))"));
 
 
@@ -168,8 +168,26 @@ public class UiSeguros {
             .locatedForAndroid(AppiumBy.id("com.rimac.rimac_surrogas.qa:id/btnText"))
             .locatedForIOS(AppiumBy.xpath("//XCUIElementTypeStaticText[@name='Seguro EPS']//following-sibling::XCUIElementTypeButton[@name='Ver detalle']"));
 
+
     public static final Target LBL_MENSAJE_2 = Target.the("Label mensaje")
             .locatedForAndroid(AppiumBy.id("com.rimac.rimac_surrogas.qa:id/paymentDetail"))
             .locatedForIOS(AppiumBy.xpath("//XCUIElementTypeStaticText[@name=\"El estado de cuenta está disponible para el contratante del seguro. Consulta con esa persona o empresa el estado de los pagos.\"]"));
+
+
+    public static Target BTN_NUMERO_TARJETA(String numero) {
+        return Target.the("Card tarjeta")
+                .locatedForAndroid(AppiumBy.xpath("(//android.widget.TextView[@text='**** "+numero+"'])[1]"))
+                .locatedForIOS(AppiumBy.xpath("(//XCUIElementTypeStaticText[@name='**** "+numero+"']//following-sibling::XCUIElementTypeButton)[1]"));
+    }
+
+    public static final Target BTN_ELIMINAR = Target.the("Botón Eliminar")
+            .locatedForAndroid(AppiumBy.xpath("//android.widget.TextView[@content-desc=\"Eliminar\"]"))
+            .locatedForIOS(AppiumBy.xpath("//XCUIElementTypeImage[@name=\"solid-gl-md-delete\"]//preceding-sibling::XCUIElementTypeButton"));
+
+    public static final Target BTN_SI_ELIMINAR = Target.the("Botón Eliminar")
+            .locatedForAndroid(AppiumBy.id("com.rimac.rimac_surrogas.qa:id/tv_title"))
+            .locatedForIOS(AppiumBy.xpath("//XCUIElementTypeButton[@name=\"Sí, eliminar\"]"));
+
+
 
 }

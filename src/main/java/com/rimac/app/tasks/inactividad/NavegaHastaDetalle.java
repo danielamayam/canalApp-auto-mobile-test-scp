@@ -1,11 +1,11 @@
 package com.rimac.app.tasks.inactividad;
 
+import com.rimac.app.interactions.ComandosCapabilities;
 import com.rimac.app.interactions.EsperarElemento;
-import com.rimac.app.interactions.MenuItem;
-import com.rimac.app.util.utilidadTecnica.interactions.ComandosCapabilities;
-import com.rimac.app.util.utilidadTecnica.interactions.builders.Scroll;
-import com.rimac.app.util.utilidadTecnica.interactions.builders.Tap;
-import com.rimac.app.util.utilidadTecnica.utils.enums.MenuSeguros;
+import com.rimac.app.interactions.app.MenuItem;
+import com.rimac.app.interactions.builders.Scroll;
+import com.rimac.app.interactions.builders.Tap;
+import com.rimac.app.util.enums.MenuSeguros;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.Tasks;

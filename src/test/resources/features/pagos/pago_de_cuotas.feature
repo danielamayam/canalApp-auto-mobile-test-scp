@@ -1,10 +1,10 @@
 #Author: Daniel Amaya Marín
 
-@ModuloPagos
+@ModuloPagos_15
 Feature: Pagos
 
 
-  @PagoSinTarjetaAsociada  # Necesita Data para la ejecución
+  @PagoSinTarjetaAsociada
   Scenario Outline: Usuario paga su seguro vehicular exitosamente sin tarjeta asociada
     Given que "Daniel" inicia sesión correctamente
       | numeroUsuario   | contrasena   |
@@ -16,10 +16,12 @@ Feature: Pagos
     Then válido el mensaje de confirmación
 
     Examples: Tabla
-      | numeroUsuario | contrasena | placa   | numtarjeta       | fecha | cvv | vigencia   |
-      | 70785760      | Rimac2020  | En Trámite | 4551708161768059 | 03/28 | 111 | 28/07/2025 |
+      | numeroUsuario | contrasena | placa | numtarjeta | fecha | cvv | vigencia |
+    ##@externaldata@./src/test/resources/datadriven/Pagos/Pago_de_cuotas_data.xlsx@PagoSinTarjetaAsociada@1
+   |41373006   |Rimac2020   |CQJ-989   |4551708161768059   |03/28   |111   |04/05/2025|
 
-  @PagoAfiliadoDebitoAuto  # Necesita Data para la ejecución
+
+  @PagoAfiliadoDebitoAuto
   Scenario Outline: Usuario realiza el pago estando afiliado a debito automatico
     Given que "Daniel" inicia sesión correctamente
       | numeroUsuario   | contrasena   |
@@ -31,10 +33,12 @@ Feature: Pagos
     Then debe mostrar el mensaje Hemos recibido tu pago!
 
     Examples: Tabla
-      | numeroUsuario | contrasena | placa   | numtarjeta       | fecha | cvv | vigencia   |
-      | 70785760      | Rimac2020  | En Trámite | 4474118355632240 | 03/28 | 111 | 28/07/2025 |
+      | numeroUsuario | contrasena | placa | numtarjeta | fecha | cvv | vigencia |
+    ##@externaldata@./src/test/resources/datadriven/Pagos/Pago_de_cuotas_data.xlsx@PagoAfiliadoDebitoAuto@1
+   |41373006   |Rimac2020   |CQJ-989   |4551708161768059   |03/28   |111   |04/05/2025|
 
-  @PagoConValidacionHistorial  # Necesita Data para la ejecución
+
+  @PagoConValidacionHistorial
   Scenario Outline: Usuario realiza el pago del seguro vehicular validando el historial de pago
     Given que "Daniel" inicia sesión correctamente
       | numeroUsuario   | contrasena   |
@@ -47,10 +51,12 @@ Feature: Pagos
     Then válido la cuota pagada en el historial de pago
 
     Examples: Tabla
-      | numeroUsuario | contrasena | placa   | numtarjeta       | fecha | cvv | vigencia   |
-      | 70785760      | Rimac2020  | En Trámite | 4474118355632240 | 03/28 | 111 | 28/07/2025 |
+      | numeroUsuario | contrasena | placa | numtarjeta | fecha | cvv | vigencia |
+    ##@externaldata@./src/test/resources/datadriven/Pagos/Pago_de_cuotas_data.xlsx@PagoConValidacionHistorial@1
+   |41373006   |Rimac2020   |CQJ-989   |4551708161768059   |03/28   |111   |04/05/2025|
 
-  @PagoConTarjetaAsociada  # Necesita Data para la ejecución
+
+  @PagoConTarjetaAsociada
   Scenario Outline: Usuario realiza el pago del seguro vehicular con tarjeta asociada
     Given que "Daniel" inicia sesión correctamente
       | numeroUsuario   | contrasena   |
@@ -60,10 +66,12 @@ Feature: Pagos
     Then válido el mensaje de confirmación
 
     Examples: Tabla
-      | numeroUsuario | contrasena | placa   | numtarjeta       | vigencia   |
-      | 70785760      | Rimac2020  | DR4-9SK | 4551708161768059 | 29/07/2025 |
+      | numeroUsuario | contrasena | placa | numtarjeta | vigencia |
+     ##@externaldata@./src/test/resources/datadriven/Pagos/Pago_de_cuotas_data.xlsx@PagoConTarjetaAsociada@1
+   |41373006   |Rimac2020   |CQJ-989   |4551708161768059   |04/05/2025|
 
-  @PagoAsociandoTarjeta  # Necesita Data para la ejecución
+
+  @PagoAsociandoTarjeta
   Scenario Outline: Usuario realiza pago exitoso asociando tarjeta
     Given que "Daniel" inicia sesión correctamente
       | numeroUsuario   | contrasena   |
@@ -75,8 +83,10 @@ Feature: Pagos
     Then válido el mensaje de confirmación
 
     Examples: Tabla
-      | numeroUsuario | contrasena | placa   | numtarjeta       | fecha | cvv | vigencia   |
-      | 70785760      | Rimac2020  | DR4-9SK | 4551708161768059 | 03/28 | 111 | 29/07/2025 |
+      | numeroUsuario | contrasena | placa | numtarjeta | fecha | cvv | vigencia |
+         ##@externaldata@./src/test/resources/datadriven/Pagos/Pago_de_cuotas_data.xlsx@PagoAsociandoTarjeta@1
+   |41373006   |Rimac2020   |CQJ-989   |4551708161768059   |03/28   |111   |04/05/2025|
+
 
   @PagoPolizaSoat
   Scenario Outline: Usuario valida pago de poliza SOAT
@@ -87,8 +97,10 @@ Feature: Pagos
     Then válido el detalle del pago anual
 
     Examples: Tabla
-      | numeroUsuario | contrasena | placa   | vigencia   |
-      | 42321915      | Rimac2020  | AYI-411 | 09-04-2026 |
+      | numeroUsuario | contrasena | placa | vigencia |
+    ##@externaldata@./src/test/resources/datadriven/Pagos/Pago_de_cuotas_data.xlsx@PagoPolizaSoat@1
+   |42321915   |Rimac2020   |AYI-411   |09-04-2026|
+
 
   @PagoInfoNoDisponible
   Scenario Outline: Usuario valida la pantalla de pago cuando el pagador es diferente al asegurado
@@ -99,5 +111,6 @@ Feature: Pagos
     Then debe mostrar mensaje "<mensaje>"
 
     Examples: Tabla
-      | numeroUsuario | contrasena | mensaje                                                                                                                        |
-      | 19098669      | Rimac2020  | El estado de cuenta está disponible para el contratante del seguro. Consulta con esa persona o empresa el estado de los pagos. |
+      | numeroUsuario | contrasena | mensaje |
+##@externaldata@./src/test/resources/datadriven/Pagos/Pago_de_cuotas_data.xlsx@PagoInfoNoDisponible@1
+   |19098669   |Rimac2020   |El estado de cuenta está disponible para el contratante del seguro. Consulta con esa persona o empresa el estado de los pagos.|

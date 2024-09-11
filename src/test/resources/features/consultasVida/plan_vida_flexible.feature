@@ -1,9 +1,9 @@
 #Author: Daniel Amaya Marín
 
-@ModuloConsultasVida
+@ModuloConsultasVida_8 @Regresion
 Feature: Consultas Vida - Plan Vida Flexible
 
-  @DescargaEstadoCuentaPlanVidaFlexible @regressionTest
+  @DescargaEstadoCuentaPlanVidaFlexible
   Scenario Outline: Usuario descarga el estado de cuenta del plan vida flexible
     Given que "Daniel" inicia sesión correctamente
       | numeroUsuario   | contrasena   |
@@ -13,9 +13,11 @@ Feature: Consultas Vida - Plan Vida Flexible
 
     Examples: Tabla
       | numeroUsuario | contrasena | month | year | vigencia   |
-      | 44853375      | Rimac2020  | Mayo  | 2022 | 04/01/2046 |
+    ##@externaldata@./src/test/resources/datadriven/consultasVida/Plan_vida_data.xlsx@Scenario5@1
+   |44853375   |Rimac2020   |Mayo   |2022   |04/01/2046|
 
-  @ConsultarCoberturasPolizaVidaFlexible @ScenarioWithoutData @regressionTest
+
+  @ConsultarCoberturasPolizaVidaFlexible
   Scenario Outline: Usuario consulta la cobertura de la póliza vida flexible
     Given que "Daniel" inicia sesión correctamente
       | numeroUsuario   | contrasena   |
@@ -25,9 +27,11 @@ Feature: Consultas Vida - Plan Vida Flexible
 
     Examples: Tabla
       | numeroUsuario | contrasena | vigencia   |
-      | 44853375      | Rimac2020  | 04/01/2046 |
+    ##@externaldata@./src/test/resources/datadriven/consultasVida/Plan_vida_data.xlsx@Scenario6@1
+   |44853375   |Rimac2020   |04/01/2046|
 
-  @ConsultarDeudasSaldoVidaFlexible @ScenarioWithoutData @regressionTest
+
+  @ConsultarDeudasSaldoVidaFlexible
   Scenario Outline: Usuario consultar Deudas y Saldos de la Poliza del Producto Flexivida
     Given que "Daniel" inicia sesión correctamente
       | numeroUsuario   | contrasena   |
@@ -37,9 +41,11 @@ Feature: Consultas Vida - Plan Vida Flexible
 
     Examples: Tabla
       | numeroUsuario | contrasena | vigencia   |
-      | 44853375      | Rimac2020  | 04/01/2046 |
+    ##@externaldata@./src/test/resources/datadriven/consultasVida/Plan_vida_data.xlsx@Scenario7@1
+   |44853375   |Rimac2020   |04/01/2046|
 
-  @ConsultarInformacionPolizaVidaFlexible @ScenarioWithoutData @regressionTest
+
+  @ConsultarInformacionPolizaVidaFlexible
   Scenario Outline: Usuario consulta información de la póliza vida flexible
     Given que "Daniel" inicia sesión correctamente
       | numeroUsuario   | contrasena   |
@@ -49,5 +55,6 @@ Feature: Consultas Vida - Plan Vida Flexible
 
     Examples: Tabla
       | numeroUsuario | contrasena | vigencia   | numeroPoliza | contratantePoliza        | vigenciaDesde       |
-      | 44853375      | Rimac2020  | 04/01/2046 | 21062337     | Yinsem Zeno Mayque Unico | 04/01/2021 - 04/01/2046 |
+    ##@externaldata@./src/test/resources/datadriven/consultasVida/Plan_vida_data.xlsx@Scenario8@1
+   |44853375   |Rimac2020   |04/01/2046   |21062337   |Yinsem Zeno Mayque Unico   |04/01/2021 - 04/01/2046|
 

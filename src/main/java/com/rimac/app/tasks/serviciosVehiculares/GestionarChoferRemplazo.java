@@ -1,12 +1,13 @@
 package com.rimac.app.tasks.serviciosVehiculares;
 
+import com.rimac.app.interactions.ComandosCapabilities;
 import com.rimac.app.interactions.EsperarElemento;
-import com.rimac.app.interactions.MenuItem;
-import com.rimac.app.util.utilidadTecnica.interactions.ComandosCapabilities;
-import com.rimac.app.util.utilidadTecnica.interactions.Hide;
-import com.rimac.app.util.utilidadTecnica.interactions.Swipe;
-import com.rimac.app.util.utilidadTecnica.interactions.builders.Scroll;
-import com.rimac.app.util.utilidadTecnica.interactions.builders.Tap;
+import com.rimac.app.interactions.Hide;
+import com.rimac.app.interactions.Swipe;
+import com.rimac.app.interactions.app.MenuItem;
+import com.rimac.app.interactions.app.TapByCoordinates;
+import com.rimac.app.interactions.builders.Scroll;
+import com.rimac.app.interactions.builders.Tap;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.Tasks;
@@ -18,6 +19,7 @@ import net.serenitybdd.screenplay.waits.WaitUntil;
 
 
 import static com.rimac.app.userInterfaces.UiCrossellRenovacion.*;
+import static com.rimac.app.userInterfaces.UiMenu.BTN_VEHICULAR;
 import static com.rimac.app.userInterfaces.UiSeguros.BTN_GUARDAR_TARJETA;
 import static com.rimac.app.userInterfaces.UiServiciosVehiculares.*;
 
@@ -43,12 +45,16 @@ public class GestionarChoferRemplazo implements Task {
                 EsperarElemento.por(40),
                 Check.whether(ComandosCapabilities.isiOS(actor)).andIfSo(
                         Tap.on(TXT_PUNTO_DE_PARTIDA),
-                        Enter.theValue("Calle Capón").into(TXT_PUNTO_DE_PARTIDA)
+                        Enter.theValue("Calle Capón").into(TXT_PUNTO_DE_PARTIDA),
+                        Hide.keyboard(),
+                        EsperarElemento.por(3),
+                        Tap.on(LBL_CALLE("Calle Capón"))
                 ),
                 Click.on(TXT_PUNTO_DE_DESTINO),
-                Enter.theValue("Calle Capón").into(TXT_PUNTO_DE_DESTINO),
+                Enter.theValue("Calle Quince").into(TXT_PUNTO_DE_DESTINO),
                 Hide.keyboard(),
-                Tap.on(LBL_CALLE),
+                EsperarElemento.por(3),
+                Tap.on(LBL_CALLE("Calle Quince")),
                 WaitUntil.the(BTN_CONTINUAR, WebElementStateMatchers.isClickable()).forNoMoreThan(120).seconds(),
                 Tap.on(BTN_CONTINUAR ),
                 Check.whether(ComandosCapabilities.isAndroid(actor)).andIfSo(

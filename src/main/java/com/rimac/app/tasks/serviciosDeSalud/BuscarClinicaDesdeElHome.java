@@ -1,8 +1,8 @@
 package com.rimac.app.tasks.serviciosDeSalud;
 
-import com.rimac.app.interactions.FormularioClinica;
-import com.rimac.app.util.utilidadTecnica.interactions.builders.Scroll;
-import com.rimac.app.util.utilidadTecnica.interactions.builders.Tap;
+import com.rimac.app.interactions.app.FormularioClinica;
+import com.rimac.app.interactions.builders.Scroll;
+import com.rimac.app.interactions.builders.Tap;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.Tasks;

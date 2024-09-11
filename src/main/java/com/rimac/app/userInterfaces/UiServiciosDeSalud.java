@@ -38,8 +38,13 @@ public class UiServiciosDeSalud {
             .locatedForIOS(AppiumBy.xpath("//XCUIElementTypeStaticText[@name='Copago']"));
 
     public static final Target BTN_REEMBOLSO_DE_SALUD = Target.the("Botón reembolso de salud")
-            .locatedForAndroid(AppiumBy.xpath("//android.widget.TextView[@text='Reembolso de salud']"))
+            .locatedForAndroid(AppiumBy.xpath("(//android.widget.RelativeLayout[@content-desc=\"Reembolso de salud\"]) | (//android.widget.TextView[@text='Reembolso de salud'])"))
             .locatedForIOS(AppiumBy.xpath("//XCUIElementTypeStaticText[@name=\"Reembolso de salud\"]"));
+
+    public static final Target LBL_TUS_TRAMITES= Target.the("Label Bienestar")
+            .locatedForAndroid(AppiumBy.xpath("//android.widget.TextView[@text='Tus trámites']"))
+            .locatedForIOS(AppiumBy.xpath("//XCUIElementTypeStaticText[@name=\"Tus trámites\"]"));
+
 
     public static final Target BTN_DESCUENTOS = Target.the("Botón descuentos")
             .locatedForAndroid(AppiumBy.xpath("//android.widget.TextView[@text='Descuento Repsol']"))
@@ -53,11 +58,17 @@ public class UiServiciosDeSalud {
             .locatedForAndroid(AppiumBy.xpath("//android.widget.EditText[@text='Producto y contratante']"))
             .locatedForIOS(AppiumBy.xpath("//XCUIElementTypeTextField[@name=\"Producto y contratante\"]//parent::XCUIElementTypeOther//parent::XCUIElementTypeOther//following-sibling::XCUIElementTypeButton"));
 
+
+    public static final Target BTN_PACIENTE_ODONTOLOGICO = Target.the("Botón paciente")
+            .locatedForAndroid(AppiumBy.id("com.rimac.rimac_surrogas.qa:id/uiEditPatient"))
+            .locatedForIOS(AppiumBy.xpath("//XCUIElementTypeTextField[@name=\"Paciente\"]//parent::XCUIElementTypeOther//parent::XCUIElementTypeOther//following-sibling::XCUIElementTypeButton"));
+
+
+
     public static Target LBL_PRODUCTO_Y_CONTRATANTE(String string) {
-        System.out.println("//android.widget.TextView[@text='"+string+"']//following-sibling::android.widget.ImageView");
-        return Target.the("Card seguro vehicular")
-                .locatedForAndroid(AppiumBy.xpath("//android.widget.TextView[@text='"+string+"']//following-sibling::android.widget.ImageView"))
-                .locatedForIOS(AppiumBy.xpath("//XCUIElementTypeStaticText[@name='"+string+"']"));
+        return Target.the("Label producto y contratante")
+                .locatedForAndroid(AppiumBy.xpath("(//android.widget.TextView[@text='"+string+"']//following-sibling::android.widget.ImageView) | (//android.view.ViewGroup[@content-desc=\"AMC COLECTIVA FOLA - Citibank del peru s.a.\"]) | (//android.view.ViewGroup[@content-desc=\"PLANES MEDICOS EPS - Medifarma s a\"]) | (//android.widget.RadioButton[@text='"+string+"'])"))
+                .locatedForIOS(AppiumBy.xpath("//XCUIElementTypeStaticText[@name='"+string+"']//parent::XCUIElementTypeCell"));
     }
 
     public static final Target BTN_LUGAR_DE_ATENCION = Target.the("Botón iniciar reembolso")
@@ -65,12 +76,17 @@ public class UiServiciosDeSalud {
             .locatedForIOS(AppiumBy.xpath("//XCUIElementTypeTextField[@name=\"Lugar de atención\"]//parent::XCUIElementTypeOther//parent::XCUIElementTypeOther//following-sibling::XCUIElementTypeButton"));
 
     public static final Target BTN_FECHA_ATENCION = Target.the("Botón iniciar reembolso")
-            .locatedForAndroid(AppiumBy.xpath("//android.widget.EditText[@text='Fecha de atención']"))
+            .locatedForAndroid(AppiumBy.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.widget.LinearLayout[4]/android.widget.FrameLayout/android.widget.EditText"))
             .locatedForIOS(AppiumBy.xpath("//XCUIElementTypeTextField[@name=\"Fecha de atención\"]"));
 
     public static final Target BTN_TIPO_COBERTURA = Target.the("Botón iniciar reembolso")
-            .locatedForAndroid(AppiumBy.xpath("//android.widget.EditText[@text='Tipo de cobertura']"))
+            .locatedForAndroid(AppiumBy.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.widget.LinearLayout[5]/android.widget.FrameLayout/android.widget.EditText"))
             .locatedForIOS(AppiumBy.xpath("//XCUIElementTypeTextField[@name=\"Tipo de cobertura\"]//parent::XCUIElementTypeOther//parent::XCUIElementTypeOther//following-sibling::XCUIElementTypeButton"));
+
+    public static final Target BTN_TIPO_TRATAMIENTO = Target.the("Botón tipo tratamiento")
+            .locatedForAndroid(AppiumBy.id("com.rimac.rimac_surrogas.qa:id/uiEditTreatmentType"))
+            .locatedForIOS(AppiumBy.xpath("//XCUIElementTypeTextField[@name=\"Tipo de tratamiento\"]//parent::XCUIElementTypeOther//parent::XCUIElementTypeOther//following-sibling::XCUIElementTypeButton"));
+
 
     public static final Target LBL_CARGAR_DOCUMENTOS = Target.the("Botón iniciar reembolso")
             .locatedForAndroid(AppiumBy.id("com.rimac.rimac_surrogas.qa:id/documentInfoTitle"))

@@ -1,9 +1,9 @@
 package com.rimac.app.tasks.serviciosVehiculares;
 
+import com.rimac.app.interactions.ComandosCapabilities;
 import com.rimac.app.interactions.EsperarElemento;
-import com.rimac.app.util.utilidadTecnica.interactions.ComandosCapabilities;
-import com.rimac.app.util.utilidadTecnica.interactions.Swipe;
-import com.rimac.app.util.utilidadTecnica.interactions.builders.Tap;
+import com.rimac.app.interactions.Swipe;
+import com.rimac.app.interactions.builders.Tap;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.Tasks;
@@ -35,12 +35,12 @@ public class SeleccionaLosDatosAsistenciasVehicularesGrua implements Task {
                         EsperarElemento.por(10),
                         Tap.on(TXT_PUNTO_DE_DESTINO),
                         Enter.theValue("Calle Capón").into(TXT_PUNTO_DE_DESTINO),
-                        Tap.on(LBL_CALLE)
+                        Tap.on(LBL_CALLE("Calle Capón"))
                 ).otherwise(
                         Tap.on(TXT_PUNTO_DE_DESTINO),
                         Enter.theValue("Calle Capón").into(TXT_PUNTO_DE_DESTINO),
                         EsperarElemento.por(10),
-                        Tap.on(LBL_CALLE)
+                        Tap.on(LBL_CALLE("Calle Capón"))
                 ),
                 WaitUntil.the(BTN_CONTINUAR, WebElementStateMatchers.isClickable()).forNoMoreThan(120).seconds(),
                 Tap.on(BTN_CONTINUAR ),

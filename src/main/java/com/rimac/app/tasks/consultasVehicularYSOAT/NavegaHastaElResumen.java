@@ -1,9 +1,10 @@
 package com.rimac.app.tasks.consultasVehicularYSOAT;
 
 import com.rimac.app.exceptions.Assertions;
-import com.rimac.app.interactions.MenuItem;
-import com.rimac.app.util.utilidadTecnica.interactions.builders.Tap;
-import com.rimac.app.util.utilidadTecnica.utils.Mensajes;
+import com.rimac.app.interactions.EsperarElemento;
+import com.rimac.app.interactions.app.MenuItem;
+import com.rimac.app.interactions.builders.Tap;
+import com.rimac.app.util.constantes.Mensajes;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.Tasks;
@@ -26,6 +27,7 @@ public class NavegaHastaElResumen implements Task {
                     MenuItem.seguros(),
                     WaitUntil.the(BTN_SOAT, WebElementStateMatchers.isVisible()).forNoMoreThan(120).seconds(),
                     Tap.on(BTN_SOAT),
+                    EsperarElemento.por(5),
                     Tap.on(CARD_SOAT_PLACA(placa)),
                     Tap.on(BTN_VER_RESUMEN),
                     WaitUntil.the(LBL_NUMERO_POLIZA, WebElementStateMatchers.isVisible()).forNoMoreThan(120).seconds()

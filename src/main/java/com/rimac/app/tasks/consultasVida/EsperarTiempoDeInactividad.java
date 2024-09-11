@@ -1,10 +1,10 @@
 package com.rimac.app.tasks.consultasVida;
 
 import com.rimac.app.exceptions.Assertions;
-import com.rimac.app.interactions.TiempoInactividadiOS;
-import com.rimac.app.interactions.TiempoInactividadAndroid;
-import com.rimac.app.util.utilidadTecnica.interactions.ComandosCapabilities;
-import com.rimac.app.util.utilidadTecnica.utils.Mensajes;
+import com.rimac.app.interactions.ComandosCapabilities;
+import com.rimac.app.interactions.app.TiempoInactividadiOS;
+import com.rimac.app.interactions.app.TiempoInactividadAndroid;
+import com.rimac.app.util.constantes.Mensajes;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.Tasks;

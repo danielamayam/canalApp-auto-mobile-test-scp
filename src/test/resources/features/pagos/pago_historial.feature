@@ -1,6 +1,6 @@
 #Author: Daniel Amaya Marín
 
-@ModuloPagos
+@ModuloPagos_15
 Feature: pagos
 
   @CronogramaPagosVehicular  # Necesita Data para la ejecución
@@ -13,7 +13,9 @@ Feature: pagos
 
     Examples: Tabla
       | numeroUsuario | contrasena | placa   | vigencia   |
-      | 70785760      | Rimac2020  | JIR-24H | 29/07/2025 |
+    ##@externaldata@./src/test/resources/datadriven/Pagos/Pago_historial_data.xlsx@CronogramaPagosVehicular@1
+   |15602689   |Rimac2020   |IDO-89D   |04/09/2025|
+
 
   @HistorialPagos
   Scenario Outline: Usuario visualiza el historial de pagos de su poliza vehicular
@@ -25,7 +27,9 @@ Feature: pagos
 
     Examples: Tabla
       | numeroUsuario | contrasena | placa   | vigencia   |
-      | 02777945      | Rimac2020  | 15T-039 | 08/07/2025 |
+    ##@externaldata@./src/test/resources/datadriven/Pagos/Pago_historial_data.xlsx@HistorialPagos@1
+   |43220212   |Rimac2020   |ACY-347   |12/07/2025|
+
 
   @DescargaHistorialPagos
   Scenario Outline: Usuario descarga el historial de pagos de su póliza vehicular
@@ -38,7 +42,9 @@ Feature: pagos
 
     Examples: Tabla
       | numeroUsuario | contrasena | placa   | vigencia   |
-      | 07525151      | Rimac2020  | ACC-241 | 12/06/2025 |
+  ##@externaldata@./src/test/resources/datadriven/Pagos/Pago_historial_data.xlsx@DescargaHistorialPagos@1
+   |43220212   |Rimac2020   |ACY-347   |12/07/2025|
+
 
 #  @CronogramaPagosEPS @Pendiente #--------------------------------- ------------------------------
 #  Scenario Outline: Usuario visualiza el cronograma de pagos del seguro de salud EPS, cuando el titular es igual al contratante

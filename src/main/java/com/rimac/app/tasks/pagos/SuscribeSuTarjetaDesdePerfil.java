@@ -1,16 +1,18 @@
 package com.rimac.app.tasks.pagos;
 
 import com.rimac.app.exceptions.Assertions;
-import com.rimac.app.interactions.FormularioCrearTarjeta;
-import com.rimac.app.interactions.MenuItem;
+import com.rimac.app.interactions.ComandosCapabilities;
+import com.rimac.app.interactions.Hide;
+import com.rimac.app.interactions.app.FormularioCrearTarjeta;
+import com.rimac.app.interactions.app.MenuItem;
+import com.rimac.app.interactions.builders.Scroll;
+import com.rimac.app.interactions.builders.Tap;
 import com.rimac.app.models.SuscripcionDesdePagos;
-import com.rimac.app.util.utilidadTecnica.interactions.ComandosCapabilities;
-import com.rimac.app.util.utilidadTecnica.interactions.builders.Scroll;
-import com.rimac.app.util.utilidadTecnica.interactions.builders.Tap;
-import com.rimac.app.util.utilidadTecnica.utils.Mensajes;
+import com.rimac.app.util.constantes.Mensajes;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.Tasks;
+import net.serenitybdd.screenplay.actions.Enter;
 import net.serenitybdd.screenplay.conditions.Check;
 import net.serenitybdd.screenplay.matchers.WebElementStateMatchers;
 import net.serenitybdd.screenplay.waits.WaitUntil;

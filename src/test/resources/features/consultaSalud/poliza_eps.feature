@@ -1,9 +1,9 @@
 #Author: Daniel Amaya Marín
 
-@ModuloConsultaSalud
+@ModuloConsultaSalud_1 @Regresion
 Feature: Consulta Salud - Plan Medico EPS
 
-  @ConsultaNumeroDePoliza @ScenarioWithoutData @regressionTest
+  @ConsultaNumeroDePoliza
   Scenario Outline: Usuario consulta el numero de poliza
     Given que "Daniel" inicia sesión correctamente
       | numeroUsuario   | contrasena   |
@@ -12,4 +12,6 @@ Feature: Consulta Salud - Plan Medico EPS
     Then válido el numero de poliza
     Examples: Tabla
       | numeroUsuario | contrasena |
-      | 10318552      | Rimac2020  |
+    ##@externaldata@./src/test/resources/datadriven/ModuloConsultaSalud/Poliza_eps_data.xlsx@ConsultaNumeroDePoliza@1
+   |10318552   |Rimac2020|
+

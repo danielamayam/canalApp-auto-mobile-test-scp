@@ -1,9 +1,9 @@
 #Author: Daniel Amaya Marín
 
-@ModuloCrossellRenovacion
+@ModuloCrossellRenovacion_1 @Regresion
 Feature: Venta SOAT
 
-  @CompraSOATDigital @regressionTest # Depende de la data no se ejecuto
+  @CompraSOATDigital
   Scenario Outline: Usuario compra un plan SOAT digital
     Given que "Daniel" inicia sesión correctamente
       | numeroUsuario   | contrasena   |
@@ -15,4 +15,5 @@ Feature: Venta SOAT
 
     Examples: Tabla
       | numeroUsuario | contrasena | placa  | numtarjeta       | cvv | fecha |
-      | 40861606      | Rimac2021  | ACV578 | 4551708161768059 | 111 | 03/28 |
+    ##@externaldata@./src/test/resources/datadriven/crossellRenovacion/Venta_soat_data.xlsx@CompraSOATDigital@1
+   |76243722   |Rimac2020   |AHN698   |4551708161768059   |111   |03/28|

@@ -1,9 +1,9 @@
 #Author: Daniel Amaya Marín
 
-@ModuloConsultasVida
+@ModuloConsultasVida_8 @Regresion
 Feature: Consultas Vida - Plan Vida Contigo
 
-  @DescargaManualdeUsoPlanVidaContigo @ScenarioWithoutData @regressionTest
+  @DescargaManualdeUsoPlanVidaContigo
   Scenario Outline: Usuario descarga el manual de uso de su poliza desde poliza del producto vida contigo
     Given que "Daniel" inicia sesión correctamente
       | numeroUsuario   | contrasena   |
@@ -13,10 +13,12 @@ Feature: Consultas Vida - Plan Vida Contigo
 
     Examples: Tabla
       | numeroUsuario | contrasena | vigencia   |
-      | 41213620      | Rimac2020  | 15/07/2022 |
+    ##@externaldata@./src/test/resources/datadriven/consultasVida/Plan_vida_data.xlsx@Scenario1@1
+   |41213620   |Rimac2020   |15/07/2022|
 
 
-  @ConsultarDeudasSaldoVidaContigo @regressionTest
+
+  @ConsultarDeudasSaldoVidaContigo
   Scenario Outline: Usuario visualiza la deuda y los saldos de la póliza del producto Vida contigo.
     Given que "Daniel" inicia sesión correctamente
       | numeroUsuario   | contrasena   |
@@ -26,10 +28,12 @@ Feature: Consultas Vida - Plan Vida Contigo
 
     Examples: Tabla
       | numeroUsuario | contrasena | vigencia   |
-      | 41213620      | Rimac2020  | 15/07/2022 |
+    ##@externaldata@./src/test/resources/datadriven/consultasVida/Plan_vida_data.xlsx@Scenario2@1
+   |41213620   |Rimac2020   |15/07/2022|
 
 
-  @ConsultarCoberturasPolizaVidaContigo @ScenarioWithoutData @regressionTest
+
+  @ConsultarCoberturasPolizaVidaContigo
   Scenario Outline: Usuario consulta la cobertura de la póliza del producto Vida contigo.
     Given que "Daniel" inicia sesión correctamente
       | numeroUsuario   | contrasena   |
@@ -39,10 +43,12 @@ Feature: Consultas Vida - Plan Vida Contigo
 
     Examples: Tabla
       | numeroUsuario | contrasena | vigencia   |
-      | 41213620      | Rimac2020  | 15/07/2022 |
+    ##@externaldata@./src/test/resources/datadriven/consultasVida/Plan_vida_data.xlsx@Scenario3@1
+   |41213620   |Rimac2020   |15/07/2022|
 
 
-  @ConsultarInformacionPolizaVidaContigo @ScenarioWithoutData @regressionTest
+
+  @ConsultarInformacionPolizaVidaContigo
   Scenario Outline: Usuario consulta la información de la poliza del producto Vida contigo
     Given que "Daniel" inicia sesión correctamente
       | numeroUsuario   | contrasena   |
@@ -52,4 +58,5 @@ Feature: Consultas Vida - Plan Vida Contigo
 
     Examples: Tabla
       | numeroUsuario | contrasena | vigencia   | numeroPoliza | contratantePoliza         | intermediarioPoliza          |vigenciaDesde|
-      | 41213620      | Rimac2020  | 15/07/2022 | 1300002498   | Kyra Ruperto Emner Abanco | Diego Alberto Fornoni Ibarra |Desde 15/07/2022 - 12/12/2131|
+##@externaldata@./src/test/resources/datadriven/consultasVida/Plan_vida_data.xlsx@Scenario4@1
+   |41213620   |Rimac2020   |15/07/2022   |1300002498   |Kyra Ruperto Emner Abanco   |Diego Alberto Fornoni Ibarra   |Desde 15/07/2022 - 12/12/2131|

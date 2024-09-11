@@ -13,6 +13,17 @@ public class Reembolso {
     private String lugarAtencion;
     private String tipoCobertura;
 
+    public String getPaciente() {
+        return paciente;
+    }
+
+    public String getTipoTratamiento() {
+        return tipoTratamiento;
+    }
+
+    private String paciente;
+    private String tipoTratamiento;
+
     public String getProductoContratante() {
         return productoContratante;
     }

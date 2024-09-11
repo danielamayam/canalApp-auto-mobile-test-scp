@@ -1,13 +1,13 @@
 package com.rimac.app.tasks.consultasVehicularYSOAT;
 
 import com.rimac.app.exceptions.Assertions;
+import com.rimac.app.interactions.ComandosCapabilities;
 import com.rimac.app.interactions.EsperarElemento;
-import com.rimac.app.interactions.MenuItem;
-import com.rimac.app.util.utilidadTecnica.interactions.ComandosCapabilities;
-import com.rimac.app.util.utilidadTecnica.interactions.builders.Scroll;
-import com.rimac.app.util.utilidadTecnica.interactions.builders.Tap;
-import com.rimac.app.util.utilidadTecnica.utils.Mensajes;
-import com.rimac.app.util.utilidadTecnica.utils.enums.MenuSeguros;
+import com.rimac.app.interactions.app.MenuItem;
+import com.rimac.app.interactions.builders.Scroll;
+import com.rimac.app.interactions.builders.Tap;
+import com.rimac.app.util.constantes.Mensajes;
+import com.rimac.app.util.enums.MenuSeguros;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.Tasks;
@@ -41,6 +41,7 @@ public class DescargarPolizaDigital implements Task {
                     ).otherwise(
                             Tap.on(BTN_VEHICULAR_ANDROID.of(MenuSeguros.ITEM_VEHICULAR.getClave()))
                     ),
+                    EsperarElemento.por(10),
                     Scroll.on(SEGURO_VEHICULAR_CARD(vigencia, placa)),
                     Tap.on(SEGURO_VEHICULAR_CARD(vigencia, placa)),
                     WaitUntil.the(BTN_POLIZA, WebElementStateMatchers.isVisible()).forNoMoreThan(120).seconds(),

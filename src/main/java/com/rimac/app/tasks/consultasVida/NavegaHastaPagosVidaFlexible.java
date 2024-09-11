@@ -1,7 +1,10 @@
 package com.rimac.app.tasks.consultasVida;
 
-import com.rimac.app.interactions.MenuItem;
-import com.rimac.app.util.utilidadTecnica.interactions.builders.Tap;
+import com.rimac.app.interactions.DesplazarEnLimitesDelElementoHorizontal;
+import com.rimac.app.interactions.HorizontalSwipeByCoordinates;
+import com.rimac.app.interactions.Swipe;
+import com.rimac.app.interactions.app.MenuItem;
+import com.rimac.app.interactions.builders.Tap;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.Tasks;
@@ -26,6 +29,8 @@ public class NavegaHastaPagosVidaFlexible implements Task {
                 WaitUntil.the(BTN_VIDA, WebElementStateMatchers.isVisible()).forNoMoreThan(120).seconds(),
                 Tap.on(BTN_VIDA),
                 Tap.on(CARD_VIDA_FLEXIBLE(vigencia)),
+                Swipe.as(actor).fromBottom().toLeft(),
+                HorizontalSwipeByCoordinates.go(300, 164, 25),
                 Tap.on(BTN_PAGOS)
         );
     }

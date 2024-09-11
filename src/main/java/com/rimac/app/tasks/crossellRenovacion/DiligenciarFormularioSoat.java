@@ -1,15 +1,16 @@
 package com.rimac.app.tasks.crossellRenovacion;
 
 import com.rimac.app.exceptions.Assertions;
+import com.rimac.app.interactions.ComandosCapabilities;
 import com.rimac.app.interactions.EsperarElemento;
-import com.rimac.app.interactions.FormularioCrearTarjeta;
-import com.rimac.app.interactions.MenuItem;
+import com.rimac.app.interactions.Hide;
+import com.rimac.app.interactions.Swipe;
+import com.rimac.app.interactions.app.FormularioCrearTarjeta;
+import com.rimac.app.interactions.app.MenuItem;
+import com.rimac.app.interactions.builders.Scroll;
+import com.rimac.app.interactions.builders.Tap;
 import com.rimac.app.models.SuscripcionDesdePagos;
-import com.rimac.app.util.utilidadTecnica.interactions.ComandosCapabilities;
-import com.rimac.app.util.utilidadTecnica.interactions.Hide;
-import com.rimac.app.util.utilidadTecnica.interactions.builders.Scroll;
-import com.rimac.app.util.utilidadTecnica.interactions.builders.Tap;
-import com.rimac.app.util.utilidadTecnica.utils.Mensajes;
+import com.rimac.app.util.constantes.Mensajes;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.Tasks;
@@ -37,6 +38,8 @@ public class DiligenciarFormularioSoat implements Task {
             char[] charArray = placa.toCharArray();
             actor.attemptsTo(
                     MenuItem.paraMi(),
+                    Swipe.as(actor).fromBottom().toLeft(),
+                    Swipe.as(actor).fromBottom().toLeft(),
                     Tap.on(BTN_SOAT),
                     Tap.on(BTN_QUIERO_COMPRAR),
                     Check.whether(ComandosCapabilities.isAndroid(actor)).andIfSo(

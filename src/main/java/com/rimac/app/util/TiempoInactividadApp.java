@@ -1,7 +1,6 @@
 package com.rimac.app.util;
 
 import com.rimac.app.interactions.EsperarElemento;
-import com.rimac.app.util.utilidadTecnica.interactions.BaseDriver;
 import org.openqa.selenium.ScreenOrientation;
 
 import java.io.BufferedReader;

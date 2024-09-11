@@ -1,10 +1,10 @@
 #Author: Daniel Amaya Marín
 
-@ModuloServiciosDeSalud @regressionTest
+@ModuloServiciosDeSalud_7 @Regresion
 Feature: Servicios de Salud - Buscador de clinicas
 
 
-  @BuscadordeClinicasdesdeHome @ScenarioWithoutData
+  @BuscadordeClinicasdesdeHome
   Scenario Outline: Usuario busca una clinica desde el home
     Given que "Daniel" inicia sesión correctamente
       | numeroUsuario   | contrasena   |
@@ -14,9 +14,11 @@ Feature: Servicios de Salud - Buscador de clinicas
 
     Examples: Tabla
       | numeroUsuario | contrasena | nomClinica           |
-      | 40660901      | Rimac2020  | Clinica Javier Prado |
+      ##@externaldata@./src/test/resources/datadriven/serviciosDeSalud/Buscador_clinicas_data.xlsx@BuscadordeClinicasdesdeHome@1
+   |40660901   |Rimac2020   |Clinica Javier Prado|
 
-  @BuscadordeClinicasdesdeTramites @ScenarioWithoutData
+
+  @BuscadordeClinicasdesdeTramites
   Scenario Outline: Usuario busca una clinica desde menu tramites
     Given que "Daniel" inicia sesión correctamente
       | numeroUsuario   | contrasena   |
@@ -26,4 +28,6 @@ Feature: Servicios de Salud - Buscador de clinicas
 
     Examples: Tabla
       | numeroUsuario | contrasena | nomClinica           |
-      | 40660901      | Rimac2020  | Clinica Javier Prado |
+      ##@externaldata@./src/test/resources/datadriven/serviciosDeSalud/Buscador_clinicas_data.xlsx@BuscadordeClinicasdesdeTramites@1
+   |40660901   |Rimac2020   |Clinica Javier Prado|
+

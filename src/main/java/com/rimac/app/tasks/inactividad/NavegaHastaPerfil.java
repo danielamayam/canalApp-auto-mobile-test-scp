@@ -1,7 +1,7 @@
 package com.rimac.app.tasks.inactividad;
 
-import com.rimac.app.interactions.MenuItem;
-import com.rimac.app.util.utilidadTecnica.interactions.builders.Tap;
+import com.rimac.app.interactions.app.MenuItem;
+import com.rimac.app.interactions.builders.Tap;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.Tasks;

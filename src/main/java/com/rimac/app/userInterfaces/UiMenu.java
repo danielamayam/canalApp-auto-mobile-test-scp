@@ -53,6 +53,9 @@ public class UiMenu {
             .locatedForIOS(AppiumBy.xpath("//XCUIElementTypeStaticText[@name='Vehicular']//preceding-sibling::XCUIElementTypeButton"));
 
 
+    public static final Target BTN_SERVICIOS = Target.the("Botón Servicios")
+            .locatedForAndroid(AppiumBy.xpath("//android.widget.LinearLayout[@content-desc='Servicios']"))
+            .locatedForIOS(AppiumBy.xpath("//XCUIElementTypeStaticText[@name='Servicios']//preceding-sibling::XCUIElementTypeButton"));
 
 
 

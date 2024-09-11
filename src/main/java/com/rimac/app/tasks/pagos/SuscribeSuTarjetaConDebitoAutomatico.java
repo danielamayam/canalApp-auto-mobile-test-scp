@@ -1,13 +1,13 @@
 package com.rimac.app.tasks.pagos;
 
 import com.rimac.app.exceptions.Assertions;
-import com.rimac.app.interactions.FormularioCrearTarjeta;
+import com.rimac.app.interactions.ComandosCapabilities;
+import com.rimac.app.interactions.Swipe;
+import com.rimac.app.interactions.app.FormularioCrearTarjeta;
+import com.rimac.app.interactions.builders.Scroll;
+import com.rimac.app.interactions.builders.Tap;
 import com.rimac.app.models.SuscripcionDesdePagos;
-import com.rimac.app.util.utilidadTecnica.interactions.ComandosCapabilities;
-import com.rimac.app.util.utilidadTecnica.interactions.Swipe;
-import com.rimac.app.util.utilidadTecnica.interactions.builders.Scroll;
-import com.rimac.app.util.utilidadTecnica.interactions.builders.Tap;
-import com.rimac.app.util.utilidadTecnica.utils.Mensajes;
+import com.rimac.app.util.constantes.Mensajes;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.Tasks;
@@ -40,7 +40,7 @@ public class SuscribeSuTarjetaConDebitoAutomatico implements Task {
                     WaitUntil.the(BTN_ANADIR_TARJETA, WebElementStateMatchers.isVisible()).forNoMoreThan(120).seconds(),
                     Tap.on(BTN_ANADIR_TARJETA),
                     FormularioCrearTarjeta.go(suscripcionDesdePagos),
-                    Tap.on(SWC_AUTOMATICO),
+                    Tap.siElElementoEsVisible(SWC_AUTOMATICO),
                     Tap.on(BTN_PAGAR),
                     Check.whether(ComandosCapabilities.isAndroid(actor)).andIfSo(Tap.siElElementoEsVisible(BTN_ALERTA_ANDROID)),
                     WaitUntil.the(LBL_PAGO_EXITOSO, WebElementStateMatchers.isVisible()).forNoMoreThan(120).seconds()

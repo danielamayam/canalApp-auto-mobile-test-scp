@@ -1,9 +1,9 @@
 #Author: Daniel Amaya Marín
 
-@ModuloServiciosVehiculares
+@ModuloServiciosVehiculares_7 @Regresion
 Feature: Servicios Vehiculares - Asistencia Vehicular
 
-  @AsistenciaVehicularRepuesto @ScenarioWithoutData @regressionTest
+  @AsistenciaVehicularRepuesto
   Scenario Outline: Usuario solicita auxilio mecanico - repuesto
     Given que "Daniel" inicia sesión correctamente
       | numeroUsuario   | contrasena   |
@@ -14,9 +14,11 @@ Feature: Servicios Vehiculares - Asistencia Vehicular
 
     Examples: Tabla
       | numeroUsuario | contrasena | placa   |
-      | 01317724      | Rimac2020  | GIS-475 |
+    ##@externaldata@./src/test/resources/datadriven/serviciosVehiculares/Asistencia_vehicular.xlsx@AsistenciaVehicularRepuesto@1
+   |01317724   |Rimac2020   |GIS-475|
 
-  @AsistenciaVehicularGrua @SeguimientodeGrua @ScenarioWithoutData @regressionTest
+
+  @AsistenciaVehicularGrua @SeguimientodeGrua
   Scenario Outline: Usuario realizar una solicitud de Grua
     Given que "Daniel" inicia sesión correctamente
       | numeroUsuario   | contrasena   |
@@ -27,9 +29,11 @@ Feature: Servicios Vehiculares - Asistencia Vehicular
 
     Examples: Tabla
       | numeroUsuario | contrasena | placa   |
-      | 01317724      | Rimac2020  | GIS-475 |
+    ##@externaldata@./src/test/resources/datadriven/serviciosVehiculares/Asistencia_vehicular.xlsx@AsistenciaVehicularGrua@1
+   |01317724   |Rimac2020   |GIS-475|
 
-  @AsistenciaVehicularProblema @SeguimientoAsistenciaVehicularProblema @ScenarioWithoutData @regressionTest
+
+  @AsistenciaVehicularProblema @SeguimientoAsistenciaVehicularProblema
   Scenario Outline: Usuario solicitar auxilio mecanico - problema
     Given que "Daniel" inicia sesión correctamente
       | numeroUsuario   | contrasena   |
@@ -40,10 +44,12 @@ Feature: Servicios Vehiculares - Asistencia Vehicular
 
     Examples: Tabla
       | numeroUsuario | contrasena | placa   |
-      | 01317724      | Rimac2020  | GIS-475 |
+    ##@externaldata@./src/test/resources/datadriven/serviciosVehiculares/Asistencia_vehicular.xlsx@AsistenciaVehicularProblema@1
+   |01317724   |Rimac2020   |GIS-475|
 
 
-  @NecesitoAyudaAuxilioMecanico @ScenarioWithoutData @regressionTest
+
+  @NecesitoAyudaAuxilioMecanico
   Scenario Outline: Usuario necesita ayuda para seleccionar la asistencia Vehicular - Auxilio Mecanico
     Given que "Daniel" inicia sesión correctamente
       | numeroUsuario   | contrasena   |
@@ -54,9 +60,11 @@ Feature: Servicios Vehiculares - Asistencia Vehicular
 
     Examples: Tabla
       | numeroUsuario | contrasena | placa   |
-      | 01317724      | Rimac2020  | GIS-475 |
+    ##@externaldata@./src/test/resources/datadriven/serviciosVehiculares/Asistencia_vehicular.xlsx@NecesitoAyudaAuxilioMecanico@1
+   |01317724   |Rimac2020   |GIS-475|
 
-  @NecesitoAyudaGrua @ScenarioWithoutData @regressionTest
+
+  @NecesitoAyudaGrua
   Scenario Outline: Usuario necesita ayuda para seleccionar la asistencia Vehicular - Grua
     Given que "Daniel" inicia sesión correctamente
       | numeroUsuario   | contrasena   |
@@ -67,4 +75,6 @@ Feature: Servicios Vehiculares - Asistencia Vehicular
 
     Examples: Tabla
       | numeroUsuario | contrasena |
-      | 01317724      | Rimac2020  |
+    ##@externaldata@./src/test/resources/datadriven/serviciosVehiculares/Asistencia_vehicular.xlsx@NecesitoAyudaGrua@1
+   |01317724   |Rimac2020|
+

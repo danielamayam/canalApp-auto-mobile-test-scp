@@ -1,10 +1,10 @@
 #Author: Daniel Amaya Marín
 
-@ModuloPagos
+@ModuloPagos_15 @PagoSuscripcion
 Feature: pagos
 
 
-  @SucripcionDesdePagos  # Necesita Data para la ejecución
+  @SucripcionDesdePagos
   Scenario Outline: Usuario suscribe su tarjeta desde medios de pagos
     Given que "Daniel" inicia sesión correctamente
       | numeroUsuario   | contrasena   |
@@ -16,7 +16,9 @@ Feature: pagos
 
     Examples: Tabla
       | numeroUsuario | contrasena | numtarjeta       | cvv | fecha | placa   | vigencia   |
-      | 70785760      | Rimac2020  | 4474104525811674 | 111 | 03/28 | JIR-24H | 29/07/2025 |
+      ##@externaldata@./src/test/resources/datadriven/Pagos/Pago_suscripcion_data.xlsx@SucripcionDesdePagos@1
+   |15602689   |Rimac2020   |4474104525811674   |111   |03/28   |IDO-89D   |04/09/2025|
+
 
   @SucripcionDesdePerfil
   Scenario Outline: Usuario suscribe su tarjeta desde mi perfil
@@ -30,9 +32,11 @@ Feature: pagos
 
     Examples: Tabla
       | numeroUsuario | contrasena | numtarjeta       | cvv | fecha |
-      | 07525151      | Rimac2020  | 4474104525811674 | 111 | 03/28 |
+    ##@externaldata@./src/test/resources/datadriven/Pagos/Pago_suscripcion_data.xlsx@SucripcionDesdePerfil@1
+   |07525151   |Rimac2020   |4474104525811674   |111   |03/28|
 
-  @SucripcionDesdeAfiliacion  # Necesita Data para la ejecución
+
+  @SucripcionDesdeAfiliacion
   Scenario Outline: Usuario suscribe su tarjeta desde afiliación
     Given que "Daniel" inicia sesión correctamente
       | numeroUsuario   | contrasena   |
@@ -45,9 +49,11 @@ Feature: pagos
 
     Examples: Tabla
       | numeroUsuario | contrasena | numtarjeta       | cvv | fecha | placa   | vigencia   |
-      | 70785760      | Rimac2020  | 5443599980000447 | 111 | 03/28 | JIR-24H | 29/07/2025 |
+    ##@externaldata@./src/test/resources/datadriven/Pagos/Pago_suscripcion_data.xlsx@SucripcionDesdeAfiliacion@1
+   |15602689   |Rimac2020   |4474104525811674   |111   |03/28   |IDO-89D   |04/09/2025|
 
-  @SucripcionDesdeOpcionPagar  # Necesita Data para la ejecución
+
+  @SucripcionDesdeOpcionPagar
   Scenario Outline: Usuario suscribe su tarjeta desde la opción pagar
     Given que "Daniel" inicia sesión correctamente
       | numeroUsuario   | contrasena   |
@@ -60,9 +66,19 @@ Feature: pagos
 
     Examples: Tabla
       | numeroUsuario | contrasena | placa   | numtarjeta       | fecha | cvv | vigencia   |
-      | 70785760      | Rimac2020  | JIR-24H | 4551708161768059 | 03/28 | 111 | 29/07/2025 |
+    ##@externaldata@./src/test/resources/datadriven/Pagos/Pago_suscripcion_data.xlsx@SucripcionDesdeOpcionPagar@1
+   |15602689   |Rimac2020   |IDO-89D   |4551708161768059   |03/28   |111   |04/09/2025|
 
 
+  @EliminarMedioDePago
+  Scenario Outline: Usuario elimina un medio de pago
+    Given que "Daniel" inicia sesión correctamente
+      | numeroUsuario   | contrasena   |
+      | <numeroUsuario> | <contrasena> |
+    When ingresa a pagos del seguro vehicular "<placa>" "<vigencia>"
+    And elimina el medio de pago "<numtarjeta>"
+    #Then válido el mensaje de confirmación
 
-
-
+    Examples: Tabla
+      | numeroUsuario | contrasena | placa   | numtarjeta       | vigencia   |
+      | 43220212      | Rimac2020  | ADB-666 | 4551708161768059 | 28/08/2025 |

@@ -1,17 +1,23 @@
 package com.rimac.app.tasks.pagos;
 
 import com.rimac.app.exceptions.Assertions;
+import com.rimac.app.interactions.ComandosCapabilities;
 import com.rimac.app.interactions.EsperarElemento;
-import com.rimac.app.interactions.IrAPagosDePolizaVihicular;
-import com.rimac.app.util.utilidadTecnica.interactions.builders.Scroll;
-import com.rimac.app.util.utilidadTecnica.interactions.builders.Tap;
-import com.rimac.app.util.utilidadTecnica.utils.Mensajes;
+import com.rimac.app.interactions.app.IrAPagosDePolizaVihicular;
+import com.rimac.app.interactions.app.MenuItem;
+import com.rimac.app.interactions.builders.Scroll;
+import com.rimac.app.interactions.builders.Tap;
+import com.rimac.app.util.constantes.Mensajes;
+import com.rimac.app.util.enums.MenuSeguros;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.Tasks;
+import net.serenitybdd.screenplay.actions.Click;
+import net.serenitybdd.screenplay.conditions.Check;
 import net.serenitybdd.screenplay.matchers.WebElementStateMatchers;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 
+import static com.rimac.app.userInterfaces.UiMenu.*;
 import static com.rimac.app.userInterfaces.UiSeguros.*;
 
 public class NavegaHastaElHistorialDePagos implements Task {

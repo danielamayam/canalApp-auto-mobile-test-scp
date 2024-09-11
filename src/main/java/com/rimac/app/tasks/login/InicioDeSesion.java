@@ -1,13 +1,14 @@
 package com.rimac.app.tasks.login;
 
 import com.rimac.app.exceptions.Assertions;
+import com.rimac.app.interactions.ComandosCapabilities;
 import com.rimac.app.interactions.EsperarElemento;
-import com.rimac.app.interactions.OmitirAlertas;
+import com.rimac.app.interactions.Hide;
+import com.rimac.app.interactions.app.NewOmitirAlertas;
+import com.rimac.app.interactions.app.OmitirAlertas;
+import com.rimac.app.interactions.builders.Tap;
 import com.rimac.app.models.Login;
-import com.rimac.app.util.utilidadTecnica.interactions.ComandosCapabilities;
-import com.rimac.app.util.utilidadTecnica.interactions.Hide;
-import com.rimac.app.util.utilidadTecnica.interactions.builders.Tap;
-import com.rimac.app.util.utilidadTecnica.utils.Mensajes;
+import com.rimac.app.util.constantes.Mensajes;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.Tasks;
@@ -31,10 +32,8 @@ public class InicioDeSesion implements Task {
     public <T extends Actor> void performAs(T actor) {
         try {
             actor.wasAbleTo(
-                    Check.whether(ComandosCapabilities.isiOS(actor)).andIfSo(
-                            EsperarElemento.por(3),
-                        Tap.siElElementoEsVisible(BTN_CAMBIAR_USUARIO)
-                    ),
+                    EsperarElemento.por(3),
+                    Tap.siElElementoEsVisible(BTN_CAMBIAR_USUARIO),
                     WaitUntil.the(TXT_USUARIO, WebElementStateMatchers.isVisible()).forNoMoreThan(120).seconds(),
                     Enter.keyValues(login.getNumeroUsuario()).into(TXT_USUARIO),
                     WaitUntil.the(BTN_CONTINUAR, WebElementStateMatchers.isClickable()).forNoMoreThan(120).seconds(),
@@ -44,7 +43,8 @@ public class InicioDeSesion implements Task {
                     Hide.keyboard(),
                     WaitUntil.the(BTN_CONTINUAR, WebElementStateMatchers.isClickable()).forNoMoreThan(120).seconds(),
                     Tap.on(BTN_CONTINUAR),
-                    OmitirAlertas.home(4)
+                    EsperarElemento.por(5),
+                    NewOmitirAlertas.home()
             );
         } catch (RuntimeException ex) {
             throw new Assertions(Assertions.Error(Mensajes.INICIO_DE_SESION), ex);

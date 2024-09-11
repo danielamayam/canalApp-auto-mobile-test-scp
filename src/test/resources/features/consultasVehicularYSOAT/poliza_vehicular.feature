@@ -1,10 +1,10 @@
 #Author: Daniel Amaya Marín
 
-@ModuloConsultasVehicularySoat
+@ModuloConsultasVehicularySoat_4 @Regresion
 Feature: Consulta vehicular y soat - Poliza Vehicular
 
 
-  @ConsultaNumeroDePolizaVehiSoat @ScenarioWithoutData @regressionTest
+  @ConsultaNumeroDePolizaVehiSoat
   Scenario Outline: Usuario consulta el numero de la poliza - soat
     Given que "Daniel" inicia sesión correctamente
       | numeroUsuario   | contrasena   |
@@ -13,11 +13,13 @@ Feature: Consulta vehicular y soat - Poliza Vehicular
     Then válido el número de póliza soat "<numeroPoliza>"
 
     Examples: Tabla
-      | numeroUsuario | contrasena | placa   | numeroPoliza |
-      | 41247452      | Rimac2020  | AG6-776 | 7778065      |
+      | numeroUsuario | contrasena | placa | numeroPoliza |
+    ##@externaldata@./src/test/resources/datadriven/consultasVehicularYSOAT/Poliza_vehicular_data.xlsx@ConsultaNumeroDePolizaVehiSoat@1
+   |41247452   |Rimac2020   |AG6-776   |7778065|
 
 
-  @ConsultarDeudasSaldosdePoliza @ScenarioWithoutData @regressionTest
+
+  @ConsultarDeudasSaldosdePoliza
   Scenario Outline: Usuario consulta deuda y saldo de la poliza - vehicular
     Given que "Daniel" inicia sesión correctamente
       | numeroUsuario   | contrasena   |
@@ -26,11 +28,13 @@ Feature: Consulta vehicular y soat - Poliza Vehicular
     Then válido la cuota pagada en el historial
 
     Examples: Tabla
-      | numeroUsuario | contrasena | placa      | vigencia   |
-      | 10020310      | Rimac2020  | En trámite | 06/12/2024 |
+      | numeroUsuario | contrasena | placa | vigencia |
+    ##@externaldata@./src/test/resources/datadriven/consultasVehicularYSOAT/Poliza_vehicular_data.xlsx@ConsultarDeudasSaldosdePoliza@1
+   |10020310   |Rimac2020   |En trámite   |06/12/2024|
 
 
-  @DescargaPolizaVehicularDigital @ScenarioWithoutData @regressionTest
+
+  @DescargaPolizaVehicularDigital
   Scenario Outline: Usuario descarga póliza digital del seguro vehicular
     Given que "Daniel" inicia sesión correctamente
       | numeroUsuario   | contrasena   |
@@ -39,11 +43,13 @@ Feature: Consulta vehicular y soat - Poliza Vehicular
     Then válido la descarga del pdf con la información
 
     Examples: Tabla
-      | numeroUsuario | contrasena | placa   | vigencia   |
-      | 41007984      | Rimac2023  | RRR-899 | 24/08/2024 |
+      | numeroUsuario | contrasena | placa | vigencia |
+    ##@externaldata@./src/test/resources/datadriven/consultasVehicularYSOAT/Poliza_vehicular_data.xlsx@DescargaPolizaVehicularDigital@1
+   |41007984   |Rimac2023    |VER-420   |14/02/2025|
 
 
-  @ConsultaCoberturas @ScenarioWithoutData @regressionTest
+
+  @ConsultaCoberturas
   Scenario Outline: Usuario consulta la cobertura del seguro vehicular
     Given que "Daniel" inicia sesión correctamente
       | numeroUsuario   | contrasena   |
@@ -52,5 +58,7 @@ Feature: Consulta vehicular y soat - Poliza Vehicular
     Then válido la cobertura del seguro
 
     Examples: Tabla
-      | numeroUsuario | contrasena | placa   | vigencia   |
-      | 41007984      | Rimac2023  | RRR-899 | 24/08/2024 |
+      | numeroUsuario | contrasena | placa | vigencia |
+      ##@externaldata@./src/test/resources/datadriven/consultasVehicularYSOAT/Poliza_vehicular_data.xlsx@ConsultaCoberturas@1
+   |41007984   |Rimac2023   |L0K-152   |01/09/2025|
+

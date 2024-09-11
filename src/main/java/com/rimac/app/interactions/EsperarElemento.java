@@ -5,8 +5,12 @@ import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Interaction;
 import net.serenitybdd.screenplay.Tasks;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 public class EsperarElemento implements Interaction {
     private static final int MILLISECONDS = 1000;
+    private static final Logger LOGGER = Logger.getAnonymousLogger();
     private int tryTimes;
 
     public EsperarElemento(int tryTimes) {
@@ -20,6 +24,8 @@ public class EsperarElemento implements Interaction {
             try {
                 Thread.sleep(MILLISECONDS);
             } catch (InterruptedException e) {
+
+                LOGGER.log(Level.SEVERE, "an error ocurred while attempting to wait for statement", e);
                 Thread.currentThread().interrupt();
             }
             tryTimes = tryTimes - 1;

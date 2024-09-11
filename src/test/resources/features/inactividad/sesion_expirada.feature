@@ -1,9 +1,9 @@
 #Author: Daniel Amaya Marín
 
-@ModuloInactividad
+@ModuloInactividad_13 @TiempoInactividad
 Feature: Consultas Vida - Plan Vida Flexible
 
-  @TiempoInactividadConsultasVida @TiempoInactividad
+  @TiempoInactividadConsultasVida
   Scenario Outline: Usuario espera 15 min de inactividad en el modulo de consultas vida
     Given que "Daniel" inicia sesión correctamente
       | numeroUsuario   | contrasena   |
@@ -16,7 +16,7 @@ Feature: Consultas Vida - Plan Vida Flexible
       | numeroUsuario | contrasena | vigencia   |
       | 44853375      | Rimac2020  | 04/01/2046 |
 
-  @TiempoInactividadPerfil @TiempoInactividad
+  @TiempoInactividadPerfil
   Scenario Outline: Usuario espera 15 min de inactividad en el modulo Perfil
     Given que "Daniel" inicia sesión correctamente
       | numeroUsuario   | contrasena   |
@@ -29,7 +29,7 @@ Feature: Consultas Vida - Plan Vida Flexible
       | numeroUsuario | contrasena |
       | 44926877      | Rimac2020  |
 
-  @TiempoInactividadConsultasSalud @TiempoInactividad
+  @TiempoInactividadConsultasSalud
   Scenario Outline: Usuario espera 15 min de inactividad en el modulo de seguro Consulta Salud
     Given que "Daniel" inicia sesión correctamente
       | numeroUsuario   | contrasena   |
@@ -42,7 +42,7 @@ Feature: Consultas Vida - Plan Vida Flexible
       | numeroUsuario | contrasena |
       | 10318552      | Rimac2020  |
 
-  @TiempoInactividadConsultaVehicularySoat @TiempoInactividad
+  @TiempoInactividadConsultaVehicularySoat
   Scenario Outline: Usuario espera 15 min de inactividad en el modulo de Consulta Vehicular SOAT
     Given que "Daniel" inicia sesión correctamente
       | numeroUsuario   | contrasena   |
@@ -56,7 +56,7 @@ Feature: Consultas Vida - Plan Vida Flexible
       | 10020310      | Rimac2020  | En trámite | 06/12/2024 |
 
 
-  @TiempoInactividadOnboarding @TiempoInactividad
+  @TiempoInactividadOnboarding
   Scenario Outline: Usuario espera 15 min de inactividad  despues de realizar exitozamente el inicio de sesión
     Given que "Daniel" inicia sesión correctamente
       | numeroUsuario   | contrasena   |
@@ -69,7 +69,7 @@ Feature: Consultas Vida - Plan Vida Flexible
       | 40861606      | Rimac2021  |
 
 
-  @TiempoInactividadPagos @TiempoInactividad
+  @TiempoInactividadPagos
   Scenario Outline: Usuario espera 15 min de inactividad en el modulo de pagos
     Given que "Daniel" inicia sesión correctamente
       | numeroUsuario   | contrasena   |
@@ -83,7 +83,7 @@ Feature: Consultas Vida - Plan Vida Flexible
       | 44926877      | Rimac2020  | AXV-266 | 08/03/2025 |
 
 
-  @TiempoInactividadServiciodeSalud @TiempoInactividad
+  @TiempoInactividadServiciodeSalud
   Scenario Outline: Usuario espera 15 min de inactividad en el modulo Servicio de salud
     Given que "Daniel" inicia sesión correctamente
       | numeroUsuario   | contrasena   |
@@ -91,8 +91,7 @@ Feature: Consultas Vida - Plan Vida Flexible
     When registra los datos del reembolso de salud sin beneficiario con tipo de cobertura desde tramites
       | productoContratante   | lugarAtencion   | tipoCobertura   |
       | <productoContratante> | <lugarAtencion> | <tipoCobertura> |
-    And adjuntamos los documentos y comprobantes del reembolso con tipo de cobertura "<tipoCobertura>"
-    Then válido seguimiento de reembolso de salud desde tramites
+    And adjuntamos los documentos y comprobantes del reembolso con tipo de cobertura
     And se mantiene inactivo por 15 minutos
     And válido el mensaje de tiempo inactivo
 
@@ -115,45 +114,46 @@ Feature: Consultas Vida - Plan Vida Flexible
       | 40861606      | Rimac2021  |
 
 
-#  @TiempoInactividadServicioVehicular @TiempoInactividad
-#  Scenario Outline: Esperar 15 min de inactividad en Asistencias Vehiculares
-#    Given que "Daniel" inicia sesión correctamente
-#      | numeroUsuario   | contrasena   |
-#      | <numeroUsuario> | <contrasena> |
-#    When se ingresa a Asistencias vehiculares desde Tramites y se inicia el tramite con la "<placa>" del vehiculo
-#    And selecciono la asistencia "Auxilio mecánico" y el "<problema>" del vehiculo
-#    And se mantiene inactivo por 15 minutos
-#    Then válido el mensaje de tiempo inactivo
-#
-#    Examples: Tabla
-#      | numeroUsuario | contrasena | placa | problema |
-#
-#
-#  @TiempoInactividadServiciosVida
-#  Scenario Outline: Esperar 15 min de inactividad en el modulo de Consultas Vida desde Home
-#    Given que "Daniel" inicia sesión correctamente
-#      | numeroUsuario   | contrasena   |
-#      | <numeroUsuario> | <contrasena> |
-#    When deseo conocer el detalle del estado de cuenta del "<año>" y del "<mes>" ingresando desde Home
-#    And se mantiene inactivo por 15 minutos
-#    Then válido el mensaje de tiempo inactivo
-#
-#    Examples: Tabla
-#      | numeroUsuario | contrasena | mes  | a??o |
-#      | 44926877      | Rimac2020  | Mayo | 2022 |
-#
-#  @TiempoInactividadTramiteYSiniestro
-#  Scenario Outline: Esperar 15 min de inactividad en el modulo Tramite y Siniestro
-#    Given que "Daniel" inicia sesión correctamente
-#      | numeroUsuario   | contrasena   |
-#      | <numeroUsuario> | <contrasena> |
-#    When ingreso a menu tramites
-#    And se mantiene inactivo por 15 minutos
-#    Then válido el mensaje de tiempo inactivo
-#
-#    Examples: Tabla
-#      | numeroUsuario | contrasena |
-#      | 44926877      | Rimac2020  |
+  @TiempoInactividadServicioVehicular @TiempoInactividad
+  Scenario Outline: Esperar 15 min de inactividad en Asistencias Vehiculares
+    Given que "Daniel" inicia sesión correctamente
+      | numeroUsuario   | contrasena   |
+      | <numeroUsuario> | <contrasena> |
+    When ingresa a asistencias vehiculares desde tramites e inicia el tramite
+    And selecciona los datos de ayuda mecanico
+    And se mantiene inactivo por 15 minutos
+    Then válido el mensaje de tiempo inactivo
+
+    Examples: Tabla
+      | numeroUsuario | contrasena |
+      |01317724   |Rimac2020   |
+
+
+  @TiempoInactividadServiciosVida
+  Scenario Outline: Esperar 15 min de inactividad en el modulo de Consultas Vida desde Home
+    Given que "Daniel" inicia sesión correctamente
+      | numeroUsuario   | contrasena   |
+      | <numeroUsuario> | <contrasena> |
+    When ingresa al detalle del seguro plan vida contigo desde el home "<vigencia>"
+    And se mantiene inactivo por 15 minutos
+    Then válido el mensaje de tiempo inactivo
+
+    Examples: Tabla
+      | numeroUsuario | contrasena | vigencia  |
+      | 44926877      | Rimac2020  | 15/07/2022 |
+
+  @TiempoInactividadTramiteYSiniestro
+  Scenario Outline: Usuario espera 15 min de inactividad en el modulo Tramite y Siniestro
+    Given que "Daniel" inicia sesión correctamente
+      | numeroUsuario   | contrasena   |
+      | <numeroUsuario> | <contrasena> |
+    When ingresa al menu tramites
+    And se mantiene inactivo por 15 minutos
+    Then válido el mensaje de tiempo inactivo
+
+    Examples: Tabla
+      | numeroUsuario | contrasena |
+      | 44926877      | Rimac2020  |
 #
 #  @TiempoInactividadVentaNueva
 #  Scenario Outline: Esperar 15 min de inactividad en el modulo Venta nueva

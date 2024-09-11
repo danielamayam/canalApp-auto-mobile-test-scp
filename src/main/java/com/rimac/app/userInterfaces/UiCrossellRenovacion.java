@@ -45,7 +45,7 @@ public class UiCrossellRenovacion {
 
 
     public static final Target BTN_CONTINUAR = Target.the("Botón continuar")
-            .locatedForAndroid(AppiumBy.id("com.rimac.rimac_surrogas.qa:id/materialBtn"))
+            .locatedForAndroid(AppiumBy.xpath("//android.widget.Button[@text='Continuar']"))
             .locatedForIOS(AppiumBy.xpath("(//XCUIElementTypeStaticText[@name='Continuar']//parent::XCUIElementTypeButton)"));
 
 

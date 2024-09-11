@@ -1,14 +1,16 @@
 package com.rimac.app.tasks.serviciosVehiculares;
 
-import com.rimac.app.interactions.MenuItem;
-import com.rimac.app.util.utilidadTecnica.interactions.builders.Scroll;
-import com.rimac.app.util.utilidadTecnica.interactions.builders.Tap;
+import com.rimac.app.interactions.EsperarElemento;
+import com.rimac.app.interactions.app.MenuItem;
+import com.rimac.app.interactions.builders.Scroll;
+import com.rimac.app.interactions.builders.Tap;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.Tasks;
 import net.serenitybdd.screenplay.matchers.WebElementStateMatchers;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 
+import static com.rimac.app.userInterfaces.UiMenu.BTN_VEHICULAR;
 import static com.rimac.app.userInterfaces.UiServiciosVehiculares.*;
 
 public class NavegaHastaAsistenciasVehiculares implements Task {

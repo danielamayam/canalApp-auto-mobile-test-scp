@@ -1,5 +1,6 @@
 package com.rimac.app.questions;
 
+import com.rimac.app.interactions.builders.Scroll;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Question;
 import net.serenitybdd.screenplay.targets.Target;

@@ -1,7 +1,7 @@
 package com.rimac.app.tasks.serviciosVehiculares;
 
 import com.rimac.app.interactions.EsperarElemento;
-import com.rimac.app.util.utilidadTecnica.interactions.builders.Tap;
+import com.rimac.app.interactions.builders.Tap;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.Tasks;
