@@ -15,7 +15,7 @@ pipeline {
                     currentBuild.displayName = "MobileTesting-Rimac-SauceLabs [#${env.BUILD_NUMBER}]"
                 }
                 // Ejecuta Maven para la construcción
-                sh 'mvn -X clean verify -DskipTests=true'
+                sh 'mvn -X clean verify'
 
             }
         }
@@ -26,7 +26,7 @@ pipeline {
                     try {
                         // Captura errores en esta etapa y marca la etapa como fallida si hay errores
                         catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE', message: 'Test Suite had a failure') {
-                            sh "mvn test -Denvironment=${v_SaucelabsPlatformName} -Dcucumber.features='src/test/resources/features/' -Dcucumber.filter.tags='${ESCENARIO}' -Dcucumber.plugin=json:target/site/result.json -Dcucumber.glue='stepdefinitions' -P installAppCloudActual"
+                            sh "mvn clean test -Denvironment=${v_SaucelabsPlatformName} -Dcucumber.features='src/test/resources/features/' -Dcucumber.filter.tags='${ESCENARIO}' -Dcucumber.glue='stepdefinitions' -P installAppCloudActual -DskipIntegrationTests=true"
                         }
                     } catch (ex) {
                         echo 'Finalizó ejecución con fallos...'
