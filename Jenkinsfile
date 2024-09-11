@@ -5,6 +5,8 @@ def defDate = new Date()
 def defTimestamp = defDateFormat.format(defDate).toString()
 
 pipeline {
+    agent any
+
     stages {
         stage('Build') {
             steps {
@@ -15,7 +17,6 @@ pipeline {
                 archive 'target/*.jar'
             }
         }
-
 
         stage('Ejecutar Pruebas') {
             steps {
@@ -33,7 +34,6 @@ pipeline {
                 }
             }
         }
-
 
         stage('Reporte') {
             steps {
@@ -53,4 +53,5 @@ pipeline {
         }
     }
 }
+
 
