@@ -10,13 +10,13 @@ import org.junit.runner.RunWith;
 import java.io.IOException;
 
 @RunWith(RunnerPersonalizado.class)
-@CucumberOptions(
+/*@CucumberOptions(
         features = {"src/test/resources/features/"}
         ,tags = "@reembolsoSaludSinBeneficiariosDesdeSegurosf"
         ,glue = {"stepdefinitions"}
         ,plugin = {"pretty","json:target/cucumber-reports/cucumber.json"}
         ,snippets = CucumberOptions.SnippetType.CAMELCASE
-)
+)*/
 public class RunRimac {
 
     @BeforeSuite
