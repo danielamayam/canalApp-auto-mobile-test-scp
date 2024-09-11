@@ -16,8 +16,7 @@ pipeline {
                 }
                 // Ejecuta Maven para la construcción
                 sh 'mvn -X clean verify -DskipTests=true'
-                // Archiva los artefactos generados
-                archiveArtifacts 'target/*.jar'
+
             }
         }
 
@@ -37,6 +36,23 @@ pipeline {
             }
         }
     }
+
+        post {
+            always {
+                script {
+                    try {
+                        sh ("mvn serenity:aggregate")
+                        echo 'Ejecucion de pruebas sin errores...'
+                        sh ("echo ${defTimestamp}")
+                        publishHTML([allowMissing: true, alwaysLinkToLastBuild: true, keepAll: true, reportDir: "${WORKSPACE}/target/site/serenity", reportFiles: 'index.html', reportName: 'Evidencias de Prueba', reportTitles: 'Reporte de Pruebas'])
+                        echo 'Reporte realizado con exito'
+                    } catch (ex) {
+                        echo 'Reporte realizado con Fallos'
+                        error('Failed')
+                    }
+                }
+            }
+        }
 }
 
 
