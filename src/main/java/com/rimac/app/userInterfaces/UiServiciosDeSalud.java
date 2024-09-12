@@ -97,5 +97,5 @@ public class UiServiciosDeSalud {
             .locatedForIOS(AppiumBy.xpath("(//XCUIElementTypeImage[@name=\"ic_radio_inactive\"])[1]"));
 
     public static final Target BTN_ACEPTAR = Target.the("Botón Lugar")
-            .locatedBy("//android.widget.Button[@text='ACEPTAR']");
+            .locatedBy("(//android.widget.Button[@text='ACEPTAR']) | (//android.widget.Button[@text='OK'])");
 }
