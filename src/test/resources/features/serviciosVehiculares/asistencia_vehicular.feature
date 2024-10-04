@@ -3,7 +3,7 @@
 @ModuloServiciosVehiculares_7 @Regresion
 Feature: Servicios Vehiculares - Asistencia Vehicular
 
-  @AsistenciaVehicularRepuesto
+  @AsistenciaVehicularRepuesto @SeguimientoAsistenciaVehicularRepuesto
   Scenario Outline: Usuario solicita auxilio mecanico - repuesto
     Given que "Daniel" inicia sesión correctamente
       | numeroUsuario   | contrasena   |

@@ -46,7 +46,7 @@ public class UiConsultasVida {
             .locatedForIOS(AppiumBy.xpath("//XCUIElementTypeStaticText[@name='Más sobre tu seguro']"));
 
     public static final Target LBL_NUMERO_DE_POLIZA = Target.the("Label numero de poliza")
-            .locatedForAndroid(AppiumBy.xpath("(//android.widget.TextView[@id='com.rimac.rimac_surrogas.qa:id/txtValueGeneric']) | (//android.widget.TextView[@resource-id='com.rimac.rimac_surrogas.qa:id/policyTextPlate']) | (//android.widget.TextView[@id='com.rimac.rimac_surrogas.qa:id/policyTextPlate']) | (//android.widget.TextView[@resource-id='com.rimac.rimac_surrogas.qa:id/txtValueGeneric'])"))
+            .locatedForAndroid(AppiumBy.xpath("(//android.widget.TextView[@id='com.rimac.rimac_surrogas.qa:id/txtValueGeneric']) | (//android.widget.TextView[@resource-id='com.rimac.rimac_surrogas.qa:id/policyTextPlate']) | (//android.widget.TextView[@id='com.rimac.rimac_surrogas.qa:id/policyTextPlate']) | (//android.widget.TextView[@resource-id='com.rimac.rimac_surrogas.qa:id/txtValueGeneric']) | (//android.widget.TextView[@resource-id='com.rimac.rimac_surrogas.qa:id/policyTextModel'])"))
             .locatedForIOS(AppiumBy.xpath("//XCUIElementTypeStaticText[@name='Número de póliza']//following-sibling::XCUIElementTypeStaticText"));
 
     public static final Target LBL_VIGENCIA = Target.the("Label vigencia")
@@ -83,13 +83,13 @@ public class UiConsultasVida {
             .locatedForAndroid(AppiumBy.id("com.rimac.rimac_surrogas.qa:id/txtPoliceDomiciliary"))
             .locatedForIOS(AppiumBy.xpath("//XCUIElementTypeStaticText[@name='Detalle de mi póliza']"));
 
-    public static final Target LBL_TU_SESION_HA_EXPIRADO = Target.the("Label detalle de mi póliza")
-            .locatedForAndroid(AppiumBy.id("PENDIENTE"))
-            .locatedForIOS(AppiumBy.xpath("//XCUIElementTypeStaticText[@name=\"Tu sesión ha expirado\"]"));
+    public static final Target LBL_BENEFICIARIO = Target.the("Label beneficiario")
+            .locatedForAndroid(AppiumBy.xpath("//android.widget.TextView[@text='HEREDEROS LEGALES']"))
+            .locatedForIOS(AppiumBy.xpath("//XCUIElementTypeStaticText[@name=\"HEREDEROS LEGALES\"]"));
 
-    public static final Target BTN_ENTENDIDO = Target.the("Botón entendido")
-            .locatedForAndroid(AppiumBy.id("PENDIENTE"))
-            .locatedForIOS(AppiumBy.xpath("//XCUIElementTypeStaticText[@name='Entendido']//parent::XCUIElementTypeButton"));
+    public static final Target BTN_BENEFICIARIO = Target.the("Botón beneficiario")
+            .locatedForAndroid(AppiumBy.xpath("//android.widget.LinearLayout[@content-desc=\"Beneficiarios\"]"))
+            .locatedForIOS(AppiumBy.xpath("(//XCUIElementTypeStaticText[@name='Beneficiarios']//preceding-sibling::XCUIElementTypeButton)"));
 
 
 

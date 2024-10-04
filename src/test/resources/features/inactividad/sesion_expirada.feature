@@ -1,9 +1,9 @@
 #Author: Daniel Amaya Marín
 
-@ModuloInactividad_13 @TiempoInactividad
+
 Feature: Consultas Vida - Plan Vida Flexible
 
-  @TiempoInactividadConsultasVida
+  @TiempoInactividadConsultasVida @ModuloInactividad @TiempoInactividad
   Scenario Outline: Usuario espera 15 min de inactividad en el modulo de consultas vida
     Given que "Daniel" inicia sesión correctamente
       | numeroUsuario   | contrasena   |
@@ -16,7 +16,7 @@ Feature: Consultas Vida - Plan Vida Flexible
       | numeroUsuario | contrasena | vigencia   |
       | 44853375      | Rimac2020  | 04/01/2046 |
 
-  @TiempoInactividadPerfil
+  @TiempoInactividadPerfil @ModuloInactividad @TiempoInactividad
   Scenario Outline: Usuario espera 15 min de inactividad en el modulo Perfil
     Given que "Daniel" inicia sesión correctamente
       | numeroUsuario   | contrasena   |
@@ -29,7 +29,7 @@ Feature: Consultas Vida - Plan Vida Flexible
       | numeroUsuario | contrasena |
       | 44926877      | Rimac2020  |
 
-  @TiempoInactividadConsultasSalud
+  @TiempoInactividadConsultasSalud @ModuloInactividad @TiempoInactividad
   Scenario Outline: Usuario espera 15 min de inactividad en el modulo de seguro Consulta Salud
     Given que "Daniel" inicia sesión correctamente
       | numeroUsuario   | contrasena   |
@@ -56,7 +56,7 @@ Feature: Consultas Vida - Plan Vida Flexible
       | 10020310      | Rimac2020  | En trámite | 06/12/2024 |
 
 
-  @TiempoInactividadOnboarding
+  @TiempoInactividadOnboarding @ModuloInactividad
   Scenario Outline: Usuario espera 15 min de inactividad  despues de realizar exitozamente el inicio de sesión
     Given que "Daniel" inicia sesión correctamente
       | numeroUsuario   | contrasena   |
@@ -69,7 +69,7 @@ Feature: Consultas Vida - Plan Vida Flexible
       | 40861606      | Rimac2021  |
 
 
-  @TiempoInactividadPagos
+  @TiempoInactividadPagos @ModuloInactividad @TiempoInactividad
   Scenario Outline: Usuario espera 15 min de inactividad en el modulo de pagos
     Given que "Daniel" inicia sesión correctamente
       | numeroUsuario   | contrasena   |
@@ -100,7 +100,7 @@ Feature: Consultas Vida - Plan Vida Flexible
       | 76243722      | Rimac2020  | AMC COLECTIVA FOLA - Citibank Del Peru S.a. | Lima          | Hospitalario  |
 
 
-  @TiempoInactividadServiciosSOAT @TiempoInactividad
+  @TiempoInactividadServiciosSOAT
   Scenario Outline: Usuario espera 15 min de inactividad en el modulo Servicios de SOAT
     Given que "Daniel" inicia sesión correctamente
       | numeroUsuario   | contrasena   |
@@ -114,7 +114,7 @@ Feature: Consultas Vida - Plan Vida Flexible
       | 40861606      | Rimac2021  |
 
 
-  @TiempoInactividadServicioVehicular @TiempoInactividad
+  @TiempoInactividadServicioVehicular
   Scenario Outline: Esperar 15 min de inactividad en Asistencias Vehiculares
     Given que "Daniel" inicia sesión correctamente
       | numeroUsuario   | contrasena   |

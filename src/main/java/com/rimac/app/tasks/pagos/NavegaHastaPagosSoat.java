@@ -1,6 +1,7 @@
 package com.rimac.app.tasks.pagos;
 
 import com.rimac.app.exceptions.Assertions;
+import com.rimac.app.interactions.EsperarElemento;
 import com.rimac.app.interactions.HorizontalSwipeByCoordinates;
 import com.rimac.app.interactions.Swipe;
 import com.rimac.app.interactions.app.MenuItem;
@@ -32,6 +33,7 @@ public class NavegaHastaPagosSoat implements Task {
         try {
             actor.attemptsTo(
                     MenuItem.seguros(),
+                    EsperarElemento.por(10),
                     Swipe.as(actor).fromBottom().toLeft(),
                     HorizontalSwipeByCoordinates.go(300, 164, 25),
                     WaitUntil.the(BTN_SOAT, WebElementStateMatchers.isVisible()).forNoMoreThan(120).seconds(),

@@ -19,6 +19,7 @@ import net.serenitybdd.screenplay.waits.WaitUntil;
 
 
 import static com.rimac.app.userInterfaces.UiCrossellRenovacion.*;
+import static com.rimac.app.userInterfaces.UiCrossellRenovacion.BTN_INICIAR_SOLICITUD;
 import static com.rimac.app.userInterfaces.UiMenu.BTN_VEHICULAR;
 import static com.rimac.app.userInterfaces.UiSeguros.BTN_GUARDAR_TARJETA;
 import static com.rimac.app.userInterfaces.UiServiciosVehiculares.*;
@@ -39,17 +40,17 @@ public class GestionarChoferRemplazo implements Task {
                 //Tap.on(BTN_VEHICULAR),
                 Scroll.on(BTN_CHOFER_DE_REMPLAZO),
                 Tap.on(BTN_CHOFER_DE_REMPLAZO),
-                WaitUntil.the(BTN_CONTINUAR, WebElementStateMatchers.isVisible()).forNoMoreThan(120).seconds(),
-                Tap.on(BTN_CONTINUAR ),
+                WaitUntil.the(BTN_INICIAR_SOLICITUD, WebElementStateMatchers.isVisible()).forNoMoreThan(120).seconds(),
+                Tap.on(BTN_INICIAR_SOLICITUD ),
                 Tap.siElElementoEsVisible(BTN_CANCELAR),
                 EsperarElemento.por(40),
-                Check.whether(ComandosCapabilities.isiOS(actor)).andIfSo(
+
                         Tap.on(TXT_PUNTO_DE_PARTIDA),
                         Enter.theValue("Calle Capón").into(TXT_PUNTO_DE_PARTIDA),
                         Hide.keyboard(),
                         EsperarElemento.por(3),
-                        Tap.on(LBL_CALLE("Calle Capón"))
-                ),
+                        Tap.on(LBL_CALLE("Calle Capón")),
+
                 Click.on(TXT_PUNTO_DE_DESTINO),
                 Enter.theValue("Calle Quince").into(TXT_PUNTO_DE_DESTINO),
                 Hide.keyboard(),
@@ -68,7 +69,11 @@ public class GestionarChoferRemplazo implements Task {
                 EsperarElemento.por(5),
                 Swipe.as(actor).fromTop().toTop(),
                 Tap.on(BTN_GUARDAR_TARJETA),
-                WaitUntil.the(LBL_MENSAJE_CHOFER, WebElementStateMatchers.isVisible()).forNoMoreThan(120).seconds()
+                WaitUntil.the(LBL_MENSAJE_CHOFER, WebElementStateMatchers.isVisible()).forNoMoreThan(120).seconds(),
+                Tap.on(BTN_VOLVER_AL_INICIO),
+                MenuItem.home(),
+                WaitUntil.the(LBL_SOLICITUD_CHOFER_REMPLAZO, WebElementStateMatchers.isVisible()).forNoMoreThan(120).seconds()
+
 
         );
     }

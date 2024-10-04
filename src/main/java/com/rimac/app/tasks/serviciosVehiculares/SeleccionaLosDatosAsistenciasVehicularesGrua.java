@@ -3,6 +3,7 @@ package com.rimac.app.tasks.serviciosVehiculares;
 import com.rimac.app.interactions.ComandosCapabilities;
 import com.rimac.app.interactions.EsperarElemento;
 import com.rimac.app.interactions.Swipe;
+import com.rimac.app.interactions.app.MenuItem;
 import com.rimac.app.interactions.builders.Tap;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
@@ -47,7 +48,11 @@ public class SeleccionaLosDatosAsistenciasVehicularesGrua implements Task {
                 EsperarElemento.por(5),
                 Swipe.as(actor).fromTop().toTop(),
                 Tap.on(BTN_GUARDAR_TARJETA),
-                WaitUntil.the(LBL_MENSAJE_CHOFER, WebElementStateMatchers.isVisible()).forNoMoreThan(120).seconds()
+                WaitUntil.the(LBL_MENSAJE_CHOFER, WebElementStateMatchers.isVisible()).forNoMoreThan(120).seconds(),
+                Tap.on(BTN_VOLVER_AL_INICIO),
+                MenuItem.home(),
+                WaitUntil.the(LBL_SOLICITUD_GRUA, WebElementStateMatchers.isVisible()).forNoMoreThan(120).seconds()
+
 
         );
     }

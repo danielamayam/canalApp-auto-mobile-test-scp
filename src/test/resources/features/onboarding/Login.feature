@@ -14,7 +14,7 @@ Feature: onboarding
     Examples: Tabla
       | numeroUsuario | contrasena |
        ##@externaldata@./src/test/resources/datadriven/Onboarding/Login_data.xlsx@Login@1
-   |47927254   |Rimac2020|
+   |10318552   |Rimac2020|
 
 
 
@@ -34,14 +34,12 @@ Feature: onboarding
 
 
 #  @OlvidasteTuContrasenia
-#  Scenario Outline: Usuario recupera su contrasena
-#    Given se selecciona la opción ¿Olvidaste tu contraseña?
-#    And se ingresa el tipo y número de documento: "<tipoID>", "<id>"
-#    When se selecciona la opción Responder Preguntas
-#    And se ingresa la fecha de nacimiento "<fechaNacimiento>" y los seguros "<seguros>" que cuenta el cliente
-#    Then debe permitir el ingreso de una nueva contraseña
-#    And debe de aparecer el mensaje de "Tu contraseña fue cambiada con éxito"
+#  Scenario Outline: Usuario recupera su contraseña
+#    Given que "Daniel" seleccionó la opción ¿Olvidaste tu contraseña? "<numeroUsuario>"
+#    When diligencia el código de validación "<email>" "<contrasena>"
+#    And actualiza la contraseña "<newContrasena>"
+#    Then válido el mensaje "Tu contraseña fue cambiada con éxito"
 #
 #    Examples:
-#      | tipoID | id       | fechaNacimiento | seguros |
-#      | DNI    | 10667872 | 08/01/1978      | SOAT    |
+#      | numeroUsuario | email                             | contrasena     | newContrasena |
+#      | 45778112      | automations_rimac_scp@hotmail.com | Medellin123** | Rimac2020     |

@@ -13,8 +13,8 @@ import net.serenitybdd.screenplay.actors.OnStage;
 import static com.rimac.app.exceptions.Assertions.EL_TARGET_NO_ES_EL_ESPERADO;
 import static com.rimac.app.userInterfaces.UiConsultasVehicularSoat.LBL_NUMERO_POLIZA;
 import static com.rimac.app.userInterfaces.UiConsultasVida.PDF_VIEW;
+import static com.rimac.app.userInterfaces.UiMenu.LBL_CONOCE_TUS_COBERTURAS;
 import static com.rimac.app.userInterfaces.UiSeguros.LBL_PAGADO;
-import static com.rimac.app.userInterfaces.UiServiciosVehiculares.BTN_ACCIDENTES_PERSONALES;
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 
 public class PolizaVehicularStepDefinitions {
@@ -71,7 +71,7 @@ public class PolizaVehicularStepDefinitions {
     @Then("válido la cobertura del seguro")
     public void validoLaCoberturaDelSeguro() {
         OnStage.theActorInTheSpotlight().should(seeThat(
-                EL_TARGET_NO_ES_EL_ESPERADO, VerificarElemento.as(BTN_ACCIDENTES_PERSONALES)
+                EL_TARGET_NO_ES_EL_ESPERADO, VerificarElemento.as(LBL_CONOCE_TUS_COBERTURAS)
         ));
     }
 }

@@ -1,6 +1,6 @@
 #Author: Daniel Amaya Marín
 
-@ModuloPagos_15
+@ModuloPagos_15 @Pagos
 Feature: Pagos
 
 
@@ -18,7 +18,7 @@ Feature: Pagos
     Examples: Tabla
       | numeroUsuario | contrasena | placa | numtarjeta | fecha | cvv | vigencia |
     ##@externaldata@./src/test/resources/datadriven/Pagos/Pago_de_cuotas_data.xlsx@PagoSinTarjetaAsociada@1
-   |41373006   |Rimac2020   |CQJ-989   |4551708161768059   |03/28   |111   |04/05/2025|
+   |41483350   |Rimac2020   |A1I-345   |4551708161768059   |03/28   |111   |02/09/2025|
 
 
   @PagoAfiliadoDebitoAuto
@@ -35,7 +35,7 @@ Feature: Pagos
     Examples: Tabla
       | numeroUsuario | contrasena | placa | numtarjeta | fecha | cvv | vigencia |
     ##@externaldata@./src/test/resources/datadriven/Pagos/Pago_de_cuotas_data.xlsx@PagoAfiliadoDebitoAuto@1
-   |41373006   |Rimac2020   |CQJ-989   |4551708161768059   |03/28   |111   |04/05/2025|
+   |41483350   |Rimac2020   |A1I-345   |4551708161768059   |03/28   |111   |02/09/2025|
 
 
   @PagoConValidacionHistorial
@@ -53,7 +53,7 @@ Feature: Pagos
     Examples: Tabla
       | numeroUsuario | contrasena | placa | numtarjeta | fecha | cvv | vigencia |
     ##@externaldata@./src/test/resources/datadriven/Pagos/Pago_de_cuotas_data.xlsx@PagoConValidacionHistorial@1
-   |41373006   |Rimac2020   |CQJ-989   |4551708161768059   |03/28   |111   |04/05/2025|
+   |41483350   |Rimac2020   |A1I-345   |4551708161768059   |03/28   |111   |02/09/2025|
 
 
   @PagoConTarjetaAsociada
@@ -68,7 +68,7 @@ Feature: Pagos
     Examples: Tabla
       | numeroUsuario | contrasena | placa | numtarjeta | vigencia |
      ##@externaldata@./src/test/resources/datadriven/Pagos/Pago_de_cuotas_data.xlsx@PagoConTarjetaAsociada@1
-   |41373006   |Rimac2020   |CQJ-989   |4551708161768059   |04/05/2025|
+   |41483350   |Rimac2020   |A1I-345   |4551708161768059   |02/09/2025|
 
 
   @PagoAsociandoTarjeta
@@ -85,7 +85,7 @@ Feature: Pagos
     Examples: Tabla
       | numeroUsuario | contrasena | placa | numtarjeta | fecha | cvv | vigencia |
          ##@externaldata@./src/test/resources/datadriven/Pagos/Pago_de_cuotas_data.xlsx@PagoAsociandoTarjeta@1
-   |41373006   |Rimac2020   |CQJ-989   |4551708161768059   |03/28   |111   |04/05/2025|
+   |41483350   |Rimac2020   |A1I-345   |4551708161768059   |03/28   |111   |02/09/2025|
 
 
   @PagoPolizaSoat

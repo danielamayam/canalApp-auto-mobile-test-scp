@@ -3,10 +3,7 @@ package stepdefinitions;
 import com.rimac.app.interactions.app.MenuItem;
 import com.rimac.app.questions.VerificarDetalleSeguroPlanVida;
 import com.rimac.app.questions.VerificarElemento;
-import com.rimac.app.tasks.consultasVida.NavegaHastaCoberturaVidaConTigo;
-import com.rimac.app.tasks.consultasVida.NavegaHastaElDetalleVidaConTigo;
-import com.rimac.app.tasks.consultasVida.NavegaHastaPagos;
-import com.rimac.app.tasks.consultasVida.DescargaPolizaDesdeElDetalle;
+import com.rimac.app.tasks.consultasVida.*;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import net.serenitybdd.screenplay.actors.OnStage;
@@ -88,5 +85,20 @@ public class PlanVidaConTigoStepDefinitions {
         OnStage.theActorInTheSpotlight().attemptsTo(
                 MenuItem.tramites()
         );
+    }
+
+
+    @When("ingresa al los beneficiarios del seguro plan vida contigo {string}")
+    public void ingresaAlLosBeneficiariosDelSeguroPlanVidaContigo(String vigencia) {
+        OnStage.theActorInTheSpotlight().attemptsTo(
+                NavegaHastaElBeneficiarioDeLaPoliza.go(vigencia)
+        );
+    }
+
+    @Then("válido la información del beneficiario {string}")
+    public void válidoLaInformaciónDelBeneficiario(String nombre) {
+        OnStage.theActorInTheSpotlight().should(seeThat(
+                VerificarDetalleSeguroPlanVida.on(nombre, LBL_BENEFICIARIO)
+        ));
     }
 }

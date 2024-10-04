@@ -17,7 +17,7 @@ Feature: pagos
     Examples: Tabla
       | numeroUsuario | contrasena | numtarjeta       | cvv | fecha | placa   | vigencia   |
       ##@externaldata@./src/test/resources/datadriven/Pagos/Pago_suscripcion_data.xlsx@SucripcionDesdePagos@1
-   |15602689   |Rimac2020   |4474104525811674   |111   |03/28   |IDO-89D   |04/09/2025|
+   |40883522   |Rimac2020   |4474104525811674   |111   |03/28   |B2L-001   |07/05/2025|
 
 
   @SucripcionDesdePerfil
@@ -50,7 +50,7 @@ Feature: pagos
     Examples: Tabla
       | numeroUsuario | contrasena | numtarjeta       | cvv | fecha | placa   | vigencia   |
     ##@externaldata@./src/test/resources/datadriven/Pagos/Pago_suscripcion_data.xlsx@SucripcionDesdeAfiliacion@1
-   |15602689   |Rimac2020   |4474104525811674   |111   |03/28   |IDO-89D   |04/09/2025|
+   |40883522   |Rimac2020   |4474104525811674   |111   |03/28   |B2L-001   |07/05/2025|
 
 
   @SucripcionDesdeOpcionPagar
@@ -67,7 +67,7 @@ Feature: pagos
     Examples: Tabla
       | numeroUsuario | contrasena | placa   | numtarjeta       | fecha | cvv | vigencia   |
     ##@externaldata@./src/test/resources/datadriven/Pagos/Pago_suscripcion_data.xlsx@SucripcionDesdeOpcionPagar@1
-   |15602689   |Rimac2020   |IDO-89D   |4551708161768059   |03/28   |111   |04/09/2025|
+   |40883522   |Rimac2020   |B2L-001   |4551708161768059   |03/28   |111   |07/05/2025|
 
 
   @EliminarMedioDePago

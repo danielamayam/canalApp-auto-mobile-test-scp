@@ -2,6 +2,7 @@ package stepdefinitions;
 
 import com.rimac.app.questions.VerificarElemento;
 import com.rimac.app.tasks.consultaSalud.NavegaHastaElDetallePoliza;
+import com.rimac.app.tasks.consultaSalud.NavegaHastaLaCoberturaPoliza;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import net.serenitybdd.screenplay.actors.OnStage;
@@ -23,6 +24,13 @@ public class PolizaEpsStepDefinitions {
         OnStage.theActorInTheSpotlight().should(seeThat(
                 EL_TARGET_NO_ES_EL_ESPERADO, VerificarElemento.as(LBL_NUMERO_DE_POLIZA)
         ));
+    }
+
+    @When("ingresa la cobertura del seguro de Salud")
+    public void ingresaLaCoberturaDelSeguroDeSalud() {
+        OnStage.theActorInTheSpotlight().attemptsTo(
+                NavegaHastaLaCoberturaPoliza.go()
+        );
     }
 
 }

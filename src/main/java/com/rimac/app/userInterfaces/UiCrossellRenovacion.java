@@ -44,6 +44,11 @@ public class UiCrossellRenovacion {
             .locatedForIOS(AppiumBy.xpath("(//XCUIElementTypeImage[@name='ic_radio_inactive'])[2]"));
 
 
+    public static final Target BTN_INICIAR_SOLICITUD = Target.the("Botón Iniciar solicitud")
+.locatedForAndroid(AppiumBy.xpath("//android.widget.Button[@resource-id='com.rimac.rimac_surrogas.qa:id/materialBtn']"))
+            .locatedForIOS(AppiumBy.xpath("(//XCUIElementTypeStaticText[@name='Continuar']//parent::XCUIElementTypeButton)"));
+
+
     public static final Target BTN_CONTINUAR = Target.the("Botón continuar")
             .locatedForAndroid(AppiumBy.xpath("//android.widget.Button[@text='Continuar']"))
             .locatedForIOS(AppiumBy.xpath("(//XCUIElementTypeStaticText[@name='Continuar']//parent::XCUIElementTypeButton)"));

@@ -60,3 +60,16 @@ Feature: Consultas Vida - Plan Vida Contigo
       | numeroUsuario | contrasena | vigencia   | numeroPoliza | contratantePoliza         | intermediarioPoliza          |vigenciaDesde|
 ##@externaldata@./src/test/resources/datadriven/consultasVida/Plan_vida_data.xlsx@Scenario4@1
    |41213620   |Rimac2020   |15/07/2022   |1300002498   |Kyra Ruperto Emner Abanco   |Diego Alberto Fornoni Ibarra   |Desde 15/07/2022 - 12/12/2131|
+
+
+  @ConsultarInformacionDelBeneficiario
+  Scenario Outline: Usuario consulta la información del beneficiario
+    Given que "Daniel" inicia sesión correctamente
+      | numeroUsuario   | contrasena   |
+      | <numeroUsuario> | <contrasena> |
+    When ingresa al los beneficiarios del seguro plan vida contigo "<vigencia>"
+    Then válido la información del beneficiario "<beneficiario>"
+
+    Examples: Tabla
+      | numeroUsuario | contrasena | vigencia   | beneficiario |
+   |41213620   |Rimac2020   |15/07/2022   |HEREDEROS LEGALES   |

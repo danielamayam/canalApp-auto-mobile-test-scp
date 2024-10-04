@@ -54,13 +54,13 @@ public class UIAlertas {
 
     public static final Target BTN_ALERTAS (int value) {
         return Target.the("Boton alertas")
-                .locatedForAndroid(AppiumBy.xpath("(//android.widget.Button[@resource-id=\"com.rimac.rimac_surrogas.qa:id/btn_not_yet\"])"))
+                .locatedForAndroid(AppiumBy.xpath("((//android.widget.TextView[@text='Por ahora no']) | (//android.widget.Button[@resource-id=\"com.rimac.rimac_surrogas.qa:id/btn_not_yet\"]) | (//android.widget.Button[@text='Por ahora no']) | (//*[@text='Entendido']) | (//android.widget.Button[@text='Conocer más']) | (//*[@text='Activa tu seguro vehicular hoy']//preceding-sibling::android.widget.ImageButton[@content-desc='Cerrar modal']) | (//android.widget.ImageButton[@content-desc=\"Cerrar modal\"]) | (//android.widget.Button[@text='Vamos a Estar Bien']) | (//*[@text='Estar Bien']//preceding-sibling::android.widget.ImageButton[ends-with(@resource-id,'dialog_close')]))["+value+"]"))
                 .locatedForIOS(AppiumBy.xpath("((//XCUIElementTypeButton[@name=\"Tal vez más tarde\"]) | (//XCUIElementTypeButton[@name=\"Por ahora no\"]) | (//*[@name='Vamos a Estar Bien']) | (//XCUIElementTypeButton[@name=\"Conocer más\"]))["+value+"]"));
 
     }
 
     public static final Target BTN_ALERTAS = Target.the("Boton alertas")
-                .locatedForAndroid(AppiumBy.xpath("(//android.widget.Button[@resource-id=\"com.rimac.rimac_surrogas.qa:id/btn_not_yet\"])"))
-                .locatedForIOS(AppiumBy.xpath("(//XCUIElementTypeButton[@name=\"Tal vez más tarde\"]) | (//*[@name='Vamos a Estar Bien']) | (//XCUIElementTypeButton[@name=\"Por ahora no\"]) | (//XCUIElementTypeButton[@name=\"Conocer más\"])"));
+            .locatedForAndroid(AppiumBy.xpath("(//android.widget.TextView[@text='Por ahora no']) | (//android.widget.Button[@resource-id=\"com.rimac.rimac_surrogas.qa:id/btn_not_yet\"]) | (//android.widget.Button[@text='Por ahora no']) | (//*[@text='Entendido']) | (//android.widget.Button[@text='Conocer más']) | (//*[@text='Activa tu seguro vehicular hoy']//preceding-sibling::android.widget.ImageButton[@content-desc='Cerrar modal']) | (//*[@text='Estar Bien']//preceding-sibling::android.widget.ImageButton[ends-with(@resource-id,'dialog_close')]) | (//android.widget.Button[@text='Vamos a Estar Bien']) | (//android.widget.ImageButton[@content-desc=\"Cerrar modal\"])"))
+            .locatedForIOS(AppiumBy.xpath("(//XCUIElementTypeButton[@name=\"Tal vez más tarde\"]) | (//*[@name='Vamos a Estar Bien']) | (//XCUIElementTypeButton[@name=\"Por ahora no\"]) | (//XCUIElementTypeButton[@name=\"Conocer más\"])"));
 
 }

@@ -24,7 +24,11 @@ public class UiServiciosVehiculares {
             .locatedForIOS(AppiumBy.xpath("//XCUIElementTypeApplication[@name=\"RIMAC\"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[2]/XCUIElementTypeOther/XCUIElementTypeButton[2]"));
 
     public static final Target TXT_PUNTO_DE_PARTIDA = Target.the("Input punto de partida")
-            .locatedBy("//XCUIElementTypeApplication[@name=\"RIMAC\"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[2]/XCUIElementTypeOther/XCUIElementTypeButton[1]");
+            .locatedForAndroid(AppiumBy.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup[1]/androidx.appcompat.widget.LinearLayoutCompat/android.view.ViewGroup/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.EditText"))
+            .locatedForIOS(AppiumBy.xpath("//XCUIElementTypeApplication[@name=\"RIMAC\"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[2]/XCUIElementTypeOther/XCUIElementTypeButton[1]\n"));
+
+
+
 
     public static final Target LBL_UBICACION = Target.the("Label")
             .locatedBy("//XCUIElementTypeStaticText[@name=\"{0}}\"]");
@@ -34,9 +38,6 @@ public class UiServiciosVehiculares {
             .locatedForAndroid(AppiumBy.id("com.rimac.rimac_surrogas.qa:id/congratsTitle"))
             .locatedForIOS(AppiumBy.xpath("//XCUIElementTypeStaticText[@name='Hemos recibido tu solicitud']"));
 
-    public static final Target BTN_VOLVER_AL_INICIO = Target.the("Label mensaje")
-            .locatedForAndroid(AppiumBy.id("com.rimac.rimac_surrogas.qa:id/materialBtn"))
-            .locatedForIOS(AppiumBy.xpath("//XCUIElementTypeStaticText[@name='Hemos recibido tu solicitud']"));
 
     public static final Target BTN_SEGUIMIENTO = Target.the("Label mensaje")
             .locatedForAndroid(AppiumBy.xpath("pendiente"))
@@ -107,37 +108,48 @@ public class UiServiciosVehiculares {
             .locatedForIOS(AppiumBy.xpath("//XCUIElementTypeOther[@name=\"Accidentes personales\"]"));
 
 
-    public static final Target BTN_CARD_CHOFER_REMPLAZO = Target.the("Botón card chofer remplazo")
-            .locatedForAndroid(AppiumBy.xpath("//android.view.ViewGroup[@content-desc=\"Accidentes personales\"]/android.widget.TextView"))
-            .locatedForIOS(AppiumBy.xpath("(//XCUIElementTypeStaticText[@value=\"CHOFER DE REEMPLAZO\"]//parent::XCUIElementTypeButton)[1]"));
+    public static final Target CARD_GRUA(String placa){
+        return Target.the("Input punto de partida")
+                .locatedForAndroid(AppiumBy.xpath("((//android.widget.TextView[@text='GRÚA']//following-sibling::android.widget.TextView[@text='Solicitud para la placa "+placa+"']//following-sibling::android.widget.ImageView)[1])"))
+                .locatedForIOS(AppiumBy.xpath("(//XCUIElementTypeStaticText[@name=\"CHOFER DE REEMPLAZO\"]//parent::XCUIElementTypeButton)[1]"));
+    }
 
     public static final Target CARD_CHOFER_REMPLAZO(String placa){
         return Target.the("Input punto de partida")
-                .locatedForAndroid(AppiumBy.xpath("(//android.widget.TextView[@text='CHOFER DE REEMPLAZO']//following-sibling::android.widget.TextView[@text='Solicitud para la placa "+placa+"']//following-sibling::android.widget.ImageView)[1]"))
-                .locatedForIOS(AppiumBy.xpath("//XCUIElementTypeStaticText[@name='"+placa+"']"));
+                .locatedForAndroid(AppiumBy.xpath("((//android.widget.TextView[@text='CHOFER DE REEMPLAZO']//following-sibling::android.widget.TextView[@text='Solicitud para la placa "+placa+"']//following-sibling::android.widget.ImageView)[1]) | ((//android.widget.TextView[@text='CHOFER DE REEMPLAZO']//following-sibling::android.widget.TextView[@text='Te avisaremos cuando tu solicitud se programe']//following-sibling::android.widget.ImageView)[1])"))
+                .locatedForIOS(AppiumBy.xpath("(//XCUIElementTypeStaticText[@name=\"CHOFER DE REEMPLAZO\"]//parent::XCUIElementTypeButton)[1]"));
     }
 
     public static final Target BTN_CANCELAR_SERVICIO = Target.the("Botón cancelar servicio")
             .locatedForAndroid(AppiumBy.id("com.rimac.rimac_surrogas.qa:id/tv_title"))
-            .locatedForIOS(AppiumBy.xpath("//XCUIElementTypeOther[@name=\"Accidentes personales\"]"));
+            .locatedForIOS(AppiumBy.xpath("//XCUIElementTypeButton[@name=\"Cancelar servicio\"]"));
 
     public static final Target BTN_SI_CANCELAR = Target.the("Botón si cancelar servicio")
             .locatedForAndroid(AppiumBy.id("com.rimac.rimac_surrogas.qa:id/tv_title"))
-            .locatedForIOS(AppiumBy.xpath("//XCUIElementTypeOther[@name=\"Accidentes personales\"]"));
+            .locatedForIOS(AppiumBy.xpath("//XCUIElementTypeButton[@name=\"Sí, cancelar\"]"));
 
     public static final Target LBL_SOLICITUD_CANCELADA = Target.the("Botón si cancelar servicio")
             .locatedForAndroid(AppiumBy.xpath("//android.widget.TextView[@text='Solicitud cancelada']"))
-            .locatedForIOS(AppiumBy.xpath("//XCUIElementTypeOther[@name=\"Accidentes personales\"]"));
+            .locatedForIOS(AppiumBy.xpath("//XCUIElementTypeStaticText[@name=\"Solicitud cancelada\"]"));
 
 
     public static final Target BTN_IR_ATRAS = Target.the("Botón si cancelar servicio")
             .locatedForAndroid(AppiumBy.id("com.rimac.rimac_surrogas.qa:id/assistanceBack"))
-            .locatedForIOS(AppiumBy.xpath("//XCUIElementTypeOther[@name=\"Accidentes personales\"]"));
+            .locatedForIOS(AppiumBy.xpath("//XCUIElementTypeImage[@name=\"gl-sm-arrow-back\"]"));
 
-    public static final Target BTN_CERRAR_ALERTA = Target.the("Botón si cancelar servicio")
-            .locatedForAndroid(AppiumBy.id("com.rimac.rimac_surrogas.qa:id/clHomeEntryPointClose"))
-            .locatedForIOS(AppiumBy.xpath("//XCUIElementTypeOther[@name=\"Accidentes personales\"]"));
+    public static final Target BTN_VOLVER_AL_INICIO = Target.the("Botón volver al inicio")
+            .locatedForAndroid(AppiumBy.id("com.rimac.rimac_surrogas.qa:id/materialBtn"))
+            .locatedForIOS(AppiumBy.xpath("//XCUIElementTypeStaticText[@name=\"Volver al inicio\"]//parent::XCUIElementTypeButton"));
 
+    public static final Target LBL_SOLICITUD_AUXILIO_MECANICO = Target.the("Label auxilio mecanico")
+            .locatedForAndroid(AppiumBy.xpath("(//android.widget.TextView[@text='AUXILIO MECÁNICO'])[1]"))
+            .locatedForIOS(AppiumBy.xpath("(//XCUIElementTypeStaticText[@name=\"AUXILIO MECÁNICO\"])[1]"));
 
+    public static final Target LBL_SOLICITUD_GRUA = Target.the("Label auxilio grua")
+            .locatedForAndroid(AppiumBy.xpath("(//android.widget.TextView[@text='GRÚA'])[1]"))
+            .locatedForIOS(AppiumBy.xpath("(//XCUIElementTypeStaticText[@name=\"GRÚA\"])[1]"));
 
+    public static final Target LBL_SOLICITUD_CHOFER_REMPLAZO = Target.the("Label chofer remplazo")
+            .locatedForAndroid(AppiumBy.xpath("(//android.widget.TextView[@text='CHOFER DE REEMPLAZO'])[1]"))
+            .locatedForIOS(AppiumBy.xpath("(//XCUIElementTypeStaticText[@name=\"CHOFER DE REEMPLAZO\"])[1]"));
 }

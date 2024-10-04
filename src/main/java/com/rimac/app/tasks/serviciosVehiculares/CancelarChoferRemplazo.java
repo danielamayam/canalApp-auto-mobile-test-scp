@@ -1,6 +1,7 @@
 package com.rimac.app.tasks.serviciosVehiculares;
 
 import com.rimac.app.interactions.EsperarElemento;
+import com.rimac.app.interactions.builders.Scroll;
 import com.rimac.app.interactions.builders.Tap;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
@@ -21,6 +22,7 @@ public class CancelarChoferRemplazo implements Task {
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
                 EsperarElemento.por(50),
+                Scroll.on(CARD_CHOFER_REMPLAZO(placa)),
                 WaitUntil.the(CARD_CHOFER_REMPLAZO(placa), WebElementStateMatchers.isClickable()).forNoMoreThan(120).seconds(),
                 Tap.on(CARD_CHOFER_REMPLAZO(placa)),
                 WaitUntil.the(BTN_CANCELAR_SERVICIO, WebElementStateMatchers.isClickable()).forNoMoreThan(120).seconds(),

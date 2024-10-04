@@ -32,8 +32,10 @@ public class DiligencioDatosReembolsoBeneficiario implements Task {
         actor.attemptsTo(
                 MenuItem.tramites(),
 
+                EsperarElemento.por(10),
                 Scroll.on(BTN_REEMBOLSO_DE_SALUD),
                 Tap.on(BTN_REEMBOLSO_DE_SALUD),
+
 
                 WaitUntil.the(BTN_INICIAR_REEMBOLSO, WebElementStateMatchers.isClickable()).forNoMoreThan(120).seconds(),
                 Tap.on(BTN_INICIAR_REEMBOLSO),

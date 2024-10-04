@@ -14,7 +14,7 @@ Feature: pagos
     Examples: Tabla
       | numeroUsuario | contrasena | placa   | vigencia   |
     ##@externaldata@./src/test/resources/datadriven/Pagos/Pago_historial_data.xlsx@CronogramaPagosVehicular@1
-   |15602689   |Rimac2020   |IDO-89D   |04/09/2025|
+   |40883522   |Rimac2020   |B2L-001   |07/05/2025|
 
 
   @HistorialPagos
@@ -28,7 +28,7 @@ Feature: pagos
     Examples: Tabla
       | numeroUsuario | contrasena | placa   | vigencia   |
     ##@externaldata@./src/test/resources/datadriven/Pagos/Pago_historial_data.xlsx@HistorialPagos@1
-   |43220212   |Rimac2020   |ACY-347   |12/07/2025|
+   |40883522   |Rimac2020   |B2L-001   |07/05/2025|
 
 
   @DescargaHistorialPagos
@@ -43,7 +43,7 @@ Feature: pagos
     Examples: Tabla
       | numeroUsuario | contrasena | placa   | vigencia   |
   ##@externaldata@./src/test/resources/datadriven/Pagos/Pago_historial_data.xlsx@DescargaHistorialPagos@1
-   |43220212   |Rimac2020   |ACY-347   |12/07/2025|
+   |40898250   |Rimac2020   |SIN-DAT   |24/08/2025|
 
 
 #  @CronogramaPagosEPS @Pendiente #--------------------------------- ------------------------------

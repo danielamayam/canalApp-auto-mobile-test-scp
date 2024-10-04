@@ -6,8 +6,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import net.serenitybdd.screenplay.actors.OnStage;
 import static com.rimac.app.exceptions.Assertions.EL_TARGET_NO_ES_EL_ESPERADO;
-import static com.rimac.app.userInterfaces.UiServiciosVehiculares.BTN_QUE_BUENO;
-import static com.rimac.app.userInterfaces.UiServiciosVehiculares.LBL_MENSAJE_CHOFER;
+import static com.rimac.app.userInterfaces.UiServiciosVehiculares.*;
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 
 public class AsistenciaVehicularStepDefinitions {
@@ -28,7 +27,7 @@ public class AsistenciaVehicularStepDefinitions {
     @Then("válido el seguimiento de la asistencia vehicular de la {string}")
     public void validoElSeguimientoDeLaAsistenciaVehicularDeLa(String string) {
         OnStage.theActorInTheSpotlight().should(seeThat(
-                EL_TARGET_NO_ES_EL_ESPERADO, VerificarElemento.as(LBL_MENSAJE_CHOFER)
+                EL_TARGET_NO_ES_EL_ESPERADO, VerificarElemento.as(LBL_SOLICITUD_AUXILIO_MECANICO)
         ));
     }
 
@@ -42,7 +41,7 @@ public class AsistenciaVehicularStepDefinitions {
     @Then("válido el seguimiento de la asistencia vehicular grua de la {string}")
     public void validoElSeguimientoDeLaAsistenciaVehicularGruaDeLa(String string) {
         OnStage.theActorInTheSpotlight().should(seeThat(
-                EL_TARGET_NO_ES_EL_ESPERADO, VerificarElemento.as(LBL_MENSAJE_CHOFER)
+                EL_TARGET_NO_ES_EL_ESPERADO, VerificarElemento.as(LBL_SOLICITUD_GRUA)
         ));
     }
 
@@ -56,7 +55,7 @@ public class AsistenciaVehicularStepDefinitions {
     @Then("válido el seguimiento de la asistencia vehicular problema de la {string}")
     public void validoElSeguimientoDeLaAsistenciaVehicularProblemaDeLa(String string) {
         OnStage.theActorInTheSpotlight().should(seeThat(
-                EL_TARGET_NO_ES_EL_ESPERADO, VerificarElemento.as(LBL_MENSAJE_CHOFER)
+                EL_TARGET_NO_ES_EL_ESPERADO, VerificarElemento.as(LBL_SOLICITUD_AUXILIO_MECANICO)
         ));
     }
 

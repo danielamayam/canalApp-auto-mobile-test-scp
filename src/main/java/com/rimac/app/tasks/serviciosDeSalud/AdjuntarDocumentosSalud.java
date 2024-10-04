@@ -30,8 +30,10 @@ public class AdjuntarDocumentosSalud implements Task {
                 Tap.on(BTN_ENTENDIDO),
 
                 WaitUntil.the(BTN_ADJUNTAR_DOCUMENTO, WebElementStateMatchers.isClickable()).forNoMoreThan(120).seconds(),
+                EsperarElemento.por(5),
                 Tap.on(BTN_ADJUNTAR_DOCUMENTO),
                 Tap.siElElementoEsVisible(BTN_ALERT_PERMITIR),
+                EsperarElemento.por(5),
                 Tap.on(BTN_DOCUMENTO),
 
                 EsperarElemento.por(25),

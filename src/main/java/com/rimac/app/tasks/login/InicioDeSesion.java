@@ -12,6 +12,7 @@ import com.rimac.app.util.constantes.Mensajes;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.Tasks;
+import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
 import net.serenitybdd.screenplay.conditions.Check;
 import net.serenitybdd.screenplay.matchers.WebElementStateMatchers;
@@ -37,12 +38,14 @@ public class InicioDeSesion implements Task {
                     WaitUntil.the(TXT_USUARIO, WebElementStateMatchers.isVisible()).forNoMoreThan(120).seconds(),
                     Enter.keyValues(login.getNumeroUsuario()).into(TXT_USUARIO),
                     WaitUntil.the(BTN_CONTINUAR, WebElementStateMatchers.isClickable()).forNoMoreThan(120).seconds(),
-                    Tap.on(BTN_CONTINUAR),
+                    Click.on(BTN_CONTINUAR),
+                    EsperarElemento.por(5),
                     WaitUntil.the(TXT_CONTRASENA, WebElementStateMatchers.isVisible()).forNoMoreThan(120).seconds(),
                     Enter.keyValues(login.getContrasena()).into(TXT_CONTRASENA),
                     Hide.keyboard(),
+                    EsperarElemento.por(5),
                     WaitUntil.the(BTN_CONTINUAR, WebElementStateMatchers.isClickable()).forNoMoreThan(120).seconds(),
-                    Tap.on(BTN_CONTINUAR),
+                    Click.on(BTN_CONTINUAR),
                     EsperarElemento.por(5),
                     NewOmitirAlertas.home()
             );

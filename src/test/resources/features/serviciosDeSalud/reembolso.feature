@@ -1,6 +1,6 @@
 #Author: Daniel Amaya Marín
 
-@ModuloServiciosDeSalud_7 @Regresion
+@ModuloServiciosDeSalud_7 @Regresion @reembolso
 Feature: Servicios de Salud - Reembolso
 
   @reembolsoSaludSinBeneficiarioDesdeMenuTramites @seguimientoReembolsoSinBeneficiariosDesdeTramite
@@ -36,7 +36,7 @@ Feature: Servicios de Salud - Reembolso
 
 
   @reembolsoSaludConBeneficiariosDesdeMenuTramites @seguimientoReembolsoConBeneficiariosDesdeTramite
-  Scenario Outline: Realizar solicitud de reembolso con cobertura medicinas con beneficiarios desde Tramites
+  Scenario Outline: Usuario realiza una solicitud de reembolso con cobertura medicinas con beneficiarios desde Tramites
     Given que "Daniel" inicia sesión correctamente
       | numeroUsuario   | contrasena   |
       | <numeroUsuario> | <contrasena> |
@@ -51,7 +51,7 @@ Feature: Servicios de Salud - Reembolso
       | 10392464      | Rimac2020  | PLANES MEDICOS EPS - Medifarma S A | Hui Humaliano Heliart - Cónyuge | Lima          | Medicinas     |
 
   @reembolsoOdontologicoDesdeMenuTramites @seguimientoReembolsoOdontologico
-  Scenario Outline: Realizar solicitud de reembolso cliente con cobertura odontologica con beneficiarios desde menu Tramites
+  Scenario Outline: Usuario realiza una solicitud de reembolso cliente con cobertura odontologica con beneficiarios desde menu Tramites
     Given que "Daniel" inicia sesión correctamente
       | numeroUsuario   | contrasena   |
       | <numeroUsuario> | <contrasena> |
@@ -67,7 +67,7 @@ Feature: Servicios de Salud - Reembolso
 
 
   @reembolsoSaludSinBeneficiariosDesdeSeguros
-  Scenario Outline: Realizar solicitud de reembolso sin beneficiarios desde detalle de seguro salud
+  Scenario Outline: Usuario realiza una solicitud de reembolso sin beneficiarios desde detalle de seguro salud
     Given que "Daniel" inicia sesión correctamente
       | numeroUsuario   | contrasena   |
       | <numeroUsuario> | <contrasena> |

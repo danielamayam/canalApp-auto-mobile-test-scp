@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.Map;
 
 public class Login {
+
     private String numeroUsuario;
     private String contrasena;
 
@@ -17,6 +18,8 @@ public class Login {
     public String getContrasena() {
         return contrasena;
     }
+
+    
 
     public static List<Login> setData(DataTable dataTable) {
         List<Login> dates = new ArrayList<>();

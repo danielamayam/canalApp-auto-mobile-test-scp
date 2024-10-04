@@ -1,6 +1,7 @@
 package com.rimac.app.tasks.serviciosVehiculares;
 
 import com.rimac.app.interactions.EsperarElemento;
+import com.rimac.app.interactions.app.MenuItem;
 import com.rimac.app.interactions.builders.Tap;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
@@ -25,7 +26,11 @@ public class SeleccionaLosDatosAsistenciasVehicularesProblema implements Task {
                 Tap.on(BTN_BATERIA_BAJA),
                 WaitUntil.the(BTN_CONFIRMAR_SOLICITUD, WebElementStateMatchers.isVisible()).forNoMoreThan(120).seconds(),
                 Tap.on(BTN_CONFIRMAR_SOLICITUD),
-                WaitUntil.the(LBL_MENSAJE_CHOFER, WebElementStateMatchers.isVisible()).forNoMoreThan(120).seconds()
+                WaitUntil.the(LBL_MENSAJE_CHOFER, WebElementStateMatchers.isVisible()).forNoMoreThan(120).seconds(),
+                Tap.on(BTN_VOLVER_AL_INICIO),
+                MenuItem.home(),
+                WaitUntil.the(LBL_SOLICITUD_AUXILIO_MECANICO, WebElementStateMatchers.isVisible()).forNoMoreThan(120).seconds()
+
 
         );
     }

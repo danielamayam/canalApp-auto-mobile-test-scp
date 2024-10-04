@@ -3,9 +3,7 @@ package stepdefinitions;
 import com.rimac.app.models.Login;
 import com.rimac.app.questions.VerificarElemento;
 import com.rimac.app.questions.VerificarLogin;
-import com.rimac.app.tasks.login.AbreLaApp;
-import com.rimac.app.tasks.login.CerrarSesion;
-import com.rimac.app.tasks.login.InicioDeSesion;
+import com.rimac.app.tasks.login.*;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -50,4 +48,28 @@ public class LoginStepDefinitions {
                 VerificarElemento.as(LBL_MENSAJE)
         ));
     }
+
+    @Given("que {string} seleccionó la opción ¿Olvidaste tu contraseña? {string}")
+    public void queSeleccionóLaOpciónOlvidasteTuContraseña(String actor, String usuario) {
+        OnStage.theActorCalled(actor).wasAbleTo(
+                SeleccionarOlvidasteTuContrasena.go(usuario)
+        );
+    }
+    @When("diligencia el código de validación {string} {string}")
+    public void diligenciaElCódigoDeValidación(String email, String contrasena) {
+        OnStage.theActorInTheSpotlight().attemptsTo(
+                DiligenciarCodigoEmail.go(email, contrasena)
+        );
+    }
+    @When("actualiza la contraseña {string}")
+    public void actualizaLaContraseña(String newContrasena) {
+
+    }
+    @Then("válido el mensaje {string}")
+    public void válidoElMensaje(String messaje) {
+
+    }
+
+
+
 }

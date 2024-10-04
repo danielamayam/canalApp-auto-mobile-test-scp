@@ -8,8 +8,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import net.serenitybdd.screenplay.actors.OnStage;
 import static com.rimac.app.exceptions.Assertions.EL_TARGET_NO_ES_EL_ESPERADO;
-import static com.rimac.app.userInterfaces.UiServiciosVehiculares.LBL_MENSAJE_CHOFER;
-import static com.rimac.app.userInterfaces.UiServiciosVehiculares.LBL_SOLICITUD_CANCELADA;
+import static com.rimac.app.userInterfaces.UiServiciosVehiculares.*;
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 
 public class ChoferReemplazoStepDefinitions {
@@ -24,7 +23,7 @@ public class ChoferReemplazoStepDefinitions {
     @When("válido el seguimiento de chofer de reemplazo de la  {string}")
     public void validoElSeguimientoDeChoferDeReemplazoDeLa(String placa) {
         OnStage.theActorInTheSpotlight().should(seeThat(
-                EL_TARGET_NO_ES_EL_ESPERADO, VerificarElemento.as(LBL_MENSAJE_CHOFER)
+                EL_TARGET_NO_ES_EL_ESPERADO, VerificarElemento.as(LBL_SOLICITUD_CHOFER_REMPLAZO)
         ));
     }
 

@@ -37,7 +37,7 @@ public class UiMenu {
             .locatedBy("//android.widget.CompoundButton[@text='{0}']");
 
     public static final Target BTN_PAGOS = Target.the("Botón pagos")
-            .locatedForAndroid(AppiumBy.xpath("//android.widget.LinearLayout[@content-desc='Pagos']"))
+            .locatedForAndroid(AppiumBy.xpath("(//android.widget.LinearLayout[@content-desc='Pagos']) | (//android.widget.LinearLayout[@content-desc=\"Pago\"])"))
             .locatedForIOS(AppiumBy.xpath("//XCUIElementTypeStaticText[@name='Pagos']//preceding-sibling::XCUIElementTypeButton"));
 
     public static final Target BTN_COBERTURA = Target.the("Botón cobertura")
@@ -56,6 +56,11 @@ public class UiMenu {
     public static final Target BTN_SERVICIOS = Target.the("Botón Servicios")
             .locatedForAndroid(AppiumBy.xpath("//android.widget.LinearLayout[@content-desc='Servicios']"))
             .locatedForIOS(AppiumBy.xpath("//XCUIElementTypeStaticText[@name='Servicios']//preceding-sibling::XCUIElementTypeButton"));
+
+
+    public static final Target LBL_CONOCE_TUS_COBERTURAS = Target.the("Label conoce tus coberturas")
+            .locatedForAndroid(AppiumBy.xpath("//android.widget.TextView[@text='Conoce tus coberturas']"))
+            .locatedForIOS(AppiumBy.xpath("//XCUIElementTypeStaticText[@name='Conoce tus coberturas']"));
 
 
 
