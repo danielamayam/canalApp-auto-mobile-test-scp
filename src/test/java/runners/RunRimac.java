@@ -12,8 +12,7 @@ import java.io.IOException;
 @RunWith(RunnerPersonalizado.class)
 /*@CucumberOptions(
         features = {"src/test/resources/features/"}
-        ,tags = "@PagoConValidacionHistorial"
-        // @PagoConValidacionHistorial @PagoConTarjetaAsociada @PagoPolizaSoat
+        ,tags = "@ChoferReemplazo"
         ,glue = {"stepdefinitions"}
         ,plugin = {"pretty","json:target/cucumber-reports/cucumber.json"}
         ,snippets = CucumberOptions.SnippetType.CAMELCASE

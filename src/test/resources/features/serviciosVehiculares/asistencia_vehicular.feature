@@ -15,7 +15,6 @@ Feature: Servicios Vehiculares - Asistencia Vehicular
     Examples: Tabla
       | numeroUsuario | contrasena | placa   |
     ##@externaldata@./src/test/resources/datadriven/serviciosVehiculares/Asistencia_vehicular.xlsx@AsistenciaVehicularRepuesto@1
-   |01317724   |Rimac2020   |GIS-475|
 
 
   @AsistenciaVehicularGrua @SeguimientodeGrua
@@ -30,7 +29,6 @@ Feature: Servicios Vehiculares - Asistencia Vehicular
     Examples: Tabla
       | numeroUsuario | contrasena | placa   |
     ##@externaldata@./src/test/resources/datadriven/serviciosVehiculares/Asistencia_vehicular.xlsx@AsistenciaVehicularGrua@1
-   |01317724   |Rimac2020   |GIS-475|
 
 
   @AsistenciaVehicularProblema @SeguimientoAsistenciaVehicularProblema
@@ -45,7 +43,6 @@ Feature: Servicios Vehiculares - Asistencia Vehicular
     Examples: Tabla
       | numeroUsuario | contrasena | placa   |
     ##@externaldata@./src/test/resources/datadriven/serviciosVehiculares/Asistencia_vehicular.xlsx@AsistenciaVehicularProblema@1
-   |01317724   |Rimac2020   |GIS-475|
 
 
 
@@ -61,7 +58,6 @@ Feature: Servicios Vehiculares - Asistencia Vehicular
     Examples: Tabla
       | numeroUsuario | contrasena | placa   |
     ##@externaldata@./src/test/resources/datadriven/serviciosVehiculares/Asistencia_vehicular.xlsx@NecesitoAyudaAuxilioMecanico@1
-   |01317724   |Rimac2020   |GIS-475|
 
 
   @NecesitoAyudaGrua
@@ -76,5 +72,4 @@ Feature: Servicios Vehiculares - Asistencia Vehicular
     Examples: Tabla
       | numeroUsuario | contrasena |
     ##@externaldata@./src/test/resources/datadriven/serviciosVehiculares/Asistencia_vehicular.xlsx@NecesitoAyudaGrua@1
-   |01317724   |Rimac2020|
 

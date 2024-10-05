@@ -63,4 +63,12 @@ public class UIAlertas {
             .locatedForAndroid(AppiumBy.xpath("(//android.widget.TextView[@text='Por ahora no']) | (//android.widget.Button[@resource-id=\"com.rimac.rimac_surrogas.qa:id/btn_not_yet\"]) | (//android.widget.Button[@text='Por ahora no']) | (//*[@text='Entendido']) | (//android.widget.Button[@text='Conocer más']) | (//*[@text='Activa tu seguro vehicular hoy']//preceding-sibling::android.widget.ImageButton[@content-desc='Cerrar modal']) | (//*[@text='Estar Bien']//preceding-sibling::android.widget.ImageButton[ends-with(@resource-id,'dialog_close')]) | (//android.widget.Button[@text='Vamos a Estar Bien']) | (//android.widget.ImageButton[@content-desc=\"Cerrar modal\"])"))
             .locatedForIOS(AppiumBy.xpath("(//XCUIElementTypeButton[@name=\"Tal vez más tarde\"]) | (//*[@name='Vamos a Estar Bien']) | (//XCUIElementTypeButton[@name=\"Por ahora no\"]) | (//XCUIElementTypeButton[@name=\"Conocer más\"])"));
 
+
+    public static final Target[] alertButtons = {
+            Target.the("Por ahora no button").located(By.xpath("(//android.widget.TextView[@text='Por ahora no']) | (//XCUIElementTypeButton[@name='Por ahora no'])")),
+            Target.the("Entendido button").located(By.xpath("(//*[@text='Entendido']) | (//XCUIElementTypeButton[@name='Entendido'])")),
+            Target.the("Conocer más button").located(By.xpath("(//android.widget.Button[@text='Conocer más']) | (//XCUIElementTypeButton[@name='Conocer más'])")),
+            Target.the("Cerrar modal button").located(By.xpath("(//android.widget.ImageButton[@content-desc='Cerrar modal']) | (//XCUIElementTypeButton[@name='Cerrar'])")),
+            Target.the("Vamos a Estar Bien button").located(By.xpath("(//android.widget.Button[@text='Vamos a Estar Bien']) | (//XCUIElementTypeButton[@name='Vamos a Estar Bien'])"))
+    };
 }

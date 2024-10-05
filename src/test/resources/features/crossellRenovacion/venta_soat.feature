@@ -16,4 +16,3 @@ Feature: Venta SOAT
     Examples: Tabla
       | numeroUsuario | contrasena | placa  | numtarjeta       | cvv | fecha |
     ##@externaldata@./src/test/resources/datadriven/crossellRenovacion/Venta_soat_data.xlsx@CompraSOATDigital@1
-   |76243722   |Rimac2020   |AHN698   |4551708161768059   |111   |03/28|

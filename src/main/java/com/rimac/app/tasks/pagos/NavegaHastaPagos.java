@@ -2,6 +2,7 @@ package com.rimac.app.tasks.pagos;
 
 import com.rimac.app.exceptions.Assertions;
 import com.rimac.app.interactions.app.IrAPagosDePolizaVihicular;
+import com.rimac.app.interactions.app.SkipAlerts;
 import com.rimac.app.util.constantes.Mensajes;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;

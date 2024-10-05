@@ -1,6 +1,6 @@
 #Author: Daniel Amaya Marín
 
-@ModuloPagos_15 @Pagos
+@ModuloPagos_15
 Feature: Pagos
 
 
@@ -18,7 +18,6 @@ Feature: Pagos
     Examples: Tabla
       | numeroUsuario | contrasena | placa | numtarjeta | fecha | cvv | vigencia |
     ##@externaldata@./src/test/resources/datadriven/Pagos/Pago_de_cuotas_data.xlsx@PagoSinTarjetaAsociada@1
-   |41483350   |Rimac2020   |A1I-345   |4551708161768059   |03/28   |111   |02/09/2025|
 
 
   @PagoAfiliadoDebitoAuto
@@ -35,7 +34,6 @@ Feature: Pagos
     Examples: Tabla
       | numeroUsuario | contrasena | placa | numtarjeta | fecha | cvv | vigencia |
     ##@externaldata@./src/test/resources/datadriven/Pagos/Pago_de_cuotas_data.xlsx@PagoAfiliadoDebitoAuto@1
-   |41483350   |Rimac2020   |A1I-345   |4551708161768059   |03/28   |111   |02/09/2025|
 
 
   @PagoConValidacionHistorial
@@ -53,7 +51,6 @@ Feature: Pagos
     Examples: Tabla
       | numeroUsuario | contrasena | placa | numtarjeta | fecha | cvv | vigencia |
     ##@externaldata@./src/test/resources/datadriven/Pagos/Pago_de_cuotas_data.xlsx@PagoConValidacionHistorial@1
-   |41483350   |Rimac2020   |A1I-345   |4551708161768059   |03/28   |111   |02/09/2025|
 
 
   @PagoConTarjetaAsociada
@@ -68,7 +65,6 @@ Feature: Pagos
     Examples: Tabla
       | numeroUsuario | contrasena | placa | numtarjeta | vigencia |
      ##@externaldata@./src/test/resources/datadriven/Pagos/Pago_de_cuotas_data.xlsx@PagoConTarjetaAsociada@1
-   |41483350   |Rimac2020   |A1I-345   |4551708161768059   |02/09/2025|
 
 
   @PagoAsociandoTarjeta
@@ -85,7 +81,6 @@ Feature: Pagos
     Examples: Tabla
       | numeroUsuario | contrasena | placa | numtarjeta | fecha | cvv | vigencia |
          ##@externaldata@./src/test/resources/datadriven/Pagos/Pago_de_cuotas_data.xlsx@PagoAsociandoTarjeta@1
-   |41483350   |Rimac2020   |A1I-345   |4551708161768059   |03/28   |111   |02/09/2025|
 
 
   @PagoPolizaSoat
@@ -99,7 +94,6 @@ Feature: Pagos
     Examples: Tabla
       | numeroUsuario | contrasena | placa | vigencia |
     ##@externaldata@./src/test/resources/datadriven/Pagos/Pago_de_cuotas_data.xlsx@PagoPolizaSoat@1
-   |42321915   |Rimac2020   |AYI-411   |09-04-2026|
 
 
   @PagoInfoNoDisponible
@@ -113,4 +107,3 @@ Feature: Pagos
     Examples: Tabla
       | numeroUsuario | contrasena | mensaje |
 ##@externaldata@./src/test/resources/datadriven/Pagos/Pago_de_cuotas_data.xlsx@PagoInfoNoDisponible@1
-   |19098669   |Rimac2020   |El estado de cuenta está disponible para el contratante del seguro. Consulta con esa persona o empresa el estado de los pagos.|

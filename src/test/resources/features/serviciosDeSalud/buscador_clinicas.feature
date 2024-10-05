@@ -15,7 +15,6 @@ Feature: Servicios de Salud - Buscador de clinicas
     Examples: Tabla
       | numeroUsuario | contrasena | nomClinica           |
       ##@externaldata@./src/test/resources/datadriven/serviciosDeSalud/Buscador_clinicas_data.xlsx@BuscadordeClinicasdesdeHome@1
-   |40660901   |Rimac2020   |Clinica Javier Prado|
 
 
   @BuscadordeClinicasdesdeTramites
@@ -29,5 +28,4 @@ Feature: Servicios de Salud - Buscador de clinicas
     Examples: Tabla
       | numeroUsuario | contrasena | nomClinica           |
       ##@externaldata@./src/test/resources/datadriven/serviciosDeSalud/Buscador_clinicas_data.xlsx@BuscadordeClinicasdesdeTramites@1
-   |40660901   |Rimac2020   |Clinica Javier Prado|
 

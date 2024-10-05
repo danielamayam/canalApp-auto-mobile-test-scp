@@ -15,7 +15,6 @@ Feature: Consulta vehicular y soat - Poliza Vehicular
     Examples: Tabla
       | numeroUsuario | contrasena | placa | numeroPoliza |
     ##@externaldata@./src/test/resources/datadriven/consultasVehicularYSOAT/Poliza_vehicular_data.xlsx@ConsultaNumeroDePolizaVehiSoat@1
-   |41247452   |Rimac2020   |AG6-776   |7778065|
 
 
 
@@ -30,7 +29,6 @@ Feature: Consulta vehicular y soat - Poliza Vehicular
     Examples: Tabla
       | numeroUsuario | contrasena | placa | vigencia |
     ##@externaldata@./src/test/resources/datadriven/consultasVehicularYSOAT/Poliza_vehicular_data.xlsx@ConsultarDeudasSaldosdePoliza@1
-   |10020310   |Rimac2020   |En trámite   |06/12/2024|
 
 
 
@@ -45,7 +43,6 @@ Feature: Consulta vehicular y soat - Poliza Vehicular
     Examples: Tabla
       | numeroUsuario | contrasena | placa | vigencia |
     ##@externaldata@./src/test/resources/datadriven/consultasVehicularYSOAT/Poliza_vehicular_data.xlsx@DescargaPolizaVehicularDigital@1
-   |41007984   |Rimac2023    |VER-420   |14/02/2025|
 
 
 
@@ -60,5 +57,4 @@ Feature: Consulta vehicular y soat - Poliza Vehicular
     Examples: Tabla
       | numeroUsuario | contrasena | placa | vigencia |
       ##@externaldata@./src/test/resources/datadriven/consultasVehicularYSOAT/Poliza_vehicular_data.xlsx@ConsultaCoberturas@1
-   |41007984   |Rimac2023   |L0K-152   |01/09/2025|
 

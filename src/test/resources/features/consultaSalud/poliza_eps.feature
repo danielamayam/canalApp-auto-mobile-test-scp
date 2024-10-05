@@ -1,6 +1,6 @@
 #Author: Daniel Amaya Marín
 
-@ModuloConsultaSalud_1 @Regresion
+@ModuloConsultaSalud_2 @Regresion
 Feature: Consulta Salud - Plan Medico EPS
 
   @ConsultaNumeroDePoliza
@@ -13,7 +13,6 @@ Feature: Consulta Salud - Plan Medico EPS
     Examples: Tabla
       | numeroUsuario | contrasena |
     ##@externaldata@./src/test/resources/datadriven/ModuloConsultaSalud/Poliza_eps_data.xlsx@ConsultaNumeroDePoliza@1
-   |10318552   |Rimac2020|
 
   @ConsultaCoberturaDeLaPoliza
   Scenario Outline: Usuario consulta las coberturas de la poliza
@@ -25,5 +24,4 @@ Feature: Consulta Salud - Plan Medico EPS
     Examples: Tabla
       | numeroUsuario | contrasena |
     ##@externaldata@./src/test/resources/datadriven/ModuloConsultaSalud/Poliza_eps_data.xlsx@ConsultaNumeroDePoliza@1
-   |10318552   |Rimac2020|
 

@@ -14,7 +14,6 @@ Feature: Servicios Vehiculares - Chofer Reemplazo
     Examples: Tabla
       | numeroUsuario | contrasena | placa  |
   ##@externaldata@./src/test/resources/datadriven/serviciosVehiculares/Asistencia_vehicular.xlsx@ChoferReemplazo@1
-   |01317724   |Rimac2020   |ASR-977|
 
   
 

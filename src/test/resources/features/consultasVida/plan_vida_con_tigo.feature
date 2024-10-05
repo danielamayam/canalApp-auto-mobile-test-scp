@@ -1,6 +1,6 @@
 #Author: Daniel Amaya Marín
 
-@ModuloConsultasVida_8 @Regresion
+@ModuloConsultasVida_9 @Regresion
 Feature: Consultas Vida - Plan Vida Contigo
 
   @DescargaManualdeUsoPlanVidaContigo
@@ -14,7 +14,6 @@ Feature: Consultas Vida - Plan Vida Contigo
     Examples: Tabla
       | numeroUsuario | contrasena | vigencia   |
     ##@externaldata@./src/test/resources/datadriven/consultasVida/Plan_vida_data.xlsx@Scenario1@1
-   |41213620   |Rimac2020   |15/07/2022|
 
 
 
@@ -29,7 +28,6 @@ Feature: Consultas Vida - Plan Vida Contigo
     Examples: Tabla
       | numeroUsuario | contrasena | vigencia   |
     ##@externaldata@./src/test/resources/datadriven/consultasVida/Plan_vida_data.xlsx@Scenario2@1
-   |41213620   |Rimac2020   |15/07/2022|
 
 
 
@@ -44,7 +42,6 @@ Feature: Consultas Vida - Plan Vida Contigo
     Examples: Tabla
       | numeroUsuario | contrasena | vigencia   |
     ##@externaldata@./src/test/resources/datadriven/consultasVida/Plan_vida_data.xlsx@Scenario3@1
-   |41213620   |Rimac2020   |15/07/2022|
 
 
 
@@ -59,7 +56,6 @@ Feature: Consultas Vida - Plan Vida Contigo
     Examples: Tabla
       | numeroUsuario | contrasena | vigencia   | numeroPoliza | contratantePoliza         | intermediarioPoliza          |vigenciaDesde|
 ##@externaldata@./src/test/resources/datadriven/consultasVida/Plan_vida_data.xlsx@Scenario4@1
-   |41213620   |Rimac2020   |15/07/2022   |1300002498   |Kyra Ruperto Emner Abanco   |Diego Alberto Fornoni Ibarra   |Desde 15/07/2022 - 12/12/2131|
 
 
   @ConsultarInformacionDelBeneficiario

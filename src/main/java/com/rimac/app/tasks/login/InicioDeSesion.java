@@ -6,6 +6,7 @@ import com.rimac.app.interactions.EsperarElemento;
 import com.rimac.app.interactions.Hide;
 import com.rimac.app.interactions.app.NewOmitirAlertas;
 import com.rimac.app.interactions.app.OmitirAlertas;
+import com.rimac.app.interactions.app.SkipAlerts;
 import com.rimac.app.interactions.builders.Tap;
 import com.rimac.app.models.Login;
 import com.rimac.app.util.constantes.Mensajes;
@@ -47,7 +48,9 @@ public class InicioDeSesion implements Task {
                     WaitUntil.the(BTN_CONTINUAR, WebElementStateMatchers.isClickable()).forNoMoreThan(120).seconds(),
                     Click.on(BTN_CONTINUAR),
                     EsperarElemento.por(5),
-                    NewOmitirAlertas.home()
+                    SkipAlerts.dismissAlerts(),
+                    EsperarElemento.por(30)
+
             );
         } catch (RuntimeException ex) {
             throw new Assertions(Assertions.Error(Mensajes.INICIO_DE_SESION), ex);

@@ -1,6 +1,6 @@
 #Author: Daniel Amaya Marín
 
-@ModuloConsultasVida_8 @Regresion
+@ModuloConsultasVida_9 @Regresion
 Feature: Consultas Vida - Plan Vida Flexible
 
   @DescargaEstadoCuentaPlanVidaFlexible
@@ -14,7 +14,6 @@ Feature: Consultas Vida - Plan Vida Flexible
     Examples: Tabla
       | numeroUsuario | contrasena | month | year | vigencia   |
     ##@externaldata@./src/test/resources/datadriven/consultasVida/Plan_vida_data.xlsx@Scenario5@1
-   |44853375   |Rimac2020   |Mayo   |2022   |04/01/2046|
 
 
   @ConsultarCoberturasPolizaVidaFlexible
@@ -28,7 +27,6 @@ Feature: Consultas Vida - Plan Vida Flexible
     Examples: Tabla
       | numeroUsuario | contrasena | vigencia   |
     ##@externaldata@./src/test/resources/datadriven/consultasVida/Plan_vida_data.xlsx@Scenario6@1
-   |44853375   |Rimac2020   |04/01/2046|
 
 
   @ConsultarDeudasSaldoVidaFlexible
@@ -42,7 +40,6 @@ Feature: Consultas Vida - Plan Vida Flexible
     Examples: Tabla
       | numeroUsuario | contrasena | vigencia   |
     ##@externaldata@./src/test/resources/datadriven/consultasVida/Plan_vida_data.xlsx@Scenario7@1
-   |44853375   |Rimac2020   |04/01/2046|
 
 
   @ConsultarInformacionPolizaVidaFlexible
@@ -56,5 +53,4 @@ Feature: Consultas Vida - Plan Vida Flexible
     Examples: Tabla
       | numeroUsuario | contrasena | vigencia   | numeroPoliza | contratantePoliza        | vigenciaDesde       |
     ##@externaldata@./src/test/resources/datadriven/consultasVida/Plan_vida_data.xlsx@Scenario8@1
-   |44853375   |Rimac2020   |04/01/2046   |21062337   |Yinsem Zeno Mayque Unico   |04/01/2021 - 04/01/2046|
 
