@@ -3,6 +3,7 @@ package com.rimac.app.tasks.pagos;
 import com.rimac.app.exceptions.Assertions;
 import com.rimac.app.interactions.ComandosCapabilities;
 import com.rimac.app.interactions.EsperarElemento;
+import com.rimac.app.interactions.app.SkipAlerts;
 import com.rimac.app.interactions.builders.Tap;
 import com.rimac.app.util.constantes.Mensajes;
 import net.serenitybdd.screenplay.Actor;
@@ -37,6 +38,8 @@ public class PagoConTarjetaAsociada implements Task {
                     Tap.on(CHEC_NUMERO_TARJETA(ultimos4Caracteres)),
                     Tap.on(BTN_PAGAR),
                     Check.whether(ComandosCapabilities.isAndroid(actor)).andIfSo(Tap.siElElementoEsVisible(BTN_ALERTA_ANDROID)),
+                    EsperarElemento.por(5),
+                    SkipAlerts.dismissAlerts(),
                     WaitUntil.the(LBL_PAGO_EXITOSO, WebElementStateMatchers.isVisible()).forNoMoreThan(120).seconds()
             );
         }catch (RuntimeException ex){
