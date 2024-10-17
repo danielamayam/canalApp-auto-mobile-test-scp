@@ -31,15 +31,16 @@ public class UiLogin {
 
     public static final Target BTN_OLVIDASTE_TU_CONTRASENA = Target.the("Botón olvidaste tu contraseña")
             .locatedForAndroid(AppiumBy.xpath("//android.widget.TextView[@content-desc=\"Olvidaste tu contraseña\"]"))
-            .locatedForIOS(AppiumBy.xpath("(//XCUIElementTypeStaticText[contains(@name,'Olvidaste tu contraseña')])"));
+            .locatedForIOS(AppiumBy.xpath("//XCUIElementTypeScrollView/XCUIElementTypeOther[1]/XCUIElementTypeOther/XCUIElementTypeButton[2]"));
 
     public static final Target LBL_ELIGE_COMO_RESTABLECER = Target.the("Label elige cómo restablecer tu contraseña")
             .locatedForAndroid(AppiumBy.xpath("//android.widget.TextView[@text='Elige cómo restablecer tu contraseña']"))
-            .locatedForIOS(AppiumBy.xpath("(//XCUIElementTypeStaticText[contains(@name,'Elige cómo restablecer tu contraseña')])"));
+            .locatedForIOS(AppiumBy.xpath("//XCUIElementTypeStaticText[@name=\"Elige cómo restablecer tu contraseña\"]"));
+
 
     public static final Target BTN_ENVIAR_CODIGO_POR_CORREO = Target.the("Btn enviar codigo por correo")
             .locatedForAndroid(AppiumBy.xpath("(//android.widget.RadioButton)[1]"))
-            .locatedForIOS(AppiumBy.xpath("(//XCUIElementTypeStaticText[contains(@name,'Elige cómo restablecer tu contraseña')])"));
+            .locatedForIOS(AppiumBy.xpath("//XCUIElementTypeOther[@name=\"Enviar código por correo electrónico aut******@hotmail.com\"]"));
 
 
 

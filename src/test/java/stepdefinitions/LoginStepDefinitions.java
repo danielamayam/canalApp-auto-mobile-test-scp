@@ -55,21 +55,10 @@ public class LoginStepDefinitions {
                 SeleccionarOlvidasteTuContrasena.go(usuario)
         );
     }
-    @When("diligencia el código de validación {string} {string}")
-    public void diligenciaElCódigoDeValidación(String email, String contrasena) {
+    @When("diligencia el código de validación")
+    public void diligenciaElCódigoDeValidación() {
         OnStage.theActorInTheSpotlight().attemptsTo(
-                DiligenciarCodigoEmail.go(email, contrasena)
+                DiligenciarCodigoEmail.go()
         );
     }
-    @When("actualiza la contraseña {string}")
-    public void actualizaLaContraseña(String newContrasena) {
-
-    }
-    @Then("válido el mensaje {string}")
-    public void válidoElMensaje(String messaje) {
-
-    }
-
-
-
 }

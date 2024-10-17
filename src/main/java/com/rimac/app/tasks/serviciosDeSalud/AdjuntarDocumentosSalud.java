@@ -28,10 +28,10 @@ public class AdjuntarDocumentosSalud implements Task {
                 Tap.on(BTN_FACTURA),
                 EsperarElemento.por(10),
                 Tap.on(BTN_ENTENDIDO),
-
+                Check.whether(ComandosCapabilities.isAndroid(actor)).andIfSo(
                 WaitUntil.the(BTN_ADJUNTAR_DOCUMENTO, WebElementStateMatchers.isClickable()).forNoMoreThan(120).seconds(),
                 EsperarElemento.por(5),
-                Tap.on(BTN_ADJUNTAR_DOCUMENTO),
+                Tap.on(BTN_ADJUNTAR_DOCUMENTO)),
                 Tap.siElElementoEsVisible(BTN_ALERT_PERMITIR),
                 EsperarElemento.por(5),
                 Tap.on(BTN_DOCUMENTO),
@@ -61,9 +61,9 @@ public class AdjuntarDocumentosSalud implements Task {
                 WaitUntil.the(BTN_BOLETA, WebElementStateMatchers.isClickable()).forNoMoreThan(120).seconds(),
                 Tap.on(BTN_BOLETA),
                 Tap.siElElementoEsVisible(BTN_ENTENDIDO),
-
+                Check.whether(ComandosCapabilities.isAndroid(actor)).andIfSo(
                 WaitUntil.the(BTN_ADJUNTAR_DOCUMENTO, WebElementStateMatchers.isClickable()).forNoMoreThan(120).seconds(),
-                Tap.on(BTN_ADJUNTAR_DOCUMENTO),
+                Tap.on(BTN_ADJUNTAR_DOCUMENTO)),
                 Tap.siElElementoEsVisible(BTN_ALERT_PERMITIR),
                 Tap.on(BTN_DOCUMENTO),
 
@@ -96,9 +96,9 @@ public class AdjuntarDocumentosSalud implements Task {
                 WaitUntil.the(BTN_RECETA_MEDICA, WebElementStateMatchers.isClickable()).forNoMoreThan(120).seconds(),
                 Tap.on(BTN_RECETA_MEDICA),
                 Tap.siElElementoEsVisible(BTN_ENTENDIDO),
-
+                Check.whether(ComandosCapabilities.isAndroid(actor)).andIfSo(
                 WaitUntil.the(BTN_ADJUNTAR_DOCUMENTO, WebElementStateMatchers.isClickable()).forNoMoreThan(120).seconds(),
-                Tap.on(BTN_ADJUNTAR_DOCUMENTO),
+                Tap.on(BTN_ADJUNTAR_DOCUMENTO)),
                 Tap.siElElementoEsVisible(BTN_ALERT_PERMITIR),
                 Tap.on(BTN_DOCUMENTO),
 

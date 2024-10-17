@@ -1,6 +1,5 @@
 package com.rimac.app.interactions.app;
 
-import com.rimac.app.interactions.EsperarElemento;
 import com.rimac.app.interactions.builders.Tap;
 import net.serenitybdd.core.pages.ListOfWebElementFacades;
 import net.serenitybdd.screenplay.Actor;

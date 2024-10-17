@@ -2,6 +2,7 @@ package com.rimac.app.tasks.consultasVida;
 
 import com.rimac.app.exceptions.Assertions;
 import com.rimac.app.interactions.app.MenuItem;
+import com.rimac.app.interactions.builders.Scroll;
 import com.rimac.app.interactions.builders.Tap;
 import com.rimac.app.util.constantes.Mensajes;
 import net.serenitybdd.screenplay.Actor;
@@ -26,7 +27,8 @@ public class NavegaHastaElBeneficiarioDeLaPoliza implements Task {
             actor.attemptsTo(
                     MenuItem.seguros(),
                     WaitUntil.the(BTN_VIDA, WebElementStateMatchers.isVisible()).forNoMoreThan(120).seconds(),
-                    Tap.on(BTN_VIDA),
+                    //Tap.on(BTN_VIDA),
+                    Scroll.on(CARD_SEGURO_VIDA_CONTIGO(vigencia)),
                     Tap.on(CARD_SEGURO_VIDA_CONTIGO(vigencia)),
                     Tap.on(BTN_BENEFICIARIO),
                     WaitUntil.the(LBL_BENEFICIARIO, WebElementStateMatchers.isVisible()).forNoMoreThan(120).seconds()

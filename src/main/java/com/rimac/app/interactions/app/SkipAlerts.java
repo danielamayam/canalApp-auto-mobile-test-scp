@@ -8,13 +8,11 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import com.rimac.app.interactions.builders.Tap;
 import net.serenitybdd.core.pages.WebElementFacade;
 import net.serenitybdd.screenplay.targets.Target;
-import org.openqa.selenium.By;
 import org.openqa.selenium.TimeoutException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import java.time.Duration;
 import java.util.List;
-
 import static com.rimac.app.userInterfaces.UIAlertas.alertButtons;
 import static com.rimac.app.userInterfaces.UiMenu.BTN_HOME;
 

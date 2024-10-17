@@ -30,8 +30,11 @@ public class UiServiciosVehiculares {
 
 
 
-    public static final Target LBL_UBICACION = Target.the("Label")
-            .locatedBy("//XCUIElementTypeStaticText[@name=\"{0}}\"]");
+    public static final Target TXT_PUNTO_DE_PARTIDA_NEW_UI = Target.the("Input punto de partida nuevo UI")
+            .locatedBy("//XCUIElementTypeTextField[@name=\"Punto de partida\"]");
+
+    public static final Target TXT_PUNTO_DE_DESTINO_NEW_UI = Target.the("Input punto de destino nuevo UI")
+            .locatedBy("//XCUIElementTypeTextField[@name=\"Punto de destino\"]");
 
 
     public static final Target LBL_MENSAJE_CHOFER = Target.the("Label mensaje")

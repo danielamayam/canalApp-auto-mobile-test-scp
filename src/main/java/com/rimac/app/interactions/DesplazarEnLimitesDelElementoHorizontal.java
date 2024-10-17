@@ -38,7 +38,6 @@ public class DesplazarEnLimitesDelElementoHorizontal implements Task {
 
         int startX = webElement.getLocation().getX();
         int startY = webElement.getLocation().getY();
-        int width = webElement.getSize().getWidth();
         int height = webElement.getSize().getHeight();
 
 

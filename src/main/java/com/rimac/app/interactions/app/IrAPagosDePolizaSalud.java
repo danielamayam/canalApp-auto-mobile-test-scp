@@ -17,9 +17,6 @@ import static com.rimac.app.userInterfaces.UiSeguros.BTN_VER_DETALLES;
 public class IrAPagosDePolizaSalud implements Interaction {
 
 
-    public IrAPagosDePolizaSalud(){
-    }
-
     @Override
     public <T extends Actor> void performAs(T actor) {
         try{

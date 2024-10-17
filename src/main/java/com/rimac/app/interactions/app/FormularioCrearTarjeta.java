@@ -1,15 +1,12 @@
 package com.rimac.app.interactions.app;
 
-import com.rimac.app.interactions.ComandosCapabilities;
 import com.rimac.app.interactions.Hide;
-import com.rimac.app.interactions.builders.Tap;
 import com.rimac.app.models.SuscripcionDesdePagos;
 import com.rimac.app.util.enums.Datos;
 import net.serenitybdd.core.steps.Instrumented;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Interaction;
 import net.serenitybdd.screenplay.actions.Enter;
-import net.serenitybdd.screenplay.conditions.Check;
 import net.serenitybdd.screenplay.matchers.WebElementStateMatchers;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 
@@ -33,11 +30,7 @@ public class FormularioCrearTarjeta implements Interaction {
                     Enter.theValue(Datos.APELLIDO.getClave()).into(TXT_APELLIDO),
                     Enter.theValue(suscripcionDesdePagos.getFecha()).into(TXT_FECHA),
                     Enter.theValue(suscripcionDesdePagos.getCvv()).into(TXT_CVV),
-//                    Check.whether(ComandosCapabilities.isAndroid(actor)).andIfSo(
-//                            Enter.theValue(Datos.CORREO.getClave()).into(TXT_CORREO)
-//                    ),
                     Hide.keyboard()
-
             );
         }catch (RuntimeException e){
 

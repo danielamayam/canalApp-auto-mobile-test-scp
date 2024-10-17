@@ -2,7 +2,6 @@ package com.rimac.app.interactions.app;
 
 import com.rimac.app.interactions.ComandosCapabilities;
 import com.rimac.app.interactions.EsperarElemento;
-import com.rimac.app.interactions.Swipe;
 import com.rimac.app.interactions.builders.Scroll;
 import com.rimac.app.interactions.builders.Tap;
 import com.rimac.app.util.enums.MenuSeguros;
@@ -13,7 +12,6 @@ import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.conditions.Check;
 import net.serenitybdd.screenplay.matchers.WebElementStateMatchers;
 import net.serenitybdd.screenplay.waits.WaitUntil;
-
 import static com.rimac.app.userInterfaces.UiMenu.*;
 import static com.rimac.app.userInterfaces.UiMenu.BTN_PAGOS;
 import static com.rimac.app.userInterfaces.UiSeguros.*;

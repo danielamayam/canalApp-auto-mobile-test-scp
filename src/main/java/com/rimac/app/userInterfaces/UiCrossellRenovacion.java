@@ -46,12 +46,12 @@ public class UiCrossellRenovacion {
 
     public static final Target BTN_INICIAR_SOLICITUD = Target.the("Botón Iniciar solicitud")
 .locatedForAndroid(AppiumBy.xpath("//android.widget.Button[@resource-id='com.rimac.rimac_surrogas.qa:id/materialBtn']"))
-            .locatedForIOS(AppiumBy.xpath("(//XCUIElementTypeStaticText[@name='Continuar']//parent::XCUIElementTypeButton)"));
+            .locatedForIOS(AppiumBy.xpath("(//XCUIElementTypeStaticText[@name='Continuar']//parent::XCUIElementTypeButton) | (//XCUIElementTypeStaticText[@name='Iniciar solicitud']//parent::XCUIElementTypeButton)"));
 
 
     public static final Target BTN_CONTINUAR = Target.the("Botón continuar")
             .locatedForAndroid(AppiumBy.xpath("//android.widget.Button[@text='Continuar']"))
-            .locatedForIOS(AppiumBy.xpath("(//XCUIElementTypeStaticText[@name='Continuar']//parent::XCUIElementTypeButton)"));
+            .locatedForIOS(AppiumBy.xpath("(//XCUIElementTypeStaticText[@name='Continuar']//parent::XCUIElementTypeButton) | (//XCUIElementTypeButton[@name=\"Continuar\"])"));
 
 
     public static final Target LBL_MENSAJE = Target.the("Label mensaje")

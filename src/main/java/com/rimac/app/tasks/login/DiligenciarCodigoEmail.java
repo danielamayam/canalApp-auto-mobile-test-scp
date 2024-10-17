@@ -11,14 +11,6 @@ import static com.rimac.app.userInterfaces.UiLogin.BTN_ENVIAR_CODIGO_POR_CORREO;
 
 public class DiligenciarCodigoEmail implements Task {
 
-    private String usuario;
-    private String contrasena;
-
-    public DiligenciarCodigoEmail(String usuario, String contrasena) {
-        this.usuario = usuario;
-        this.contrasena = contrasena;
-    }
-
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
@@ -27,8 +19,8 @@ public class DiligenciarCodigoEmail implements Task {
         );
     }
 
-    public static DiligenciarCodigoEmail go(String email, String contrasena){
-        return Tasks.instrumented(DiligenciarCodigoEmail.class, email, contrasena);
+    public static DiligenciarCodigoEmail go(){
+        return Tasks.instrumented(DiligenciarCodigoEmail.class);
     }
 
 }
