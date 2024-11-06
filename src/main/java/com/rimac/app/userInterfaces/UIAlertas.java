@@ -65,7 +65,7 @@ public class UIAlertas {
 
 
     public static final Target[] alertButtons = {
-            Target.the("Por ahora no button").located(By.xpath("(//android.widget.TextView[@text='Por ahora no']) | (//XCUIElementTypeButton[@name='Por ahora no'])")),
+            Target.the("Por ahora no button").located(By.xpath("(//android.widget.TextView[@text='Por ahora no']) | (//XCUIElementTypeButton[@name='Por ahora no']) | (//android.widget.Button[@resource-id=\"com.rimac.rimac_surrogas.qa:id/btn_not_yet\"])")),
             Target.the("Entendido button").located(By.xpath("(//*[@text='Entendido']) | (//XCUIElementTypeButton[@name='Entendido'])")),
             Target.the("Conocer más button").located(By.xpath("(//android.widget.Button[@text='Conocer más']) | (//XCUIElementTypeButton[@name='Conocer más'])")),
             Target.the("Cerrar modal button").located(By.xpath("(//android.widget.ImageButton[@content-desc='Cerrar modal']) | (//XCUIElementTypeButton[@name='Cerrar'])")),
