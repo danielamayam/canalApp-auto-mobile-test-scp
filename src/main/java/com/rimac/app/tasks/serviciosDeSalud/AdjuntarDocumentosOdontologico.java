@@ -223,7 +223,7 @@ public class AdjuntarDocumentosOdontologico implements Task {
                 Tap.on(BTN_CONTINUAR),
 
                 Check.whether(ComandosCapabilities.isAndroid(actor)).andIfSo(
-                        EsperarElemento.por(5)
+                        EsperarElemento.por(15)
                 ),
 
                 WaitUntil.the(BTN_CONTINUAR, WebElementStateMatchers.isClickable()).forNoMoreThan(120).seconds(),

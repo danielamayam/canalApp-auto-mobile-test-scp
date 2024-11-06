@@ -35,6 +35,7 @@ public class NavegaHastaElHistorialDePagos implements Task {
     public <T extends Actor> void performAs(T actor) {
         try{
             actor.attemptsTo(
+                    EsperarElemento.por(10),
                     IrAPagosDePolizaVihicular.go(placa, vigencia),
                     EsperarElemento.por(5),
                     Scroll.on(BTN_HISTORIAL_DE_PAGOS),

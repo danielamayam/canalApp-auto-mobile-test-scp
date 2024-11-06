@@ -2,6 +2,7 @@ package com.rimac.app.tasks.serviciosVehiculares;
 
 import com.rimac.app.interactions.ComandosCapabilities;
 import com.rimac.app.interactions.EsperarElemento;
+import com.rimac.app.interactions.Hide;
 import com.rimac.app.interactions.Swipe;
 import com.rimac.app.interactions.app.MenuItem;
 import com.rimac.app.interactions.builders.Tap;
@@ -42,6 +43,7 @@ public class SeleccionaLosDatosAsistenciasVehicularesGrua implements Task {
                         Enter.theValue("Calle Capón").into(TXT_PUNTO_DE_DESTINO),
                         EsperarElemento.por(10),
                         Tap.on(LBL_CALLE("Calle Capón"))
+                        //Hide.keyboard()
                 ),
                 WaitUntil.the(BTN_CONTINUAR, WebElementStateMatchers.isClickable()).forNoMoreThan(120).seconds(),
                 Tap.on(BTN_CONTINUAR ),

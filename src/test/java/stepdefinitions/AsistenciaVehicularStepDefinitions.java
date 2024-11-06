@@ -41,7 +41,7 @@ public class AsistenciaVehicularStepDefinitions {
     @Then("válido el seguimiento de la asistencia vehicular grua de la {string}")
     public void validoElSeguimientoDeLaAsistenciaVehicularGruaDeLa(String string) {
         OnStage.theActorInTheSpotlight().should(seeThat(
-                EL_TARGET_NO_ES_EL_ESPERADO, VerificarElemento.as(LBL_SOLICITUD_GRUA)
+                EL_TARGET_NO_ES_EL_ESPERADO, VerificarElemento.as(LBL_MENSAJE_CHOFER)
         ));
     }
 

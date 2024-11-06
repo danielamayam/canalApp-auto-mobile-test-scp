@@ -161,7 +161,7 @@ public class UiSeguros {
     public static Target CHEC_NUMERO_TARJETA(String numero) {
         return Target.the("Card seguro vehicular")
                 .locatedForAndroid(AppiumBy.xpath("(//android.widget.TextView[@text='**** "+numero+"']//parent::androidx.appcompat.widget.LinearLayoutCompat//following-sibling::android.widget.RadioButton)[1]"))
-                .locatedForIOS(AppiumBy.xpath("(//XCUIElementTypeStaticText[@name='**** "+numero+"']//following-sibling::XCUIElementTypeButton[@name='ic radio inactive'])[1]"));
+                .locatedForIOS(AppiumBy.xpath("(//XCUIElementTypeStaticText[@name='**** "+numero+"']//following-sibling::XCUIElementTypeButton)[1]"));
     }
 
     public static final Target BTN_DETALLE = Target.the("Botón detalle")

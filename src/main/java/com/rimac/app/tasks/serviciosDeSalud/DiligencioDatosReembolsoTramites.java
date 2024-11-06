@@ -55,6 +55,7 @@ public class DiligencioDatosReembolsoTramites implements Task {
                 Check.whether(ComandosCapabilities.isiOS(actor)).andIfSo(
                         Hide.keyboard()
                 ).otherwise(
+                        EsperarElemento.por(5),
                         Tap.on(BTN_ACEPTAR)
                 ),
                 EsperarElemento.por(5),
