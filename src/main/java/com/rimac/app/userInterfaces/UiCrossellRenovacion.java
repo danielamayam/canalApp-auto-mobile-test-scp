@@ -51,7 +51,7 @@ public class UiCrossellRenovacion {
 
     public static final Target BTN_CONTINUAR = Target.the("Botón continuar")
             .locatedForAndroid(AppiumBy.xpath("//android.widget.Button[@text='Continuar']"))
-            .locatedForIOS(AppiumBy.xpath("(//XCUIElementTypeStaticText[@name='Continuar']//parent::XCUIElementTypeButton) | (//XCUIElementTypeButton[@name=\"Continuar\"])"));
+            .locatedForIOS(AppiumBy.xpath("(//XCUIElementTypeStaticText[@name='Continuar']//parent::XCUIElementTypeButton) | (//XCUIElementTypeButton[@name=\"Continuar\"]) | (//XCUIElementTypeStaticText[@name='Enviar solicitud']//parent::XCUIElementTypeButton) "));
 
 
     public static final Target LBL_MENSAJE = Target.the("Label mensaje")
