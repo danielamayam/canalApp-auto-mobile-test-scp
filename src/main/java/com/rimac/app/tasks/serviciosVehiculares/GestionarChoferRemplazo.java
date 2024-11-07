@@ -65,7 +65,7 @@ public class GestionarChoferRemplazo implements Task {
                         Hide.keyboard(),
                         EsperarElemento.por(3),
                         Tap.on(LBL_CALLE("Calle Capón")),
-                        EsperarElemento.por(5),
+                        EsperarElemento.por(10),
 
                         Enter.theValue("Calle Quince").into(TXT_PUNTO_DE_DESTINO_NEW_UI),
                         Hide.keyboard(),
