@@ -34,7 +34,7 @@ public class UiServiciosVehiculares {
             .locatedBy("//XCUIElementTypeTextField[@name=\"Punto de partida\"]");
 
     public static final Target TXT_PUNTO_DE_DESTINO_NEW_UI = Target.the("Input punto de destino nuevo UI")
-            .locatedBy("//XCUIElementTypeTextField[@name=\"Punto de destino\"]");
+            .locatedBy("(//XCUIElementTypeTextField[@name=\"Punto de destino\"]) | (//XCUIElementTypeApplication[@name=\"RIMAC\"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[3]/XCUIElementTypeOther/XCUIElementTypeOther[4]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther//child::XCUIElementTypeTextField[@name=\"Punto de destino\"])");
 
 
     public static final Target LBL_MENSAJE_CHOFER = Target.the("Label mensaje")
