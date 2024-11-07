@@ -42,7 +42,7 @@ public class GestionarChoferRemplazo implements Task {
                 Tap.on(BTN_CHOFER_DE_REMPLAZO),
                 WaitUntil.the(BTN_INICIAR_SOLICITUD, WebElementStateMatchers.isVisible()).forNoMoreThan(120).seconds(),
                 Tap.on(BTN_INICIAR_SOLICITUD),
-
+                EsperarElemento.por(20),
                 Tap.siElElementoEsVisible(BTN_CANCELAR),
                 EsperarElemento.por(40),
 
