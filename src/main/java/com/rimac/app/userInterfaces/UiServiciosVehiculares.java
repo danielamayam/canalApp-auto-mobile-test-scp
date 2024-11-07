@@ -11,7 +11,7 @@ public class UiServiciosVehiculares {
 
     public static final Target BTN_CANCELAR = Target.the("Botón cancelar")
             .locatedForAndroid(AppiumBy.id("android:id/button2"))
-            .locatedForIOS(AppiumBy.xpath("//XCUIElementTypeButton[@name='Cancelar']"));
+            .locatedForIOS(AppiumBy.xpath("(//XCUIElementTypeButton[@name='Cancelar']) | (//XCUIElementTypeButton[@name=\"Don’t Allow\"])"));
 
     public static final Target LBL_CALLE(String text){
         return Target.the("Input punto de partida")
