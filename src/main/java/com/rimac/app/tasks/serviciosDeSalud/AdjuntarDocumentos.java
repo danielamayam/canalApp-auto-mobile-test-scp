@@ -28,10 +28,8 @@ public class AdjuntarDocumentos implements Task {
                 Tap.on(BTN_FACTURA),
                 EsperarElemento.por(10),
                 Tap.on(BTN_ENTENDIDO),
-
-                Check.whether(ComandosCapabilities.isAndroid(actor)).andIfSo(
                 WaitUntil.the(BTN_ADJUNTAR_DOCUMENTO, WebElementStateMatchers.isClickable()).forNoMoreThan(120).seconds(),
-                Tap.on(BTN_ADJUNTAR_DOCUMENTO)),
+                Tap.on(BTN_ADJUNTAR_DOCUMENTO),
                 Tap.siElElementoEsVisible(BTN_ALERT_PERMITIR),
                 Tap.on(BTN_DOCUMENTO),
 
@@ -59,9 +57,8 @@ public class AdjuntarDocumentos implements Task {
                 WaitUntil.the(BTN_RECIBO_POR_HONORARIOS, WebElementStateMatchers.isClickable()).forNoMoreThan(120).seconds(),
                 Tap.on(BTN_RECIBO_POR_HONORARIOS),
                 Tap.siElElementoEsVisible(BTN_ENTENDIDO),
-                Check.whether(ComandosCapabilities.isAndroid(actor)).andIfSo(
                 WaitUntil.the(BTN_ADJUNTAR_DOCUMENTO, WebElementStateMatchers.isClickable()).forNoMoreThan(120).seconds(),
-                Tap.on(BTN_ADJUNTAR_DOCUMENTO)),
+                Tap.on(BTN_ADJUNTAR_DOCUMENTO),
                 Tap.siElElementoEsVisible(BTN_ALERT_PERMITIR),
                 Tap.on(BTN_DOCUMENTO),
 
@@ -90,9 +87,8 @@ public class AdjuntarDocumentos implements Task {
                 WaitUntil.the(BTN_BOLETA, WebElementStateMatchers.isClickable()).forNoMoreThan(120).seconds(),
                 Tap.on(BTN_BOLETA),
                 Tap.siElElementoEsVisible(BTN_ENTENDIDO),
-                Check.whether(ComandosCapabilities.isAndroid(actor)).andIfSo(
                 WaitUntil.the(BTN_ADJUNTAR_DOCUMENTO, WebElementStateMatchers.isClickable()).forNoMoreThan(120).seconds(),
-                Tap.on(BTN_ADJUNTAR_DOCUMENTO)),
+                Tap.on(BTN_ADJUNTAR_DOCUMENTO),
                 Tap.siElElementoEsVisible(BTN_ALERT_PERMITIR),
                 Tap.on(BTN_DOCUMENTO),
 
@@ -125,9 +121,8 @@ public class AdjuntarDocumentos implements Task {
                 WaitUntil.the(BTN_HOJA_DE_ATENCION, WebElementStateMatchers.isClickable()).forNoMoreThan(120).seconds(),
                 Tap.on(BTN_HOJA_DE_ATENCION),
                 Tap.siElElementoEsVisible(BTN_ENTENDIDO),
-                Check.whether(ComandosCapabilities.isAndroid(actor)).andIfSo(
                 WaitUntil.the(BTN_ADJUNTAR_DOCUMENTO, WebElementStateMatchers.isClickable()).forNoMoreThan(120).seconds(),
-                Tap.on(BTN_ADJUNTAR_DOCUMENTO)),
+                Tap.on(BTN_ADJUNTAR_DOCUMENTO),
                 Tap.siElElementoEsVisible(BTN_ALERT_PERMITIR),
                 Tap.on(BTN_DOCUMENTO),
 
@@ -140,9 +135,8 @@ public class AdjuntarDocumentos implements Task {
                 WaitUntil.the(BTN_ORDEN_MEDICA, WebElementStateMatchers.isClickable()).forNoMoreThan(120).seconds(),
                 Tap.on(BTN_ORDEN_MEDICA),
                 Tap.siElElementoEsVisible(BTN_ENTENDIDO),
-                Check.whether(ComandosCapabilities.isAndroid(actor)).andIfSo(
                 WaitUntil.the(BTN_ADJUNTAR_DOCUMENTO, WebElementStateMatchers.isClickable()).forNoMoreThan(120).seconds(),
-                Tap.on(BTN_ADJUNTAR_DOCUMENTO)),
+                Tap.on(BTN_ADJUNTAR_DOCUMENTO),
                 Tap.siElElementoEsVisible(BTN_ALERT_PERMITIR),
                 Tap.on(BTN_DOCUMENTO),
                 WaitUntil.the(BTN_CONTINUAR, WebElementStateMatchers.isClickable()).forNoMoreThan(120).seconds(),
@@ -154,9 +148,8 @@ public class AdjuntarDocumentos implements Task {
                 WaitUntil.the(BTN_HOJA_DE_LIQUIDACION, WebElementStateMatchers.isClickable()).forNoMoreThan(120).seconds(),
                 Tap.on(BTN_HOJA_DE_LIQUIDACION),
                 Tap.siElElementoEsVisible(BTN_ENTENDIDO),
-                Check.whether(ComandosCapabilities.isAndroid(actor)).andIfSo(
                 WaitUntil.the(BTN_ADJUNTAR_DOCUMENTO, WebElementStateMatchers.isClickable()).forNoMoreThan(120).seconds(),
-                Tap.on(BTN_ADJUNTAR_DOCUMENTO)),
+                Tap.on(BTN_ADJUNTAR_DOCUMENTO),
                 Tap.siElElementoEsVisible(BTN_ALERT_PERMITIR),
                 Tap.on(BTN_DOCUMENTO),
                 WaitUntil.the(BTN_CONTINUAR, WebElementStateMatchers.isClickable()).forNoMoreThan(120).seconds(),
@@ -168,9 +161,8 @@ public class AdjuntarDocumentos implements Task {
                 WaitUntil.the(BTN_INFORME_MEDICO, WebElementStateMatchers.isClickable()).forNoMoreThan(120).seconds(),
                 Tap.on(BTN_INFORME_MEDICO),
                 Tap.siElElementoEsVisible(BTN_ENTENDIDO),
-                Check.whether(ComandosCapabilities.isAndroid(actor)).andIfSo(
                 WaitUntil.the(BTN_ADJUNTAR_DOCUMENTO, WebElementStateMatchers.isClickable()).forNoMoreThan(120).seconds(),
-                Tap.on(BTN_ADJUNTAR_DOCUMENTO)),
+                Tap.on(BTN_ADJUNTAR_DOCUMENTO),
                 Tap.siElElementoEsVisible(BTN_ALERT_PERMITIR),
                 Tap.on(BTN_DOCUMENTO),
                 WaitUntil.the(BTN_CONTINUAR, WebElementStateMatchers.isClickable()).forNoMoreThan(120).seconds(),
@@ -182,9 +174,8 @@ public class AdjuntarDocumentos implements Task {
                 WaitUntil.the(BTN_RESULTADO_EXAMENES, WebElementStateMatchers.isClickable()).forNoMoreThan(120).seconds(),
                 Tap.on(BTN_RESULTADO_EXAMENES),
                 Tap.siElElementoEsVisible(BTN_ENTENDIDO),
-                Check.whether(ComandosCapabilities.isAndroid(actor)).andIfSo(
                 WaitUntil.the(BTN_ADJUNTAR_DOCUMENTO, WebElementStateMatchers.isClickable()).forNoMoreThan(120).seconds(),
-                Tap.on(BTN_ADJUNTAR_DOCUMENTO)),
+                Tap.on(BTN_ADJUNTAR_DOCUMENTO),
                 Tap.siElElementoEsVisible(BTN_ALERT_PERMITIR),
                 Tap.on(BTN_DOCUMENTO),
                 WaitUntil.the(BTN_CONTINUAR, WebElementStateMatchers.isClickable()).forNoMoreThan(120).seconds(),
@@ -196,9 +187,8 @@ public class AdjuntarDocumentos implements Task {
                 WaitUntil.the(BTN_EPICRISIS, WebElementStateMatchers.isClickable()).forNoMoreThan(120).seconds(),
                 Tap.on(BTN_EPICRISIS),
                 Tap.siElElementoEsVisible(BTN_ENTENDIDO),
-                Check.whether(ComandosCapabilities.isAndroid(actor)).andIfSo(
                 WaitUntil.the(BTN_ADJUNTAR_DOCUMENTO, WebElementStateMatchers.isClickable()).forNoMoreThan(120).seconds(),
-                Tap.on(BTN_ADJUNTAR_DOCUMENTO)),
+                Tap.on(BTN_ADJUNTAR_DOCUMENTO),
                 Tap.siElElementoEsVisible(BTN_ALERT_PERMITIR),
                 Tap.on(BTN_DOCUMENTO),
                 WaitUntil.the(BTN_CONTINUAR, WebElementStateMatchers.isClickable()).forNoMoreThan(120).seconds(),
@@ -210,9 +200,8 @@ public class AdjuntarDocumentos implements Task {
                 WaitUntil.the(BTN_REPORTE_OPERATORIO, WebElementStateMatchers.isClickable()).forNoMoreThan(120).seconds(),
                 Tap.on(BTN_REPORTE_OPERATORIO),
                 Tap.siElElementoEsVisible(BTN_ENTENDIDO),
-                Check.whether(ComandosCapabilities.isAndroid(actor)).andIfSo(
                 WaitUntil.the(BTN_ADJUNTAR_DOCUMENTO, WebElementStateMatchers.isClickable()).forNoMoreThan(120).seconds(),
-                Tap.on(BTN_ADJUNTAR_DOCUMENTO)),
+                Tap.on(BTN_ADJUNTAR_DOCUMENTO),
                 Tap.siElElementoEsVisible(BTN_ALERT_PERMITIR),
                 Tap.on(BTN_DOCUMENTO),
                 WaitUntil.the(BTN_CONTINUAR, WebElementStateMatchers.isClickable()).forNoMoreThan(120).seconds(),
@@ -224,9 +213,8 @@ public class AdjuntarDocumentos implements Task {
                 WaitUntil.the(BTN_ANATOMIA_PATOLOGICO, WebElementStateMatchers.isClickable()).forNoMoreThan(120).seconds(),
                 Tap.on(BTN_ANATOMIA_PATOLOGICO),
                 Tap.siElElementoEsVisible(BTN_ENTENDIDO),
-                Check.whether(ComandosCapabilities.isAndroid(actor)).andIfSo(
                 WaitUntil.the(BTN_ADJUNTAR_DOCUMENTO, WebElementStateMatchers.isClickable()).forNoMoreThan(120).seconds(),
-                Tap.on(BTN_ADJUNTAR_DOCUMENTO)),
+                Tap.on(BTN_ADJUNTAR_DOCUMENTO),
                 Tap.siElElementoEsVisible(BTN_ALERT_PERMITIR),
                 Tap.on(BTN_DOCUMENTO),
                 WaitUntil.the(BTN_CONTINUAR, WebElementStateMatchers.isClickable()).forNoMoreThan(120).seconds(),
@@ -265,8 +253,6 @@ public class AdjuntarDocumentos implements Task {
                 Tap.on(BTN_REEMBOLSO_DE_SALUD),
 
                 WaitUntil.the(CARD_REEMBOLSO, WebElementStateMatchers.isVisible()).forNoMoreThan(120).seconds()
-
-
 
 
         );

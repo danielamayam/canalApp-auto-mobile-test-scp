@@ -5,6 +5,7 @@ import com.rimac.app.interactions.EsperarElemento;
 import com.rimac.app.interactions.Hide;
 import com.rimac.app.interactions.Swipe;
 import com.rimac.app.interactions.app.MenuItem;
+import com.rimac.app.interactions.builders.Scroll;
 import com.rimac.app.interactions.builders.Tap;
 import com.rimac.app.models.Reembolso;
 import net.serenitybdd.screenplay.Actor;
@@ -30,7 +31,7 @@ public class DiligencioDatosReembolsoTramites implements Task {
                 MenuItem.tramites(),
                 WaitUntil.the(LBL_TUS_TRAMITES, WebElementStateMatchers.isVisible()).forNoMoreThan(120).seconds(),
                 Swipe.as(actor).fromBottom().toTop(),
-                Swipe.as(actor).fromBottom().toTop(),
+                Scroll.on(BTN_REEMBOLSO_DE_SALUD),
                 EsperarElemento.por(4),
                 Tap.on(BTN_REEMBOLSO_DE_SALUD),
 

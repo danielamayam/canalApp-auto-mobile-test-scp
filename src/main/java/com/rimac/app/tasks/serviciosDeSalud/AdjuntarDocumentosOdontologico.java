@@ -27,9 +27,8 @@ public class AdjuntarDocumentosOdontologico implements Task {
                 Tap.on(BTN_FACTURA),
                 EsperarElemento.por(10),
                 Tap.on(BTN_ENTENDIDO),
-                Check.whether(ComandosCapabilities.isAndroid(actor)).andIfSo(
                 WaitUntil.the(BTN_ADJUNTAR_DOCUMENTO, WebElementStateMatchers.isClickable()).forNoMoreThan(120).seconds(),
-                Tap.on(BTN_ADJUNTAR_DOCUMENTO)),
+                Tap.on(BTN_ADJUNTAR_DOCUMENTO),
                 Tap.siElElementoEsVisible(BTN_ALERT_PERMITIR),
                 Tap.on(BTN_DOCUMENTO),
 
@@ -57,9 +56,8 @@ public class AdjuntarDocumentosOdontologico implements Task {
                 WaitUntil.the(BTN_RECIBO_POR_HONORARIOS, WebElementStateMatchers.isClickable()).forNoMoreThan(120).seconds(),
                 Tap.on(BTN_RECIBO_POR_HONORARIOS),
                 Tap.siElElementoEsVisible(BTN_ENTENDIDO),
-                Check.whether(ComandosCapabilities.isAndroid(actor)).andIfSo(
                 WaitUntil.the(BTN_ADJUNTAR_DOCUMENTO, WebElementStateMatchers.isClickable()).forNoMoreThan(120).seconds(),
-                Tap.on(BTN_ADJUNTAR_DOCUMENTO)),
+                Tap.on(BTN_ADJUNTAR_DOCUMENTO),
                 Tap.siElElementoEsVisible(BTN_ALERT_PERMITIR),
                 Tap.on(BTN_DOCUMENTO),
 
@@ -88,9 +86,8 @@ public class AdjuntarDocumentosOdontologico implements Task {
                 WaitUntil.the(BTN_BOLETA, WebElementStateMatchers.isClickable()).forNoMoreThan(120).seconds(),
                 Tap.on(BTN_BOLETA),
                 Tap.siElElementoEsVisible(BTN_ENTENDIDO),
-                Check.whether(ComandosCapabilities.isAndroid(actor)).andIfSo(
                 WaitUntil.the(BTN_ADJUNTAR_DOCUMENTO, WebElementStateMatchers.isClickable()).forNoMoreThan(120).seconds(),
-                Tap.on(BTN_ADJUNTAR_DOCUMENTO)),
+                Tap.on(BTN_ADJUNTAR_DOCUMENTO),
                 Tap.siElElementoEsVisible(BTN_ALERT_PERMITIR),
                 Tap.on(BTN_DOCUMENTO),
 
@@ -124,9 +121,8 @@ public class AdjuntarDocumentosOdontologico implements Task {
                 WaitUntil.the(BTN_SOLICITUD_REEMBOLSO, WebElementStateMatchers.isClickable()).forNoMoreThan(120).seconds(),
                 Tap.on(BTN_SOLICITUD_REEMBOLSO),
                 Tap.siElElementoEsVisible(BTN_ENTENDIDO),
-                Check.whether(ComandosCapabilities.isAndroid(actor)).andIfSo(
                 WaitUntil.the(BTN_ADJUNTAR_DOCUMENTO, WebElementStateMatchers.isClickable()).forNoMoreThan(120).seconds(),
-                Tap.on(BTN_ADJUNTAR_DOCUMENTO)),
+                Tap.on(BTN_ADJUNTAR_DOCUMENTO),
                 Tap.siElElementoEsVisible(BTN_ALERT_PERMITIR),
                 Tap.on(BTN_DOCUMENTO),
                 WaitUntil.the(BTN_CONTINUAR, WebElementStateMatchers.isClickable()).forNoMoreThan(120).seconds(),
@@ -139,9 +135,8 @@ public class AdjuntarDocumentosOdontologico implements Task {
                 WaitUntil.the(BTN_ODONTOGRAMA, WebElementStateMatchers.isClickable()).forNoMoreThan(120).seconds(),
                 Tap.on(BTN_ODONTOGRAMA),
                 Tap.siElElementoEsVisible(BTN_ENTENDIDO),
-                Check.whether(ComandosCapabilities.isAndroid(actor)).andIfSo(
                 WaitUntil.the(BTN_ADJUNTAR_DOCUMENTO, WebElementStateMatchers.isClickable()).forNoMoreThan(120).seconds(),
-                Tap.on(BTN_ADJUNTAR_DOCUMENTO)),
+                Tap.on(BTN_ADJUNTAR_DOCUMENTO),
                 Tap.siElElementoEsVisible(BTN_ALERT_PERMITIR),
                 Tap.on(BTN_DOCUMENTO),
                 WaitUntil.the(BTN_CONTINUAR, WebElementStateMatchers.isClickable()).forNoMoreThan(120).seconds(),
@@ -154,9 +149,8 @@ public class AdjuntarDocumentosOdontologico implements Task {
                 WaitUntil.the(BTN_LIQUIDACION_CLINICA, WebElementStateMatchers.isClickable()).forNoMoreThan(120).seconds(),
                 Tap.on(BTN_LIQUIDACION_CLINICA),
                 Tap.siElElementoEsVisible(BTN_ENTENDIDO),
-                Check.whether(ComandosCapabilities.isAndroid(actor)).andIfSo(
                 WaitUntil.the(BTN_ADJUNTAR_DOCUMENTO, WebElementStateMatchers.isClickable()).forNoMoreThan(120).seconds(),
-                Tap.on(BTN_ADJUNTAR_DOCUMENTO)),
+                Tap.on(BTN_ADJUNTAR_DOCUMENTO),
                 Tap.siElElementoEsVisible(BTN_ALERT_PERMITIR),
                 Tap.on(BTN_DOCUMENTO),
                 WaitUntil.the(BTN_CONTINUAR, WebElementStateMatchers.isClickable()).forNoMoreThan(120).seconds(),
@@ -169,9 +163,8 @@ public class AdjuntarDocumentosOdontologico implements Task {
                 WaitUntil.the(BTN_MODELO_DE_ESTUDIO, WebElementStateMatchers.isClickable()).forNoMoreThan(120).seconds(),
                 Tap.on(BTN_MODELO_DE_ESTUDIO),
                 Tap.siElElementoEsVisible(BTN_ENTENDIDO),
-                Check.whether(ComandosCapabilities.isAndroid(actor)).andIfSo(
                 WaitUntil.the(BTN_ADJUNTAR_DOCUMENTO, WebElementStateMatchers.isClickable()).forNoMoreThan(120).seconds(),
-                Tap.on(BTN_ADJUNTAR_DOCUMENTO)),
+                Tap.on(BTN_ADJUNTAR_DOCUMENTO),
                 Tap.siElElementoEsVisible(BTN_ALERT_PERMITIR),
                 Tap.on(BTN_DOCUMENTO),
                 WaitUntil.the(BTN_CONTINUAR, WebElementStateMatchers.isClickable()).forNoMoreThan(120).seconds(),
@@ -184,9 +177,8 @@ public class AdjuntarDocumentosOdontologico implements Task {
                 WaitUntil.the(BTN_RADIOGRAFIA, WebElementStateMatchers.isClickable()).forNoMoreThan(120).seconds(),
                 Tap.on(BTN_RADIOGRAFIA),
                 Tap.siElElementoEsVisible(BTN_ENTENDIDO),
-                Check.whether(ComandosCapabilities.isAndroid(actor)).andIfSo(
                 WaitUntil.the(BTN_ADJUNTAR_DOCUMENTO, WebElementStateMatchers.isClickable()).forNoMoreThan(120).seconds(),
-                Tap.on(BTN_ADJUNTAR_DOCUMENTO)),
+                Tap.on(BTN_ADJUNTAR_DOCUMENTO),
                 Tap.siElElementoEsVisible(BTN_ALERT_PERMITIR),
                 Tap.on(BTN_DOCUMENTO),
                 WaitUntil.the(BTN_CONTINUAR, WebElementStateMatchers.isClickable()).forNoMoreThan(120).seconds(),
@@ -199,9 +191,8 @@ public class AdjuntarDocumentosOdontologico implements Task {
                 WaitUntil.the(BTN_RADIOGRAFIA_PANORAMICA, WebElementStateMatchers.isClickable()).forNoMoreThan(120).seconds(),
                 Tap.on(BTN_RADIOGRAFIA_PANORAMICA),
                 Tap.siElElementoEsVisible(BTN_ENTENDIDO),
-                Check.whether(ComandosCapabilities.isAndroid(actor)).andIfSo(
                 WaitUntil.the(BTN_ADJUNTAR_DOCUMENTO, WebElementStateMatchers.isClickable()).forNoMoreThan(120).seconds(),
-                Tap.on(BTN_ADJUNTAR_DOCUMENTO)),
+                Tap.on(BTN_ADJUNTAR_DOCUMENTO),
                 Tap.siElElementoEsVisible(BTN_ALERT_PERMITIR),
                 Tap.on(BTN_DOCUMENTO),
                 WaitUntil.the(BTN_CONTINUAR, WebElementStateMatchers.isClickable()).forNoMoreThan(120).seconds(),
@@ -214,9 +205,8 @@ public class AdjuntarDocumentosOdontologico implements Task {
                 WaitUntil.the(BTN_INFORME_MEDICO_ODONTOLOGICO, WebElementStateMatchers.isClickable()).forNoMoreThan(120).seconds(),
                 Tap.on(BTN_INFORME_MEDICO_ODONTOLOGICO),
                 Tap.siElElementoEsVisible(BTN_ENTENDIDO),
-                Check.whether(ComandosCapabilities.isAndroid(actor)).andIfSo(
                 WaitUntil.the(BTN_ADJUNTAR_DOCUMENTO, WebElementStateMatchers.isClickable()).forNoMoreThan(120).seconds(),
-                Tap.on(BTN_ADJUNTAR_DOCUMENTO)),
+                Tap.on(BTN_ADJUNTAR_DOCUMENTO),
                 Tap.siElElementoEsVisible(BTN_ALERT_PERMITIR),
                 Tap.on(BTN_DOCUMENTO),
                 WaitUntil.the(BTN_CONTINUAR, WebElementStateMatchers.isClickable()).forNoMoreThan(120).seconds(),

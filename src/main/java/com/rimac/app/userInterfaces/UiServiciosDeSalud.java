@@ -94,7 +94,7 @@ public class UiServiciosDeSalud {
 
     public static final Target CHEK_LUGAR = Target.the("Botón Lugar")
             .locatedForAndroid(AppiumBy.xpath("(//android.widget.RadioButton)[1]"))
-            .locatedForIOS(AppiumBy.xpath("(//XCUIElementTypeImage[@name=\"ic_radio_inactive\"])[1]"));
+            .locatedForIOS(AppiumBy.xpath("(//XCUIElementTypeImage[@name=\"ic_radio_inactive\"])[1] | (//XCUIElementTypeStaticText[@name=\"Lima\"])"));
 
     public static final Target BTN_ACEPTAR = Target.the("Botón Lugar")
             .located(AppiumBy.xpath("(//android.widget.Button[@text='ACEPTAR']) | (//android.widget.Button[@text='OK']) | (//android.widget.Button[@resource-id='android:id/button1'])"));

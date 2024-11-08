@@ -86,7 +86,7 @@ public class UiReembolso {
 
     public static final Target CHEC_DOLARES= Target.the("Botón dolar")
             .locatedForAndroid(AppiumBy.xpath("(//android.widget.RadioButton)[1]"))
-            .locatedForIOS(AppiumBy.xpath("(//XCUIElementTypeImage[@name=\"ic_radio_inactive\"])[2]"));
+            .locatedForIOS(AppiumBy.xpath("((//XCUIElementTypeImage[@name=\"ic_radio_inactive\"])[2]) | (//XCUIElementTypeStaticText[@name=\"Soles (S/)\"])"));
 
     public static final Target BTN_RECIBO_POR_HONORARIOS = Target.the("Botón mas factura")
             .locatedForAndroid(AppiumBy.xpath("//android.widget.TextView[@text='Recibo por honorarios']//parent::android.view.ViewGroup//child::androidx.cardview.widget.CardView"))
