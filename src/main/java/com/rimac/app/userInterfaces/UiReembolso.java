@@ -31,7 +31,7 @@ public class UiReembolso {
             .locatedForIOS(AppiumBy.xpath("//XCUIElementTypeButton[@name=\"Adjuntar documento\"]"));
 
     public static final Target BTN_TOMAR_FOTO= Target.the("Botón tomar foto")
-            .locatedForAndroid(AppiumBy.xpath("pendiente"))
+            .locatedForAndroid(AppiumBy.xpath("//android.widget.TextView[@resource-id=\"com.rimac.rimac_surrogas.qa:id/description\" and @text=\"Tomar una foto\"]"))
             .locatedForIOS(AppiumBy.xpath("//XCUIElementTypeButton[@name=\"Tomar una foto\"]"));
 
     public static final Target BTN_ALERT_PERMITIR= Target.the("Botón tomar foto")
@@ -39,11 +39,11 @@ public class UiReembolso {
             .locatedForIOS(AppiumBy.xpath("//XCUIElementTypeButton[@name=\"Permitir\"]"));
 
     public static final Target BTN_CAPTURAR_FOTO= Target.the("Botón tomar foto")
-            .locatedForAndroid(AppiumBy.xpath("pendiente"))
+            .locatedForAndroid(AppiumBy.id("com.sec.android.app.camera:id/center_button"))
             .locatedForIOS(AppiumBy.xpath("//XCUIElementTypeButton[@name=\"PhotoCapture\"]"));
 
     public static final Target BTN_USAR_FOTO= Target.the("Botón tomar foto")
-            .locatedForAndroid(AppiumBy.xpath("pendiente"))
+            .locatedForAndroid(AppiumBy.xpath("(//android.widget.Button[@content-desc=\"Aceptar\"]) | (//android.widget.Button[@content-desc=\"OK\"])"))
             .locatedForIOS(AppiumBy.xpath("//XCUIElementTypeStaticText[@name=\"Usar foto\"]"));
 
     public static final Target BTN_DOCUMENTO= Target.the("Botón entendido")

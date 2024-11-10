@@ -1,5 +1,6 @@
 package com.rimac.app.tasks.serviciosDeSalud;
 
+import com.rimac.app.interactions.Swipe;
 import com.rimac.app.interactions.app.FormularioClinica;
 import com.rimac.app.interactions.builders.Scroll;
 import com.rimac.app.interactions.builders.Tap;
@@ -19,6 +20,7 @@ public class BuscarClinicaDesdeElHome implements Task {
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
+                Swipe.as(actor).fromBottom().toTop(),
                 Scroll.on(BTN_BUSCADOR_DE_CLINICAS),
                 Tap.on(BTN_BUSCADOR_DE_CLINICAS),
                 FormularioClinica.go(nombre)
