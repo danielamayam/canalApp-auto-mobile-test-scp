@@ -2,6 +2,7 @@ package com.rimac.app.interactions.app;
 
 import com.rimac.app.interactions.ComandosCapabilities;
 import com.rimac.app.interactions.EsperarElemento;
+import com.rimac.app.interactions.Swipe;
 import com.rimac.app.interactions.builders.Scroll;
 import com.rimac.app.interactions.builders.Tap;
 import com.rimac.app.util.enums.MenuSeguros;
@@ -38,6 +39,9 @@ public class IrAPagosDePolizaVihicular implements Interaction {
                             Tap.siElElementoEsVisible(BTN_VEHICULAR_ANDROID.of(MenuSeguros.ITEM_VEHICULAR.getClave()))
                     ),
                     EsperarElemento.por(10),
+                    Check.whether(SEGURO_VEHICULAR_CARD(vigencia, placa).resolveFor(actor).isVisible()).otherwise(
+                            Swipe.as(actor).fromBottom().toTop()
+                    ),
                     Scroll.on(SEGURO_VEHICULAR_CARD(vigencia, placa)),
                     Click.on(SEGURO_VEHICULAR_CARD(vigencia, placa)),
                     WaitUntil.the(BTN_PAGOS, WebElementStateMatchers.isVisible()).forNoMoreThan(120).seconds(),

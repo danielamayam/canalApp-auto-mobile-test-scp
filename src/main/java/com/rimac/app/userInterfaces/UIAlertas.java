@@ -69,6 +69,9 @@ public class UIAlertas {
             Target.the("Entendido button").located(By.xpath("(//*[@text='Entendido']) | (//XCUIElementTypeButton[@name='Entendido'])")),
             Target.the("Conocer más button").located(By.xpath("(//android.widget.Button[@text='Conocer más']) | (//XCUIElementTypeButton[@name='Conocer más'])")),
             Target.the("Cerrar modal button").located(By.xpath("(//android.widget.ImageButton[@content-desc='Cerrar modal']) | (//XCUIElementTypeButton[@name='Cerrar']) | (//XCUIElementTypeButton[@name=\"gl sm error 1\"]) | (//android.widget.ImageButton[@content-desc=\"Cerrar modal\"])")),
-            Target.the("Vamos a Estar Bien button").located(By.xpath("(//android.widget.Button[@text='Vamos a Estar Bien']) | (//XCUIElementTypeButton[@name='Vamos a Estar Bien'])"))
+            Target.the("Vamos a Estar Bien button").located(By.xpath("(//android.widget.Button[@text='Vamos a Estar Bien']) | (//XCUIElementTypeButton[@name='Vamos a Estar Bien'])")),
+            Target.the("Boton no guardar datos").located(By.xpath("//android.widget.Button[@resource-id=\"android:id/autofill_save_no\"]"))
     };
+
+
 }

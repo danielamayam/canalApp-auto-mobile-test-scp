@@ -9,6 +9,11 @@ public class UiConsultasVehicularSoat {
             .locatedForAndroid(AppiumBy.xpath("//android.widget.CompoundButton[@text='SOAT']"))
             .locatedForIOS(AppiumBy.xpath("(//XCUIElementTypeStaticText[@name='SOAT']//preceding-sibling::XCUIElementTypeButton)[1]"));
 
+    public static final Target BTN_SALUD = Target.the("Botón salud")
+            .locatedForAndroid(AppiumBy.xpath("//android.widget.CompoundButton[@text='Salud']"))
+            .locatedForIOS(AppiumBy.xpath("(//XCUIElementTypeStaticText[@name='Salud']//preceding-sibling::XCUIElementTypeButton)[1]"));
+
+
     public static final Target CARD_SOAT_PLACA(String placa) {
         return Target.the("Card vida flexible")
                 .locatedForAndroid(AppiumBy.xpath("//android.widget.TextView[@text='Placa: "+placa+"']//parent::android.widget.LinearLayout//following-sibling::android.widget.Button[@text='Ver detalle']"))

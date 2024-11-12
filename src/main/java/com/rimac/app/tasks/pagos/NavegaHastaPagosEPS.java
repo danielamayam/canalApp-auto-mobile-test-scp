@@ -8,6 +8,7 @@ import net.serenitybdd.screenplay.Tasks;
 import net.serenitybdd.screenplay.matchers.WebElementStateMatchers;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 
+import static com.rimac.app.userInterfaces.UiConsultasVehicularSoat.BTN_SALUD;
 import static com.rimac.app.userInterfaces.UiMenu.BTN_PAGOS;
 import static com.rimac.app.userInterfaces.UiSeguros.BTN_DETALLE;
 import static com.rimac.app.userInterfaces.UiSeguros.LBL_MENSAJE_2;
@@ -17,6 +18,8 @@ public class NavegaHastaPagosEPS implements Task {
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
                 MenuItem.seguros(),
+                WaitUntil.the(BTN_SALUD, WebElementStateMatchers.isVisible()).forNoMoreThan(120).seconds(),
+                Tap.on(BTN_SALUD),
                 WaitUntil.the(BTN_DETALLE, WebElementStateMatchers.isVisible()).forNoMoreThan(120).seconds(),
                 Tap.on(BTN_DETALLE),
                 WaitUntil.the(BTN_PAGOS, WebElementStateMatchers.isVisible()).forNoMoreThan(120).seconds(),

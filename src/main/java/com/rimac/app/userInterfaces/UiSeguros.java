@@ -80,7 +80,7 @@ public class UiSeguros {
     public static final Target BTN_ALERTA_ANDROID = Target.the("Guardar Datos").located(By.id("android:id/autofill_save_no"));
 
     public static final Target LBL_PAGADO = Target.the("Label mis tarjetas")
-            .locatedForAndroid(AppiumBy.xpath("(//android.widget.TextView[@text='Pagado'])[1]"))
+            .locatedForAndroid(AppiumBy.xpath("((//android.widget.TextView[@text='Pagado'])[1]) | (//androidx.cardview.widget.CardView/android.view.ViewGroup)"))
             .locatedForIOS(AppiumBy.xpath("((//XCUIElementTypeStaticText[@name='Pagado'])[1]) | ((//XCUIElementTypeStaticText[@name='PAGADO'])[1])"));
 
     public static final Target LBL_CONSULTA_TUS_PAGOS = Target.the("Label consulta tus pagos")
@@ -165,7 +165,7 @@ public class UiSeguros {
     }
 
     public static final Target BTN_DETALLE = Target.the("Botón detalle")
-            .locatedForAndroid(AppiumBy.id("com.rimac.rimac_surrogas.qa:id/btnText"))
+            .locatedForAndroid(AppiumBy.xpath("(//android.widget.Button[@resource-id=\"com.rimac.rimac_surrogas.qa:id/btnText\"])[2]"))
             .locatedForIOS(AppiumBy.xpath("//XCUIElementTypeStaticText[@name='Seguro EPS']//following-sibling::XCUIElementTypeButton[@name='Ver detalle']"));
 
 

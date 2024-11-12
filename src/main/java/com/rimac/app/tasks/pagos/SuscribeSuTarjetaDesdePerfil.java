@@ -2,9 +2,11 @@ package com.rimac.app.tasks.pagos;
 
 import com.rimac.app.exceptions.Assertions;
 import com.rimac.app.interactions.ComandosCapabilities;
+import com.rimac.app.interactions.EsperarElemento;
 import com.rimac.app.interactions.Hide;
 import com.rimac.app.interactions.app.FormularioCrearTarjeta;
 import com.rimac.app.interactions.app.MenuItem;
+import com.rimac.app.interactions.app.SkipAlerts;
 import com.rimac.app.interactions.builders.Scroll;
 import com.rimac.app.interactions.builders.Tap;
 import com.rimac.app.models.SuscripcionDesdePagos;
@@ -42,6 +44,8 @@ public class SuscribeSuTarjetaDesdePerfil implements Task {
                     FormularioCrearTarjeta.go(suscripcionDesdePagos),
                     Tap.on(BTN_GUARDAR_TARJETA),
                     Check.whether(ComandosCapabilities.isAndroid(actor)).andIfSo(Tap.siElElementoEsVisible(BTN_ALERTA_ANDROID)),
+                    EsperarElemento.por(5),
+                    SkipAlerts.dismissAlerts(),
                     WaitUntil.the(LBL_MIS_TARJETAS, WebElementStateMatchers.isVisible()).forNoMoreThan(120).seconds(),
                     Scroll.on(LBL_NUMERO_TARJETA(ultimos4Caracteres))
 
