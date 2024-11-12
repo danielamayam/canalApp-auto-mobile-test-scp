@@ -1,9 +1,11 @@
 package com.rimac.app.interactions.app;
 
+import com.rimac.app.interactions.ComandosCapabilities;
 import com.rimac.app.interactions.builders.Tap;
 import net.serenitybdd.core.steps.Instrumented;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Interaction;
+import net.serenitybdd.screenplay.conditions.Check;
 import net.serenitybdd.screenplay.matchers.WebElementStateMatchers;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 
@@ -16,6 +18,7 @@ public class TomarFoto implements Interaction {
         actor.attemptsTo(
                 WaitUntil.the(BTN_TOMAR_FOTO, WebElementStateMatchers.isClickable()).forNoMoreThan(120).seconds(),
                 Tap.on(BTN_TOMAR_FOTO),
+                Check.whether(ComandosCapabilities.isiOS(actor)).andIfSo(Tap.siElElementoEsVisible(BTN_ALERT_PERMITIR)),
                 EsperarElemento.por(5),
                 Tap.on(BTN_CAPTURAR_FOTO),
                 WaitUntil.the(BTN_USAR_FOTO, WebElementStateMatchers.isClickable()).forNoMoreThan(120).seconds(),

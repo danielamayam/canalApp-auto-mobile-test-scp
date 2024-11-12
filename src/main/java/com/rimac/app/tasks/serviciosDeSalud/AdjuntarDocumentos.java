@@ -38,7 +38,6 @@ public class AdjuntarDocumentos implements Task {
 
                 Check.whether(!v_environment.contains("documento")).andIfSo(TomarFoto.go()).otherwise(AdjuntarDocumento.go()),
 
-
                 EsperarElemento.por(25),
                 WaitUntil.the(TXT_SERIE_DOCUMENTO, WebElementStateMatchers.isClickable()).forNoMoreThan(120).seconds(),
                 Enter.theValue("FRED").into(TXT_SERIE_DOCUMENTO),
@@ -194,10 +193,8 @@ public class AdjuntarDocumentos implements Task {
                 Scroll.on(BTN_REPORTE_OPERATORIO),
                 WaitUntil.the(BTN_REPORTE_OPERATORIO, WebElementStateMatchers.isClickable()).forNoMoreThan(120).seconds(),
                 Tap.on(BTN_REPORTE_OPERATORIO),
-                Tap.siElElementoEsVisible(BTN_ENTENDIDO),
-
+                Check.whether(ComandosCapabilities.isAndroid(actor)).andIfSo(Tap.siElElementoEsVisible(BTN_ENTENDIDO)),
                 Check.whether(!v_environment.contains("documento")).andIfSo(TomarFoto.go()).otherwise(AdjuntarDocumento.go()),
-
                 WaitUntil.the(BTN_CONTINUAR, WebElementStateMatchers.isClickable()).forNoMoreThan(120).seconds(),
                 Tap.on(BTN_CONTINUAR),
                 Check.whether(ComandosCapabilities.isAndroid(actor)).andIfSo(

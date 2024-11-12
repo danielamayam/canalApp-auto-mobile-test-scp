@@ -32,9 +32,9 @@ public class UiReembolso {
 
     public static final Target BTN_TOMAR_FOTO= Target.the("Botón tomar foto")
             .locatedForAndroid(AppiumBy.xpath("//android.widget.TextView[@resource-id=\"com.rimac.rimac_surrogas.qa:id/description\" and @text=\"Tomar una foto\"]"))
-            .locatedForIOS(AppiumBy.xpath("//XCUIElementTypeButton[@name=\"Tomar una foto\"]"));
+            .locatedForIOS(AppiumBy.id("Tomar una foto"));
 
-    public static final Target BTN_ALERT_PERMITIR= Target.the("Botón tomar foto")
+    public static final Target BTN_ALERT_PERMITIR= Target.the("Botón permitir")
             .locatedForAndroid(AppiumBy.xpath("pendiente"))
             .locatedForIOS(AppiumBy.xpath("//XCUIElementTypeButton[@name=\"Permitir\"]"));
 
@@ -44,7 +44,7 @@ public class UiReembolso {
 
     public static final Target BTN_USAR_FOTO= Target.the("Botón tomar foto")
             .locatedForAndroid(AppiumBy.xpath("(//android.widget.Button[@content-desc=\"Aceptar\"]) | (//android.widget.Button[@content-desc=\"OK\"])"))
-            .locatedForIOS(AppiumBy.xpath("(//XCUIElementTypeStaticText[@name=\"Usar foto\"]) | (//XCUIElementTypeButton[@name=\"Done\"])"));
+            .locatedForIOS(AppiumBy.xpath("(//XCUIElementTypeButton[@name=\"Done\"])"));
 
     public static final Target BTN_DOCUMENTO= Target.the("Botón entendido")
             .locatedForAndroid(AppiumBy.xpath("(/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/androidx.drawerlayout.widget.DrawerLayout/android.widget.ScrollView/android.widget.FrameLayout/android.widget.FrameLayout[2]/android.widget.LinearLayout/android.view.ViewGroup/android.widget.GridView/androidx.cardview.widget.CardView/androidx.cardview.widget.CardView)[1]"))

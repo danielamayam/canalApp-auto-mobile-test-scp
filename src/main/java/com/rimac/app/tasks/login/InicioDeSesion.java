@@ -7,6 +7,7 @@ import com.rimac.app.interactions.Hide;
 import com.rimac.app.interactions.app.NewOmitirAlertas;
 import com.rimac.app.interactions.app.OmitirAlertas;
 import com.rimac.app.interactions.app.SkipAlerts;
+import com.rimac.app.interactions.app.SkipLog;
 import com.rimac.app.interactions.builders.Tap;
 import com.rimac.app.models.Login;
 import com.rimac.app.util.constantes.Mensajes;
@@ -49,7 +50,8 @@ public class InicioDeSesion implements Task {
                     Click.on(BTN_CONTINUAR),
                     EsperarElemento.por(5),
                     SkipAlerts.dismissAlerts(),
-                    EsperarElemento.por(30)
+                    EsperarElemento.por(30),
+                    SkipLog.dismissAlerts()
 
             );
         } catch (RuntimeException ex) {

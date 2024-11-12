@@ -1,9 +1,11 @@
 package com.rimac.app.interactions.app;
 
+import com.rimac.app.interactions.ComandosCapabilities;
 import com.rimac.app.interactions.builders.Tap;
 import net.serenitybdd.core.steps.Instrumented;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Interaction;
+import net.serenitybdd.screenplay.conditions.Check;
 import net.serenitybdd.screenplay.matchers.WebElementStateMatchers;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 
@@ -13,8 +15,10 @@ public class AdjuntarDocumento implements Interaction {
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
-                WaitUntil.the(BTN_ADJUNTAR_DOCUMENTO, WebElementStateMatchers.isClickable()).forNoMoreThan(120).seconds(),
-                Tap.on(BTN_ADJUNTAR_DOCUMENTO),
+                Check.whether(ComandosCapabilities.isAndroid(actor)).andIfSo(
+                        WaitUntil.the(BTN_ADJUNTAR_DOCUMENTO, WebElementStateMatchers.isClickable()).forNoMoreThan(120).seconds(),
+                        Tap.on(BTN_ADJUNTAR_DOCUMENTO)
+                ),
                 Tap.siElElementoEsVisible(BTN_ALERT_PERMITIR),
                 Tap.on(BTN_DOCUMENTO)
         );
