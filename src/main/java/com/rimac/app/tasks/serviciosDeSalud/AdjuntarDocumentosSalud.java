@@ -3,7 +3,9 @@ package com.rimac.app.tasks.serviciosDeSalud;
 import com.rimac.app.interactions.ComandosCapabilities;
 import com.rimac.app.interactions.EsperarElemento;
 import com.rimac.app.interactions.Hide;
+import com.rimac.app.interactions.app.AdjuntarDocumento;
 import com.rimac.app.interactions.app.MenuItem;
+import com.rimac.app.interactions.app.TomarFoto;
 import com.rimac.app.interactions.builders.Scroll;
 import com.rimac.app.interactions.builders.Tap;
 import net.serenitybdd.screenplay.Actor;
@@ -13,6 +15,8 @@ import net.serenitybdd.screenplay.actions.Enter;
 import net.serenitybdd.screenplay.conditions.Check;
 import net.serenitybdd.screenplay.matchers.WebElementStateMatchers;
 import net.serenitybdd.screenplay.waits.WaitUntil;
+import net.thucydides.model.environment.SystemEnvironmentVariables;
+import net.thucydides.model.util.EnvironmentVariables;
 
 import static com.rimac.app.userInterfaces.UiMenu.BTN_HOME;
 import static com.rimac.app.userInterfaces.UiReembolso.*;
@@ -21,19 +25,18 @@ import static com.rimac.app.userInterfaces.UiServiciosDeSalud.BTN_ACEPTAR;
 import static com.rimac.app.userInterfaces.UiServiciosDeSalud.BTN_REEMBOLSO_DE_SALUD;
 
 public class AdjuntarDocumentosSalud implements Task {
+    static EnvironmentVariables variables = SystemEnvironmentVariables.createEnvironmentVariables();
     @Override
     public <T extends Actor> void performAs(T actor) {
+        String v_environment = variables.getProperty("reembolso");
         actor.attemptsTo(
                 WaitUntil.the(BTN_FACTURA, WebElementStateMatchers.isClickable()).forNoMoreThan(120).seconds(),
                 Tap.on(BTN_FACTURA),
                 EsperarElemento.por(10),
                 Tap.on(BTN_ENTENDIDO),
-                WaitUntil.the(BTN_ADJUNTAR_DOCUMENTO, WebElementStateMatchers.isClickable()).forNoMoreThan(120).seconds(),
-                EsperarElemento.por(5),
-                Tap.on(BTN_ADJUNTAR_DOCUMENTO),
-                Tap.siElElementoEsVisible(BTN_ALERT_PERMITIR),
-                EsperarElemento.por(5),
-                Tap.on(BTN_DOCUMENTO),
+
+                Check.whether(!v_environment.contains("documento")).andIfSo(TomarFoto.go()).otherwise(AdjuntarDocumento.go()),
+
 
                 EsperarElemento.por(25),
                 WaitUntil.the(TXT_SERIE_DOCUMENTO, WebElementStateMatchers.isClickable()).forNoMoreThan(120).seconds(),
@@ -60,10 +63,9 @@ public class AdjuntarDocumentosSalud implements Task {
                 WaitUntil.the(BTN_BOLETA, WebElementStateMatchers.isClickable()).forNoMoreThan(120).seconds(),
                 Tap.on(BTN_BOLETA),
                 Tap.siElElementoEsVisible(BTN_ENTENDIDO),
-                WaitUntil.the(BTN_ADJUNTAR_DOCUMENTO, WebElementStateMatchers.isClickable()).forNoMoreThan(120).seconds(),
-                Tap.on(BTN_ADJUNTAR_DOCUMENTO),
-                Tap.siElElementoEsVisible(BTN_ALERT_PERMITIR),
-                Tap.on(BTN_DOCUMENTO),
+                Check.whether(!v_environment.contains("documento")).andIfSo(TomarFoto.go()).otherwise(AdjuntarDocumento.go()),
+
+
 
                 EsperarElemento.por(25),
                 WaitUntil.the(TXT_RUCO, WebElementStateMatchers.isClickable()).forNoMoreThan(120).seconds(),
@@ -94,10 +96,9 @@ public class AdjuntarDocumentosSalud implements Task {
                 WaitUntil.the(BTN_RECETA_MEDICA, WebElementStateMatchers.isClickable()).forNoMoreThan(120).seconds(),
                 Tap.on(BTN_RECETA_MEDICA),
                 Tap.siElElementoEsVisible(BTN_ENTENDIDO),
-                WaitUntil.the(BTN_ADJUNTAR_DOCUMENTO, WebElementStateMatchers.isClickable()).forNoMoreThan(120).seconds(),
-                Tap.on(BTN_ADJUNTAR_DOCUMENTO),
-                Tap.siElElementoEsVisible(BTN_ALERT_PERMITIR),
-                Tap.on(BTN_DOCUMENTO),
+                Check.whether(!v_environment.contains("documento")).andIfSo(TomarFoto.go()).otherwise(AdjuntarDocumento.go()),
+
+
 
                 WaitUntil.the(BTN_CONTINUAR, WebElementStateMatchers.isClickable()).forNoMoreThan(120).seconds(),
                 Tap.on(BTN_CONTINUAR),
