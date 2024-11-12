@@ -10,6 +10,7 @@ import net.serenitybdd.screenplay.matchers.WebElementStateMatchers;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 import static com.rimac.app.userInterfaces.UiCrossellRenovacion.BTN_CONTINUAR;
 import static com.rimac.app.userInterfaces.UiServiciosDeSalud.*;
+import static com.rimac.app.userInterfaces.UiServiciosVehiculares.BTN_CANCELAR;
 
 public class FormularioClinica implements Interaction {
 
@@ -27,6 +28,7 @@ public class FormularioClinica implements Interaction {
                 Tap.on(LBL_PACIENTE),
                 Tap.on(BTN_CONTINUAR),
                 EsperarElemento.por(5),
+                Tap.siElElementoEsVisible(BTN_CANCELAR),
                 Tap.siElElementoEsVisible(BTN_CANCELAR_LACALIZACION),
                 Tap.on(BTN_BUSCAR),
                 Enter.theValue(nombre).into(TXT_BUSCAR),
