@@ -78,7 +78,7 @@ public class UIAlertas {
     };
 
     public static final Target LBL_SEGUROS = Target.the("Label home seguros")
-            .locatedForAndroid(AppiumBy.xpath("(//android.widget.TextView[@text='Por ahora no']) | (//android.widget.Button[@resource-id=\"com.rimac.rimac_surrogas.qa:id/btn_not_yet\"]) | (//android.widget.Button[@text='Por ahora no']) | (//*[@text='Entendido']) | (//android.widget.Button[@text='Conocer más']) | (//*[@text='Activa tu seguro vehicular hoy']//preceding-sibling::android.widget.ImageButton[@content-desc='Cerrar modal']) | (//*[@text='Estar Bien']//preceding-sibling::android.widget.ImageButton[ends-with(@resource-id,'dialog_close')]) | (//android.widget.Button[@text='Vamos a Estar Bien']) | (//android.widget.ImageButton[@content-desc=\"Cerrar modal\"])"))
+            .locatedForAndroid(AppiumBy.xpath("//android.widget.TextView[@resource-id=\"com.rimac.rimac_surrogas.qa:id/textView43\"]"))
             .locatedForIOS(AppiumBy.xpath("(//XCUIElementTypeStaticText[@name=\"Seguros\"])[1]"));
 
 
