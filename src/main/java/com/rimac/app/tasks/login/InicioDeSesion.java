@@ -50,7 +50,7 @@ public class InicioDeSesion implements Task {
                     Click.on(BTN_CONTINUAR),
                     EsperarElemento.por(5),
                     SkipAlerts.dismissAlerts(),
-                    EsperarElemento.por(30),
+                    EsperarElemento.por(10),
                     SkipLog.dismissAlerts()
 
             );

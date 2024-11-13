@@ -1,6 +1,6 @@
 #Author: Daniel Amaya Marín
 
-@ModuloServiciosDeSalud_7 @Regresion
+@ModuloServiciosDeSalud_7 @Reembolso
 Feature: Servicios de Salud - Reembolso
 
   @reembolsoSaludSinBeneficiarioDesdeMenuTramites @seguimientoReembolsoSinBeneficiariosDesdeTramite

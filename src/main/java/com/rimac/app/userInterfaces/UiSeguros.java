@@ -74,7 +74,7 @@ public class UiSeguros {
     public static Target LBL_NUMERO_TARJETA(String numero) {
         return Target.the("Card seguro vehicular")
                 .locatedForAndroid(AppiumBy.xpath("(//android.widget.TextView[@text='**** "+numero+"'])[1]"))
-                .locatedForIOS(AppiumBy.xpath("(//XCUIElementTypeStaticText[@name='**** "+numero+"'])[1]"));
+                .locatedForIOS(AppiumBy.xpath("(//XCUIElementTypeStaticText[contains(@name, '- *"+numero+"')])[1]"));
     }
 
     public static final Target BTN_ALERTA_ANDROID = Target.the("Guardar Datos").located(By.id("android:id/autofill_save_no"));
@@ -177,7 +177,7 @@ public class UiSeguros {
     public static Target BTN_NUMERO_TARJETA(String numero) {
         return Target.the("Card tarjeta")
                 .locatedForAndroid(AppiumBy.xpath("(//android.widget.TextView[@text='**** "+numero+"'])[1]"))
-                .locatedForIOS(AppiumBy.xpath("(//XCUIElementTypeStaticText[@name='**** "+numero+"']//following-sibling::XCUIElementTypeButton)[1]"));
+                .locatedForIOS(AppiumBy.xpath("//XCUIElementTypeStaticText[contains(@name, '- *"+numero+"')]//following-sibling::XCUIElementTypeButton)[1]"));
     }
 
     public static final Target BTN_ELIMINAR = Target.the("Botón Eliminar")
