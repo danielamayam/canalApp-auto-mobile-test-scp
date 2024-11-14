@@ -139,7 +139,7 @@ public class Hook extends BaseDriver {
         long duration = System.currentTimeMillis() - startTime;
         if (v_environment.contains("true")) {
             String testCaseKey = obtenerTestCaseKeyDelTag(scenario);
-            String testCycleKey = obtenerTestCycleKeyDelTag(scenario);
+            String testCycleKey = variables.getProperty("testCycleKey");
             String status = scenario.isFailed() ? "Failed" : "Passed";
             String comment = scenario.isFailed() ? "El escenario falló: " + scenario.getName() : "El escenario pasó exitosamente";
             OnStage.theActorInTheSpotlight().attemptsTo(
@@ -154,13 +154,5 @@ public class Hook extends BaseDriver {
                 .findFirst()
                 .map(tag -> tag.replace("@TestCaseKey:", ""))
                 .orElseThrow(() -> new RuntimeException("No se encontró el tag de TestCaseKey"));
-    }
-
-    private String obtenerTestCycleKeyDelTag(Scenario scenario) {
-        return scenario.getSourceTagNames().stream()
-                .filter(tag -> tag.startsWith("@TestCycleKey:"))
-                .findFirst()
-                .map(tag -> tag.replace("@TestCycleKey:", ""))
-                .orElseThrow(() -> new RuntimeException("No se encontró el tag de TestCycleKey"));
     }
 }
