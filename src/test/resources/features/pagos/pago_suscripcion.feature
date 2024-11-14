@@ -4,7 +4,7 @@
 Feature: pagos
 
 
-  @SucripcionDesdePagos
+  @SucripcionDesdePagos @TestCaseKey:TDARA-T206
   Scenario Outline: Usuario suscribe su tarjeta desde medios de pagos
     Given que "Daniel" inicia sesión correctamente
       | numeroUsuario   | contrasena   |
@@ -19,7 +19,7 @@ Feature: pagos
       ##@externaldata@./src/test/resources/datadriven/Pagos/Pago_suscripcion_data.xlsx@SucripcionDesdePagos@1
 
 
-  @SucripcionDesdePerfil
+  @SucripcionDesdePerfil @TestCaseKey:TDARA-T207
   Scenario Outline: Usuario suscribe su tarjeta desde mi perfil
     Given que "Daniel" inicia sesión correctamente
       | numeroUsuario   | contrasena   |
@@ -34,7 +34,7 @@ Feature: pagos
     ##@externaldata@./src/test/resources/datadriven/Pagos/Pago_suscripcion_data.xlsx@SucripcionDesdePerfil@1
 
 
-  @SucripcionDesdeAfiliacion
+  @SucripcionDesdeAfiliacion @TestCaseKey:TDARA-T208
   Scenario Outline: Usuario suscribe su tarjeta desde afiliación
     Given que "Daniel" inicia sesión correctamente
       | numeroUsuario   | contrasena   |
@@ -50,7 +50,7 @@ Feature: pagos
     ##@externaldata@./src/test/resources/datadriven/Pagos/Pago_suscripcion_data.xlsx@SucripcionDesdeAfiliacion@1
 
 
-  @SucripcionDesdeOpcionPagar
+  @SucripcionDesdeOpcionPagar @TestCaseKey:TDARA-T209
   Scenario Outline: Usuario suscribe su tarjeta desde la opción pagar
     Given que "Daniel" inicia sesión correctamente
       | numeroUsuario   | contrasena   |
@@ -66,7 +66,7 @@ Feature: pagos
     ##@externaldata@./src/test/resources/datadriven/Pagos/Pago_suscripcion_data.xlsx@SucripcionDesdeOpcionPagar@1
 
 
-  @EliminarMedioDePago
+  @EliminarMedioDePago @TestCaseKey:TDARA-T939
   Scenario Outline: Usuario elimina un medio de pago
     Given que "Daniel" inicia sesión correctamente
       | numeroUsuario   | contrasena   |
