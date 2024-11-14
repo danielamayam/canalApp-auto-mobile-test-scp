@@ -4,14 +4,18 @@ import com.rimac.app.interactions.ChangeToNaviteContext;
 import com.rimac.app.interactions.ChangeToWebContext;
 import com.rimac.app.interactions.ComandosCapabilities;
 import com.rimac.app.interactions.GetDriver;
+import com.rimac.app.tasks.utils.ActualizarEjecucionZephyrScale;
 import com.rimac.app.util.BaseDriver;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
+import io.cucumber.java.Scenario;
 import jakarta.mail.*;
 import jakarta.mail.internet.InternetAddress;
 import jakarta.mail.internet.MimeBodyPart;
 import jakarta.mail.internet.MimeMessage;
 import jakarta.mail.internet.MimeMultipart;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import net.serenitybdd.screenplay.actors.OnStage;
 import net.serenitybdd.screenplay.actors.OnlineCast;
 import net.thucydides.core.steps.StepEventBus;
@@ -19,37 +23,43 @@ import net.thucydides.model.domain.TestOutcome;
 import net.thucydides.model.environment.SystemEnvironmentVariables;
 import net.thucydides.model.util.EnvironmentVariables;
 import org.openqa.selenium.JavascriptExecutor;
+
 import java.io.File;
 import java.util.Properties;
+
 import static com.rimac.app.util.enums.ConstantesCorreo.CORREO_DESTINO;
 import static com.rimac.app.util.enums.ConstantesCorreo.CORREO_REMITENTE;
 
 
 public class Hook extends BaseDriver {
     static EnvironmentVariables variables = SystemEnvironmentVariables.createEnvironmentVariables();
+    private long startTime;
 
     @Before
-    public void setUp(){
+    public void setUp() {
         OnStage.setTheStage(new OnlineCast());
     }
+    @Before
+    public void beforeScenario() {
+        startTime = System.currentTimeMillis();
+    }
 
-
-   @After
+    @After
     public void tearDown() {
         String v_environment = variables.getProperty("environment");
 
-       if (ComandosCapabilities.isiOS(OnStage.theActorInTheSpotlight()) && v_environment.contains("local")){
-           GetDriver.as(OnStage.theActorInTheSpotlight()).iosDriver().terminateApp("com.abletoaid.rimaciphoneapp");
-       }
+        if (ComandosCapabilities.isiOS(OnStage.theActorInTheSpotlight()) && v_environment.contains("local")) {
+            GetDriver.as(OnStage.theActorInTheSpotlight()).iosDriver().terminateApp("com.abletoaid.rimaciphoneapp");
+        }
 
         if (!v_environment.contains("local")) {
             TestOutcome outcome = StepEventBus.getEventBus().getBaseStepListener().getCurrentTestOutcome();
             System.out.println("SauceOnDemandSessionID=" + appiumDriver().getSessionId().toString() + " job-name=" + outcome.getCompleteName());
-            if (ComandosCapabilities.isiOS(OnStage.theActorInTheSpotlight())){
+            if (ComandosCapabilities.isiOS(OnStage.theActorInTheSpotlight())) {
                 ChangeToWebContext.isWeb();
             }
             ((JavascriptExecutor) appiumDriver()).executeScript("sauce:job-name=" + outcome.getCompleteName() + "");
-            if (ComandosCapabilities.isiOS(OnStage.theActorInTheSpotlight())){
+            if (ComandosCapabilities.isiOS(OnStage.theActorInTheSpotlight())) {
                 ChangeToNaviteContext.isNativo();
             }
 
@@ -121,5 +131,36 @@ public class Hook extends BaseDriver {
         } catch (Exception ex) {
             ex.printStackTrace();
         }
+    }
+
+    @After
+    public void actualizarZephyrScale(Scenario scenario) {
+        String v_environment = variables.getProperty("jira");
+        long duration = System.currentTimeMillis() - startTime;
+        if (v_environment.contains("true")) {
+            String testCaseKey = obtenerTestCaseKeyDelTag(scenario);
+            String testCycleKey = obtenerTestCycleKeyDelTag(scenario);
+            String status = scenario.isFailed() ? "Failed" : "Passed";
+            String comment = scenario.isFailed() ? "El escenario falló: " + scenario.getName() : "El escenario pasó exitosamente";
+            OnStage.theActorInTheSpotlight().attemptsTo(
+                    ActualizarEjecucionZephyrScale.conResultado(testCaseKey, testCycleKey, status, comment, duration)
+            );
+        }
+    }
+
+    private String obtenerTestCaseKeyDelTag(Scenario scenario) {
+        return scenario.getSourceTagNames().stream()
+                .filter(tag -> tag.startsWith("@TestCaseKey:"))
+                .findFirst()
+                .map(tag -> tag.replace("@TestCaseKey:", ""))
+                .orElseThrow(() -> new RuntimeException("No se encontró el tag de TestCaseKey"));
+    }
+
+    private String obtenerTestCycleKeyDelTag(Scenario scenario) {
+        return scenario.getSourceTagNames().stream()
+                .filter(tag -> tag.startsWith("@TestCycleKey:"))
+                .findFirst()
+                .map(tag -> tag.replace("@TestCycleKey:", ""))
+                .orElseThrow(() -> new RuntimeException("No se encontró el tag de TestCycleKey"));
     }
 }

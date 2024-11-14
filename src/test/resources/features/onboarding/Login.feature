@@ -3,13 +3,14 @@
 @Onboarding_3 @Regresion
 Feature: onboarding
 
-  @Login @ScenarioWithoutData
+  @Login @ScenarioWithoutData @TestCaseKey:TDARA-T194
   Scenario Outline: Usuario inicia sesión en Rimac para acceder a todos los servicios
     Given que "Daniel" ingreso en la aplicacion Rimac
     When se ingresan credenciales correctamente
       | numeroUsuario   | contrasena   |
       | <numeroUsuario> | <contrasena> |
     Then válido el inicio de sesión correctamente
+
 
     Examples: Tabla
       | numeroUsuario | contrasena |
