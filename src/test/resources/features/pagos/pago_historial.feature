@@ -3,7 +3,7 @@
 @ModuloPagos_15
 Feature: pagos
 
-  @CronogramaPagosVehicular  # Necesita Data para la ejecución
+  @CronogramaPagosVehicular
   Scenario Outline: Usuario visualiza el cronograma de pagos de la póliza vehicular
     Given que "Daniel" inicia sesión correctamente
       | numeroUsuario   | contrasena   |
@@ -14,6 +14,7 @@ Feature: pagos
     Examples: Tabla
       | numeroUsuario | contrasena | placa   | vigencia   |
     ##@externaldata@./src/test/resources/datadriven/Pagos/Pago_historial_data.xlsx@CronogramaPagosVehicular@1
+   |72636759   |Rimac2020   |ZIJ-583   |12/11/2025|
 
 
   @HistorialPagos
@@ -27,6 +28,7 @@ Feature: pagos
     Examples: Tabla
       | numeroUsuario | contrasena | placa   | vigencia   |
     ##@externaldata@./src/test/resources/datadriven/Pagos/Pago_historial_data.xlsx@HistorialPagos@1
+   |72934725   |Rimac2020   |XFN-363   |06/11/2025|
 
 
   @DescargaHistorialPagos
@@ -41,6 +43,7 @@ Feature: pagos
     Examples: Tabla
       | numeroUsuario | contrasena | placa   | vigencia   |
   ##@externaldata@./src/test/resources/datadriven/Pagos/Pago_historial_data.xlsx@DescargaHistorialPagos@1
+   |72934725   |Rimac2020   |XFN-363   |06/11/2025|
 
 
 #  @CronogramaPagosEPS @Pendiente #--------------------------------- ------------------------------
