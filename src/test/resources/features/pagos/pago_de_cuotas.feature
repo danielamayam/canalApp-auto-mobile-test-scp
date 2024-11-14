@@ -4,7 +4,7 @@
 Feature: Pagos
 
 
-  @PagoSinTarjetaAsociada
+  @PagoSinTarjetaAsociada @TestCaseKey:TDARA-T196
   Scenario Outline: Usuario paga su seguro vehicular exitosamente sin tarjeta asociada
     Given que "Daniel" inicia sesión correctamente
       | numeroUsuario   | contrasena   |
@@ -20,7 +20,7 @@ Feature: Pagos
     ##@externaldata@./src/test/resources/datadriven/Pagos/Pago_de_cuotas_data.xlsx@PagoSinTarjetaAsociada@1
 
 
-  @PagoAfiliadoDebitoAuto
+  @PagoAfiliadoDebitoAuto @TestCaseKey:TDARA-T197
   Scenario Outline: Usuario realiza el pago estando afiliado a debito automatico
     Given que "Daniel" inicia sesión correctamente
       | numeroUsuario   | contrasena   |
@@ -36,7 +36,7 @@ Feature: Pagos
     ##@externaldata@./src/test/resources/datadriven/Pagos/Pago_de_cuotas_data.xlsx@PagoAfiliadoDebitoAuto@1
 
 
-  @PagoConValidacionHistorial
+  @PagoConValidacionHistorial @TestCaseKey:TDARA-T198
   Scenario Outline: Usuario realiza el pago del seguro vehicular validando el historial de pago
     Given que "Daniel" inicia sesión correctamente
       | numeroUsuario   | contrasena   |
@@ -53,7 +53,7 @@ Feature: Pagos
     ##@externaldata@./src/test/resources/datadriven/Pagos/Pago_de_cuotas_data.xlsx@PagoConValidacionHistorial@1
 
 
-  @PagoConTarjetaAsociada
+  @PagoConTarjetaAsociada @TestCaseKey:TDARA-T199
   Scenario Outline: Usuario realiza el pago del seguro vehicular con tarjeta asociada
     Given que "Daniel" inicia sesión correctamente
       | numeroUsuario   | contrasena   |
@@ -67,7 +67,7 @@ Feature: Pagos
      ##@externaldata@./src/test/resources/datadriven/Pagos/Pago_de_cuotas_data.xlsx@PagoConTarjetaAsociada@1
 
 
-  @PagoAsociandoTarjeta
+  @PagoAsociandoTarjeta @TestCaseKey:TDARA-T200
   Scenario Outline: Usuario realiza pago exitoso asociando tarjeta
     Given que "Daniel" inicia sesión correctamente
       | numeroUsuario   | contrasena   |
@@ -83,7 +83,7 @@ Feature: Pagos
          ##@externaldata@./src/test/resources/datadriven/Pagos/Pago_de_cuotas_data.xlsx@PagoAsociandoTarjeta@1
 
 
-  @PagoPolizaSoat
+  @PagoPolizaSoat @TestCaseKey:TDARA-T201
   Scenario Outline: Usuario valida pago de poliza SOAT
     Given que "Daniel" inicia sesión correctamente
       | numeroUsuario   | contrasena   |
@@ -96,7 +96,7 @@ Feature: Pagos
     ##@externaldata@./src/test/resources/datadriven/Pagos/Pago_de_cuotas_data.xlsx@PagoPolizaSoat@1
 
 
-  @PagoInfoNoDisponible
+  @PagoInfoNoDisponible @TestCaseKey:TDARA-T202
   Scenario Outline: Usuario valida la pantalla de pago cuando el pagador es diferente al asegurado
     Given que "Daniel" inicia sesión correctamente
       | numeroUsuario   | contrasena   |

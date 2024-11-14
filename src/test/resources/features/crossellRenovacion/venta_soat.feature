@@ -3,7 +3,7 @@
 @ModuloCrossellRenovacion_1 @Regresion
 Feature: Venta SOAT
 
-  @CompraSOATDigital
+  @CompraSOATDigital @TestCaseKey:TDARA-T193
   Scenario Outline: Usuario compra un plan SOAT digital
     Given que "Daniel" inicia sesión correctamente
       | numeroUsuario   | contrasena   |

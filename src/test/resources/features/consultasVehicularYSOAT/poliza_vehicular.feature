@@ -4,7 +4,7 @@
 Feature: Consulta vehicular y soat - Poliza Vehicular
 
 
-  @ConsultaNumeroDePolizaVehiSoat
+  @ConsultaNumeroDePolizaVehiSoat @TestCaseKey:TDARA-T185
   Scenario Outline: Usuario consulta el numero de la poliza - soat
     Given que "Daniel" inicia sesión correctamente
       | numeroUsuario   | contrasena   |
@@ -18,7 +18,7 @@ Feature: Consulta vehicular y soat - Poliza Vehicular
 
 
 
-  @ConsultarDeudasSaldosdePoliza
+  @ConsultarDeudasSaldosdePoliza @TestCaseKey:TDARA-T186
   Scenario Outline: Usuario consulta deuda y saldo de la poliza - vehicular
     Given que "Daniel" inicia sesión correctamente
       | numeroUsuario   | contrasena   |
@@ -32,7 +32,7 @@ Feature: Consulta vehicular y soat - Poliza Vehicular
 
 
 
-  @DescargaPolizaVehicularDigital
+  @DescargaPolizaVehicularDigital @TestCaseKey:TDARA-T187
   Scenario Outline: Usuario descarga póliza digital del seguro vehicular
     Given que "Daniel" inicia sesión correctamente
       | numeroUsuario   | contrasena   |
@@ -46,7 +46,7 @@ Feature: Consulta vehicular y soat - Poliza Vehicular
 
 
 
-  @ConsultaCoberturas
+  @ConsultaCoberturas @TestCaseKey:TDARA-T242
   Scenario Outline: Usuario consulta la cobertura del seguro vehicular
     Given que "Daniel" inicia sesión correctamente
       | numeroUsuario   | contrasena   |

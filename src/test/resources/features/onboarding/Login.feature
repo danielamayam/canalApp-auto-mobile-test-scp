@@ -3,7 +3,7 @@
 @Onboarding_3 @Regresion
 Feature: onboarding
 
-  @Login @ScenarioWithoutData @TestCaseKey:TDARA-T194
+  @Login @TestCaseKey:TDARA-T194
   Scenario Outline: Usuario inicia sesión en Rimac para acceder a todos los servicios
     Given que "Daniel" ingreso en la aplicacion Rimac
     When se ingresan credenciales correctamente
@@ -18,7 +18,7 @@ Feature: onboarding
    |10318552   |Rimac2020|
 
 
-  @LogOut @ScenarioWithoutData
+  @LogOut @TestCaseKey:TDARA-T195
   Scenario Outline: Usuario cierra sesión después de iniciar sesión en Rimac
     Given que "Daniel" ingreso en la aplicacion Rimac
     When se ingresan credenciales correctamente
@@ -33,7 +33,7 @@ Feature: onboarding
    |10318552   |Rimac2020|
 
 
-  @OlvidasteTuContrasenia
+  @OlvidasteTuContrasenia @TestCaseKey:TDARA-T938
   Scenario Outline: Usuario recupera su contraseña
     Given que "Daniel" seleccionó la opción ¿Olvidaste tu contraseña? "<numeroUsuario>"
     When diligencia el código de validación

@@ -3,7 +3,7 @@
 @ModuloServiciosVehiculares_7 @Regresion
 Feature: Servicios Vehiculares - Asistencia Vehicular
 
-  @AsistenciaVehicularRepuesto @SeguimientoAsistenciaVehicularRepuesto
+  @AsistenciaVehicularRepuesto @SeguimientoAsistenciaVehicularRepuesto @TestCaseKey:TDARA-T212
   Scenario Outline: Usuario solicita auxilio mecanico - repuesto
     Given que "Daniel" inicia sesión correctamente
       | numeroUsuario   | contrasena   |
@@ -17,7 +17,7 @@ Feature: Servicios Vehiculares - Asistencia Vehicular
     ##@externaldata@./src/test/resources/datadriven/serviciosVehiculares/Asistencia_vehicular.xlsx@AsistenciaVehicularRepuesto@1
 
 
-  @AsistenciaVehicularGrua @SeguimientodeGrua
+  @AsistenciaVehicularGrua @SeguimientodeGrua @TestCaseKey:TDARA-T213
   Scenario Outline: Usuario realizar una solicitud de Grua
     Given que "Daniel" inicia sesión correctamente
       | numeroUsuario   | contrasena   |
@@ -31,7 +31,7 @@ Feature: Servicios Vehiculares - Asistencia Vehicular
     ##@externaldata@./src/test/resources/datadriven/serviciosVehiculares/Asistencia_vehicular.xlsx@AsistenciaVehicularGrua@1
 
 
-  @AsistenciaVehicularProblema @SeguimientoAsistenciaVehicularProblema
+  @AsistenciaVehicularProblema @SeguimientoAsistenciaVehicularProblema @TestCaseKey:TDARA-T214
   Scenario Outline: Usuario solicitar auxilio mecanico - problema
     Given que "Daniel" inicia sesión correctamente
       | numeroUsuario   | contrasena   |
@@ -46,7 +46,7 @@ Feature: Servicios Vehiculares - Asistencia Vehicular
 
 
 
-  @NecesitoAyudaAuxilioMecanico
+  @NecesitoAyudaAuxilioMecanico @TestCaseKey:TDARA-T215
   Scenario Outline: Usuario necesita ayuda para seleccionar la asistencia Vehicular - Auxilio Mecanico
     Given que "Daniel" inicia sesión correctamente
       | numeroUsuario   | contrasena   |
@@ -60,7 +60,7 @@ Feature: Servicios Vehiculares - Asistencia Vehicular
     ##@externaldata@./src/test/resources/datadriven/serviciosVehiculares/Asistencia_vehicular.xlsx@NecesitoAyudaAuxilioMecanico@1
 
 
-  @NecesitoAyudaGrua
+  @NecesitoAyudaGrua @TestCaseKey:TDARA-T447
   Scenario Outline: Usuario necesita ayuda para seleccionar la asistencia Vehicular - Grua
     Given que "Daniel" inicia sesión correctamente
       | numeroUsuario   | contrasena   |

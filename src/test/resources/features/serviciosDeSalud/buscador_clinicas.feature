@@ -4,7 +4,7 @@
 Feature: Servicios de Salud - Buscador de clinicas
 
 
-  @BuscadordeClinicasdesdeHome
+  @BuscadordeClinicasdesdeHome @TestCaseKey:TDARA-T210
   Scenario Outline: Usuario busca una clinica desde el home
     Given que "Daniel" inicia sesión correctamente
       | numeroUsuario   | contrasena   |
@@ -17,7 +17,7 @@ Feature: Servicios de Salud - Buscador de clinicas
       ##@externaldata@./src/test/resources/datadriven/serviciosDeSalud/Buscador_clinicas_data.xlsx@BuscadordeClinicasdesdeHome@1
 
 
-  @BuscadordeClinicasdesdeTramites
+  @BuscadordeClinicasdesdeTramites @TestCaseKey:TDARA-T211
   Scenario Outline: Usuario busca una clinica desde menu tramites
     Given que "Daniel" inicia sesión correctamente
       | numeroUsuario   | contrasena   |

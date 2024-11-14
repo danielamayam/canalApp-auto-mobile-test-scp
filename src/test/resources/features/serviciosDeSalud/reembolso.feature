@@ -3,7 +3,7 @@
 @ModuloServiciosDeSalud_7 @Reembolso
 Feature: Servicios de Salud - Reembolso
 
-  @reembolsoSaludSinBeneficiarioDesdeMenuTramites @seguimientoReembolsoSinBeneficiariosDesdeTramite
+  @reembolsoSaludSinBeneficiarioDesdeMenuTramites @seguimientoReembolsoSinBeneficiariosDesdeTramite @TestCaseKey:TDARA-T437
   Scenario Outline: Usuario realiza una solicitud de reembolso con cobertura medicinas sin beneficiarios desde menu Tramites
     Given que "Daniel" inicia sesión correctamente
       | numeroUsuario   | contrasena   |
@@ -19,7 +19,7 @@ Feature: Servicios de Salud - Reembolso
       | 76243722      | Rimac2020  | AMC COLECTIVA FOLA - Citibank Del Peru S.a. | Lima          | Hospitalario  |
 
 
-  @reembolsoSaludSinBeneficiarioaDesdeMenuInicio @seguimientoReembolsoDesdeInicio
+  @reembolsoSaludSinBeneficiarioaDesdeMenuInicio @seguimientoReembolsoDesdeInicio @TestCaseKey:TDARA-T439
   Scenario Outline: Usuario realiza una solicitud de reembolso sin beneficiarios desde menu Inicio
     Given que "Daniel" inicia sesión correctamente
       | numeroUsuario   | contrasena   |
@@ -35,7 +35,7 @@ Feature: Servicios de Salud - Reembolso
       | 76243722      | Rimac2020  | AMC COLECTIVA FOLA - Citibank Del Peru S.a. | Lima          | Hospitalario  |
 
 
-  @reembolsoSaludConBeneficiariosDesdeMenuTramites @seguimientoReembolsoConBeneficiariosDesdeTramite
+  @reembolsoSaludConBeneficiariosDesdeMenuTramites @seguimientoReembolsoConBeneficiariosDesdeTramite @TestCaseKey:TDARA-T441
   Scenario Outline: Usuario realiza una solicitud de reembolso con cobertura medicinas con beneficiarios desde Tramites
     Given que "Daniel" inicia sesión correctamente
       | numeroUsuario   | contrasena   |
@@ -50,7 +50,7 @@ Feature: Servicios de Salud - Reembolso
       | numeroUsuario | contrasena | productoContratante                | paciente                        | lugarAtencion | tipoCobertura |
       | 10392464      | Rimac2020  | PLANES MEDICOS EPS - Medifarma S A | Hui Humaliano Heliart - Cónyuge | Lima          | Medicinas     |
 
-  @reembolsoOdontologicoDesdeMenuTramites @seguimientoReembolsoOdontologico
+  @reembolsoOdontologicoDesdeMenuTramites @seguimientoReembolsoOdontologico @TestCaseKey:TDARA-T429
   Scenario Outline: Usuario realiza una solicitud de reembolso cliente con cobertura odontologica con beneficiarios desde menu Tramites
     Given que "Daniel" inicia sesión correctamente
       | numeroUsuario   | contrasena   |
@@ -66,7 +66,7 @@ Feature: Servicios de Salud - Reembolso
       | 10392464      | Rimac2020  | PLANES MEDICOS EPS - Medifarma S A | Madueño Armacanque Herzop Myki - Titular | Lima          | Odontología   | Ortodoncia      |
 
 
-  @reembolsoSaludSinBeneficiariosDesdeSeguros
+  @reembolsoSaludSinBeneficiariosDesdeSeguros @TestCaseKey:TDARA-T443
   Scenario Outline: Usuario realiza una solicitud de reembolso sin beneficiarios desde detalle de seguro salud
     Given que "Daniel" inicia sesión correctamente
       | numeroUsuario   | contrasena   |

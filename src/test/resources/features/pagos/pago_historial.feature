@@ -3,7 +3,7 @@
 @ModuloPagos_15
 Feature: pagos
 
-  @CronogramaPagosVehicular
+  @CronogramaPagosVehicular @TestCaseKey:TDARA-T203
   Scenario Outline: Usuario visualiza el cronograma de pagos de la póliza vehicular
     Given que "Daniel" inicia sesión correctamente
       | numeroUsuario   | contrasena   |
@@ -17,7 +17,7 @@ Feature: pagos
    |72636759   |Rimac2020   |ZIJ-583   |12/11/2025|
 
 
-  @HistorialPagos
+  @HistorialPagos @TestCaseKey:TDARA-T204
   Scenario Outline: Usuario visualiza el historial de pagos de su poliza vehicular
     Given que "Daniel" inicia sesión correctamente
       | numeroUsuario   | contrasena   |
@@ -31,7 +31,7 @@ Feature: pagos
    |72934725   |Rimac2020   |XFN-363   |06/11/2025|
 
 
-  @DescargaHistorialPagos
+  @DescargaHistorialPagos @TestCaseKey:TDARA-T205
   Scenario Outline: Usuario descarga el historial de pagos de su póliza vehicular
     Given que "Daniel" inicia sesión correctamente
       | numeroUsuario   | contrasena   |

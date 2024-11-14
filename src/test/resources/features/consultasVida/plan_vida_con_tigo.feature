@@ -3,7 +3,7 @@
 @ModuloConsultasVida_9 @Regresion
 Feature: Consultas Vida - Plan Vida Contigo
 
-  @DescargaManualdeUsoPlanVidaContigo
+  @DescargaManualdeUsoPlanVidaContigo @TestCaseKey:TDARA-T188
   Scenario Outline: Usuario descarga el manual de uso de su poliza desde poliza del producto vida contigo
     Given que "Daniel" inicia sesión correctamente
       | numeroUsuario   | contrasena   |
@@ -17,7 +17,7 @@ Feature: Consultas Vida - Plan Vida Contigo
 
 
 
-  @ConsultarDeudasSaldoVidaContigo
+  @ConsultarDeudasSaldoVidaContigo @TestCaseKey:TDARA-T243
   Scenario Outline: Usuario visualiza la deuda y los saldos de la póliza del producto Vida contigo.
     Given que "Daniel" inicia sesión correctamente
       | numeroUsuario   | contrasena   |
@@ -31,7 +31,7 @@ Feature: Consultas Vida - Plan Vida Contigo
 
 
 
-  @ConsultarCoberturasPolizaVidaContigo
+  @ConsultarCoberturasPolizaVidaContigo @TestCaseKey:TDARA-T189
   Scenario Outline: Usuario consulta la cobertura de la póliza del producto Vida contigo.
     Given que "Daniel" inicia sesión correctamente
       | numeroUsuario   | contrasena   |
@@ -45,7 +45,7 @@ Feature: Consultas Vida - Plan Vida Contigo
 
 
 
-  @ConsultarInformacionPolizaVidaContigo
+  @ConsultarInformacionPolizaVidaContigo @TestCaseKey:TDARA-T190
   Scenario Outline: Usuario consulta la información de la poliza del producto Vida contigo
     Given que "Daniel" inicia sesión correctamente
       | numeroUsuario   | contrasena   |
@@ -58,7 +58,7 @@ Feature: Consultas Vida - Plan Vida Contigo
 ##@externaldata@./src/test/resources/datadriven/consultasVida/Plan_vida_data.xlsx@Scenario4@1
 
 
-  @ConsultarInformacionDelBeneficiario
+  @ConsultarInformacionDelBeneficiario @TestCaseKey:TDARA-T421
   Scenario Outline: Usuario consulta la información del beneficiario
     Given que "Daniel" inicia sesión correctamente
       | numeroUsuario   | contrasena   |
