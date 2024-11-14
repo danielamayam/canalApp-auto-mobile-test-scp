@@ -1,6 +1,6 @@
 #Author: Daniel Amaya Marín
 
-@ModuloPagos_15
+@ModuloPagos_15 @PagoDeCuotas
 Feature: Pagos
 
 
