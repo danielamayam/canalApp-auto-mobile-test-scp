@@ -25,7 +25,9 @@ import net.thucydides.model.util.EnvironmentVariables;
 import org.openqa.selenium.JavascriptExecutor;
 
 import java.io.File;
+import java.util.List;
 import java.util.Properties;
+import java.util.stream.Collectors;
 
 import static com.rimac.app.util.enums.ConstantesCorreo.CORREO_DESTINO;
 import static com.rimac.app.util.enums.ConstantesCorreo.CORREO_REMITENTE;
@@ -139,21 +141,23 @@ public class Hook extends BaseDriver {
         String v_environment = variables.getProperty("jira");
         long duration = System.currentTimeMillis() - startTime;
         if (v_environment.contains("true")) {
-            String testCaseKey = obtenerTestCaseKeyDelTag(scenario);
+            List<String> testCaseKeys = obtenerTestCaseKeysDelTag(scenario);
             String testCycleKey = variables.getProperty("testCycleKey");
             String status = scenario.isFailed() ? "Failed" : "Passed";
             String comment = scenario.isFailed() ? "El escenario falló: " + scenario.getName() : "El escenario pasó exitosamente";
-            OnStage.theActorInTheSpotlight().attemptsTo(
-                    ActualizarEjecucionZephyrScale.conResultado(testCaseKey, testCycleKey, status, comment, duration)
-            );
+
+            for (String testCaseKey : testCaseKeys) {
+                OnStage.theActorInTheSpotlight().attemptsTo(
+                        ActualizarEjecucionZephyrScale.conResultado(testCaseKey, testCycleKey, status, comment, duration)
+                );
+            }
         }
     }
 
-    private String obtenerTestCaseKeyDelTag(Scenario scenario) {
+    private List<String> obtenerTestCaseKeysDelTag(Scenario scenario) {
         return scenario.getSourceTagNames().stream()
                 .filter(tag -> tag.startsWith("@TestCaseKey:"))
-                .findFirst()
                 .map(tag -> tag.replace("@TestCaseKey:", ""))
-                .orElseThrow(() -> new RuntimeException("No se encontró el tag de TestCaseKey"));
+                .collect(Collectors.toList());
     }
 }

@@ -3,7 +3,7 @@
 @ModuloServiciosDeSalud_7 @Reembolso
 Feature: Servicios de Salud - Reembolso
 
-  @reembolsoSaludSinBeneficiarioDesdeMenuTramites @seguimientoReembolsoSinBeneficiariosDesdeTramite @TestCaseKey:TDARA-T437
+  @reembolsoSaludSinBeneficiarioDesdeMenuTramites @seguimientoReembolsoSinBeneficiariosDesdeTramite @TestCaseKey:TDARA-T437 @TestCaseKey:TDARA-T438
   Scenario Outline: Usuario realiza una solicitud de reembolso con cobertura medicinas sin beneficiarios desde menu Tramites
     Given que "Daniel" inicia sesión correctamente
       | numeroUsuario   | contrasena   |
@@ -19,7 +19,7 @@ Feature: Servicios de Salud - Reembolso
       | 76243722      | Rimac2020  | AMC COLECTIVA FOLA - Citibank Del Peru S.a. | Lima          | Hospitalario  |
 
 
-  @reembolsoSaludSinBeneficiarioaDesdeMenuInicio @seguimientoReembolsoDesdeInicio @TestCaseKey:TDARA-T439
+  @reembolsoSaludSinBeneficiarioaDesdeMenuInicio @seguimientoReembolsoDesdeInicio @TestCaseKey:TDARA-T439 @TestCaseKey:TDARA-T440
   Scenario Outline: Usuario realiza una solicitud de reembolso sin beneficiarios desde menu Inicio
     Given que "Daniel" inicia sesión correctamente
       | numeroUsuario   | contrasena   |
@@ -35,7 +35,7 @@ Feature: Servicios de Salud - Reembolso
       | 76243722      | Rimac2020  | AMC COLECTIVA FOLA - Citibank Del Peru S.a. | Lima          | Hospitalario  |
 
 
-  @reembolsoSaludConBeneficiariosDesdeMenuTramites @seguimientoReembolsoConBeneficiariosDesdeTramite @TestCaseKey:TDARA-T441
+  @reembolsoSaludConBeneficiariosDesdeMenuTramites @seguimientoReembolsoConBeneficiariosDesdeTramite @TestCaseKey:TDARA-T441 @TestCaseKey:TDARA-T442
   Scenario Outline: Usuario realiza una solicitud de reembolso con cobertura medicinas con beneficiarios desde Tramites
     Given que "Daniel" inicia sesión correctamente
       | numeroUsuario   | contrasena   |
@@ -50,7 +50,7 @@ Feature: Servicios de Salud - Reembolso
       | numeroUsuario | contrasena | productoContratante                | paciente                        | lugarAtencion | tipoCobertura |
       | 10392464      | Rimac2020  | PLANES MEDICOS EPS - Medifarma S A | Hui Humaliano Heliart - Cónyuge | Lima          | Medicinas     |
 
-  @reembolsoOdontologicoDesdeMenuTramites @seguimientoReembolsoOdontologico @TestCaseKey:TDARA-T429
+  @reembolsoOdontologicoDesdeMenuTramites @seguimientoReembolsoOdontologico @TestCaseKey:TDARA-T429 @TestCaseKey:TDARA-T436
   Scenario Outline: Usuario realiza una solicitud de reembolso cliente con cobertura odontologica con beneficiarios desde menu Tramites
     Given que "Daniel" inicia sesión correctamente
       | numeroUsuario   | contrasena   |
