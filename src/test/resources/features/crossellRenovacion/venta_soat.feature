@@ -15,4 +15,4 @@ Feature: Venta SOAT
 
     Examples: Tabla
       | numeroUsuario | contrasena | placa  | numtarjeta       | cvv | fecha |
-    ##@externaldata@./src/test/resources/datadriven/crossellRenovacion/Venta_soat_data.xlsx@CompraSOATDigital@1
+    ##@externaldata@/Users/chm3572/Documents/datadriven/crossellRenovacion/Venta_soat_data.xlsx@CompraSOATDigital@1

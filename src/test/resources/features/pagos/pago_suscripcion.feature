@@ -16,7 +16,7 @@ Feature: pagos
 
     Examples: Tabla
       | numeroUsuario | contrasena | numtarjeta       | cvv | fecha | placa   | vigencia   |
-      ##@externaldata@./src/test/resources/datadriven/Pagos/Pago_suscripcion_data.xlsx@SucripcionDesdePagos@1
+      ##@externaldata@/Users/chm3572/Documents/datadriven/Pagos/Pago_suscripcion_data.xlsx@SucripcionDesdePagos@1
 
 
   @SucripcionDesdePerfil @TestCaseKey:TDARA-T207
@@ -31,7 +31,7 @@ Feature: pagos
 
     Examples: Tabla
       | numeroUsuario | contrasena | numtarjeta       | cvv | fecha |
-    ##@externaldata@./src/test/resources/datadriven/Pagos/Pago_suscripcion_data.xlsx@SucripcionDesdePerfil@1
+    ##@externaldata@/Users/chm3572/Documents/datadriven/Pagos/Pago_suscripcion_data.xlsx@SucripcionDesdePerfil@1
 
 
   @SucripcionDesdeAfiliacion @TestCaseKey:TDARA-T208
@@ -47,7 +47,7 @@ Feature: pagos
 
     Examples: Tabla
       | numeroUsuario | contrasena | numtarjeta       | cvv | fecha | placa   | vigencia   |
-    ##@externaldata@./src/test/resources/datadriven/Pagos/Pago_suscripcion_data.xlsx@SucripcionDesdeAfiliacion@1
+    ##@externaldata@/Users/chm3572/Documents/datadriven/Pagos/Pago_suscripcion_data.xlsx@SucripcionDesdeAfiliacion@1
 
 
   @SucripcionDesdeOpcionPagar @TestCaseKey:TDARA-T209
@@ -63,7 +63,7 @@ Feature: pagos
 
     Examples: Tabla
       | numeroUsuario | contrasena | placa   | numtarjeta       | fecha | cvv | vigencia   |
-    ##@externaldata@./src/test/resources/datadriven/Pagos/Pago_suscripcion_data.xlsx@SucripcionDesdeOpcionPagar@1
+    ##@externaldata@/Users/chm3572/Documents/datadriven/Pagos/Pago_suscripcion_data.xlsx@SucripcionDesdeOpcionPagar@1
 
 
   @EliminarMedioDePago @TestCaseKey:TDARA-T939
@@ -73,7 +73,7 @@ Feature: pagos
       | <numeroUsuario> | <contrasena> |
     When ingresa a pagos del seguro vehicular "<placa>" "<vigencia>"
     And elimina el medio de pago "<numtarjeta>"
-    #Then válido el mensaje de confirmación
+    Then válido el mensaje de confirmación
 
     Examples: Tabla
       | numeroUsuario | contrasena | placa   | numtarjeta       | vigencia   |
