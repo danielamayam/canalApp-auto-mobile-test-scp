@@ -24,9 +24,7 @@ import net.thucydides.model.environment.SystemEnvironmentVariables;
 import net.thucydides.model.util.EnvironmentVariables;
 import org.openqa.selenium.JavascriptExecutor;
 
-import java.io.ByteArrayOutputStream;
 import java.io.File;
-import java.io.PrintStream;
 import java.util.Properties;
 
 import static com.rimac.app.util.enums.ConstantesCorreo.CORREO_DESTINO;
@@ -36,8 +34,7 @@ import static com.rimac.app.util.enums.ConstantesCorreo.CORREO_REMITENTE;
 public class Hook extends BaseDriver {
     static EnvironmentVariables variables = SystemEnvironmentVariables.createEnvironmentVariables();
     private long startTime;
-    private ByteArrayOutputStream consoleCapture;
-    private PrintStream originalOut;
+    
 
     @Before
     public void setUp() {
@@ -141,15 +138,11 @@ public class Hook extends BaseDriver {
     public void actualizarZephyrScale(Scenario scenario) {
         String v_environment = variables.getProperty("jira");
         long duration = System.currentTimeMillis() - startTime;
-        System.setOut(originalOut);
-        String consoleOutput = consoleCapture.toString();
         if (v_environment.contains("true")) {
             String testCaseKey = obtenerTestCaseKeyDelTag(scenario);
             String testCycleKey = variables.getProperty("testCycleKey");
             String status = scenario.isFailed() ? "Failed" : "Passed";
-            String comment = scenario.isFailed()
-                    ? "El escenario falló: " + scenario.getName() + "\n\nConsole Output:\n" + consoleOutput
-                    : "El escenario pasó exitosamente";
+            String comment = scenario.isFailed() ? "El escenario falló: " + scenario.getName() : "El escenario pasó exitosamente";
             OnStage.theActorInTheSpotlight().attemptsTo(
                     ActualizarEjecucionZephyrScale.conResultado(testCaseKey, testCycleKey, status, comment, duration)
             );
