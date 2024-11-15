@@ -13,8 +13,8 @@ Feature: pagos
 
     Examples: Tabla
       | numeroUsuario | contrasena | placa   | vigencia   |
-    ##@externaldata@./src/test/resources/datadriven/Pagos/Pago_historial_data.xlsx@CronogramaPagosVehicular@1
-   |72636759   |Rimac2020   |ZIJ-583   |12/11/2025|
+    ##@externaldata@/Users/chm3572/Documents/datadriven/Pagos/Pago_historial_data.xlsx@CronogramaPagosVehicular@1
+
 
 
   @HistorialPagos @TestCaseKey:TDARA-T204
@@ -27,8 +27,8 @@ Feature: pagos
 
     Examples: Tabla
       | numeroUsuario | contrasena | placa   | vigencia   |
-    ##@externaldata@./src/test/resources/datadriven/Pagos/Pago_historial_data.xlsx@HistorialPagos@1
-   |72934725   |Rimac2020   |XFN-363   |06/11/2025|
+    ##@externaldata@/Users/chm3572/Documents/datadriven/Pagos/Pago_historial_data.xlsx@HistorialPagos@1
+
 
 
   @DescargaHistorialPagos @TestCaseKey:TDARA-T205
@@ -42,8 +42,8 @@ Feature: pagos
 
     Examples: Tabla
       | numeroUsuario | contrasena | placa   | vigencia   |
-  ##@externaldata@./src/test/resources/datadriven/Pagos/Pago_historial_data.xlsx@DescargaHistorialPagos@1
-   |72934725   |Rimac2020   |XFN-363   |06/11/2025|
+  ##@externaldata@/Users/chm3572/Documents/datadriven/Pagos/Pago_historial_data.xlsx@DescargaHistorialPagos@1
+
 
 
 #  @CronogramaPagosEPS @Pendiente #--------------------------------- ------------------------------

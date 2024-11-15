@@ -14,7 +14,8 @@ Feature: Servicios de Salud - Buscador de clinicas
 
     Examples: Tabla
       | numeroUsuario | contrasena | nomClinica           |
-      ##@externaldata@./src/test/resources/datadriven/serviciosDeSalud/Buscador_clinicas_data.xlsx@BuscadordeClinicasdesdeHome@1
+      ##@externaldata@/Users/chm3572/Documents/datadriven/serviciosDeSalud/Buscador_clinicas_data.xlsx@BuscadordeClinicasdesdeHome@1
+
 
 
   @BuscadordeClinicasdesdeTramites @TestCaseKey:TDARA-T211
@@ -27,5 +28,6 @@ Feature: Servicios de Salud - Buscador de clinicas
 
     Examples: Tabla
       | numeroUsuario | contrasena | nomClinica           |
-      ##@externaldata@./src/test/resources/datadriven/serviciosDeSalud/Buscador_clinicas_data.xlsx@BuscadordeClinicasdesdeTramites@1
+      ##@externaldata@/Users/chm3572/Documents/datadriven/serviciosDeSalud/Buscador_clinicas_data.xlsx@BuscadordeClinicasdesdeTramites@1
+
 

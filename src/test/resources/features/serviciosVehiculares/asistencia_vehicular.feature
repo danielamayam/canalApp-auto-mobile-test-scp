@@ -14,7 +14,8 @@ Feature: Servicios Vehiculares - Asistencia Vehicular
 
     Examples: Tabla
       | numeroUsuario | contrasena | placa   |
-    ##@externaldata@./src/test/resources/datadriven/serviciosVehiculares/Asistencia_vehicular.xlsx@AsistenciaVehicularRepuesto@1
+    ##@externaldata@/Users/chm3572/Documents/datadriven/serviciosVehiculares/Asistencia_vehicular.xlsx@AsistenciaVehicularRepuesto@1
+
 
 
   @AsistenciaVehicularGrua @SeguimientodeGrua @TestCaseKey:TDARA-T213 @TestCaseKey:TDARA-T445
@@ -28,7 +29,8 @@ Feature: Servicios Vehiculares - Asistencia Vehicular
 
     Examples: Tabla
       | numeroUsuario | contrasena | placa   |
-    ##@externaldata@./src/test/resources/datadriven/serviciosVehiculares/Asistencia_vehicular.xlsx@AsistenciaVehicularGrua@1
+    ##@externaldata@/Users/chm3572/Documents/datadriven/serviciosVehiculares/Asistencia_vehicular.xlsx@AsistenciaVehicularGrua@1
+
 
 
   @AsistenciaVehicularProblema @SeguimientoAsistenciaVehicularProblema @TestCaseKey:TDARA-T214 @TestCaseKey:TDARA-T446
@@ -42,7 +44,8 @@ Feature: Servicios Vehiculares - Asistencia Vehicular
 
     Examples: Tabla
       | numeroUsuario | contrasena | placa   |
-    ##@externaldata@./src/test/resources/datadriven/serviciosVehiculares/Asistencia_vehicular.xlsx@AsistenciaVehicularProblema@1
+    ##@externaldata@/Users/chm3572/Documents/datadriven/serviciosVehiculares/Asistencia_vehicular.xlsx@AsistenciaVehicularProblema@1
+
 
 
 
@@ -57,7 +60,8 @@ Feature: Servicios Vehiculares - Asistencia Vehicular
 
     Examples: Tabla
       | numeroUsuario | contrasena | placa   |
-    ##@externaldata@./src/test/resources/datadriven/serviciosVehiculares/Asistencia_vehicular.xlsx@NecesitoAyudaAuxilioMecanico@1
+    ##@externaldata@/Users/chm3572/Documents/datadriven/serviciosVehiculares/Asistencia_vehicular.xlsx@NecesitoAyudaAuxilioMecanico@1
+
 
 
   @NecesitoAyudaGrua @TestCaseKey:TDARA-T447
@@ -71,5 +75,6 @@ Feature: Servicios Vehiculares - Asistencia Vehicular
 
     Examples: Tabla
       | numeroUsuario | contrasena |
-    ##@externaldata@./src/test/resources/datadriven/serviciosVehiculares/Asistencia_vehicular.xlsx@NecesitoAyudaGrua@1
+    ##@externaldata@/Users/chm3572/Documents/datadriven/serviciosVehiculares/Asistencia_vehicular.xlsx@NecesitoAyudaGrua@1
+
 

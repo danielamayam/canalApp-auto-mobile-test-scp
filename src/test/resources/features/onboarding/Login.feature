@@ -18,6 +18,7 @@ Feature: onboarding
 
 
 
+
   @LogOut @TestCaseKey:TDARA-T195
   Scenario Outline: Usuario cierra sesión después de iniciar sesión en Rimac
     Given que "Daniel" ingreso en la aplicacion Rimac
@@ -30,6 +31,7 @@ Feature: onboarding
     Examples:Tabla
       | numeroUsuario | contrasena |
     ##@externaldata@/Users/chm3572/Documents/datadriven/Onboarding/Login_data.xlsx@LogOut@1
+
 
 
 

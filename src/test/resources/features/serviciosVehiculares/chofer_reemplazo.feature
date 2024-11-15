@@ -13,7 +13,8 @@ Feature: Servicios Vehiculares - Chofer Reemplazo
 
     Examples: Tabla
       | numeroUsuario | contrasena | placa  |
-  ##@externaldata@./src/test/resources/datadriven/serviciosVehiculares/Asistencia_vehicular.xlsx@ChoferReemplazo@1
+  ##@externaldata@/Users/chm3572/Documents/datadriven/serviciosVehiculares/Asistencia_vehicular.xlsx@ChoferReemplazo@1
+
 
   
 

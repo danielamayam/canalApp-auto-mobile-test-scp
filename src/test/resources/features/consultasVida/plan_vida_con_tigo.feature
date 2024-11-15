@@ -12,8 +12,10 @@ Feature: Consultas Vida - Plan Vida Contigo
     Then válido que se haya descargado el manual correctamente
 
     Examples: Tabla
-      | numeroUsuario | contrasena | vigencia   |
-    ##@externaldata@./src/test/resources/datadriven/consultasVida/Plan_vida_data.xlsx@Scenario1@1
+      | numeroUsuario | contrasena | vigencia |
+    ##@externaldata@/Users/chm3572/Documents/datadriven/consultasVida/Plan_vida_data.xlsx@Scenario1@1
+
+
 
 
 
@@ -26,8 +28,10 @@ Feature: Consultas Vida - Plan Vida Contigo
     Then válido la deuda y los saldos de la póliza.
 
     Examples: Tabla
-      | numeroUsuario | contrasena | vigencia   |
-    ##@externaldata@./src/test/resources/datadriven/consultasVida/Plan_vida_data.xlsx@Scenario2@1
+      | numeroUsuario | contrasena | vigencia |
+    ##@externaldata@/Users/chm3572/Documents/datadriven/consultasVida/Plan_vida_data.xlsx@Scenario2@1
+
+
 
 
 
@@ -40,8 +44,10 @@ Feature: Consultas Vida - Plan Vida Contigo
     Then válido que se puedan visualizar las coberturas principales y coberturas adicionales
 
     Examples: Tabla
-      | numeroUsuario | contrasena | vigencia   |
-    ##@externaldata@./src/test/resources/datadriven/consultasVida/Plan_vida_data.xlsx@Scenario3@1
+      | numeroUsuario | contrasena | vigencia |
+    ##@externaldata@/Users/chm3572/Documents/datadriven/consultasVida/Plan_vida_data.xlsx@Scenario3@1
+
+
 
 
 
@@ -54,8 +60,8 @@ Feature: Consultas Vida - Plan Vida Contigo
     Then válido la información de la poliza "<numeroPoliza>" "<vigenciaDesde>" "<contratantePoliza>" "<intermediarioPoliza>"
 
     Examples: Tabla
-      | numeroUsuario | contrasena | vigencia   | numeroPoliza | contratantePoliza         | intermediarioPoliza          |vigenciaDesde|
-##@externaldata@./src/test/resources/datadriven/consultasVida/Plan_vida_data.xlsx@Scenario4@1
+      | numeroUsuario | contrasena | vigencia | numeroPoliza | contratantePoliza | intermediarioPoliza | vigenciaDesde |
+##@externaldata@/Users/chm3572/Documents/datadriven/consultasVida/Plan_vida_data.xlsx@Scenario4@1
 
 
   @ConsultarInformacionDelBeneficiario @TestCaseKey:TDARA-T421
@@ -67,5 +73,5 @@ Feature: Consultas Vida - Plan Vida Contigo
     Then válido la información del beneficiario "<beneficiario>"
 
     Examples: Tabla
-      | numeroUsuario | contrasena | vigencia   | beneficiario |
-   |41213620   |Rimac2020   |15/07/2022   |HEREDEROS LEGALES   |
+      | numeroUsuario | contrasena | vigencia   | beneficiario      |
+      | 41213620      | Rimac2020  | 15/07/2022 | HEREDEROS LEGALES |
