@@ -14,8 +14,7 @@ Feature: onboarding
 
     Examples: Tabla
       | numeroUsuario | contrasena |
-       ##@externaldata@./src/test/resources/datadriven/Onboarding/Login_data.xlsx@Login@1
-   |10318552   |Rimac2020|
+       ##@externaldata@/Users/chm3572/Desktop/Onboarding/Login_data.xlsx@Login@1
 
 
   @LogOut @TestCaseKey:TDARA-T195
@@ -29,8 +28,7 @@ Feature: onboarding
 
     Examples:Tabla
       | numeroUsuario | contrasena |
-    ##@externaldata@./src/test/resources/datadriven/Onboarding/Login_data.xlsx@LogOut@1
-   |10318552   |Rimac2020|
+    ##@externaldata@/Users/chm3572/Desktop/Onboarding/Login_data.xlsx@LogOut@1
 
 
   @OlvidasteTuContrasenia @TestCaseKey:TDARA-T938
