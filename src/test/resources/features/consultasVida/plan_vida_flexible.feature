@@ -3,7 +3,7 @@
 @ModuloConsultasVida_9 @Regresion
 Feature: Consultas Vida - Plan Vida Flexible
 
-  @DescargaEstadoCuentaPlanVidaFlexible @TestCaseKey:
+  @DescargaEstadoCuentaPlanVidaFlexible @TestCaseKey:TDARA-T86
   Scenario Outline: Usuario descarga el estado de cuenta del plan vida flexible
     Given que "Daniel" inicia sesión correctamente
       | numeroUsuario   | contrasena   |
@@ -16,7 +16,7 @@ Feature: Consultas Vida - Plan Vida Flexible
     ##@externaldata@./src/test/resources/datadriven/consultasVida/Plan_vida_data.xlsx@Scenario5@1
 
 
-  @ConsultarCoberturasPolizaVidaFlexible @TestCaseKey:
+  @ConsultarCoberturasPolizaVidaFlexible @TestCaseKey:TDARA-T191
   Scenario Outline: Usuario consulta la cobertura de la póliza vida flexible
     Given que "Daniel" inicia sesión correctamente
       | numeroUsuario   | contrasena   |
@@ -29,7 +29,7 @@ Feature: Consultas Vida - Plan Vida Flexible
     ##@externaldata@./src/test/resources/datadriven/consultasVida/Plan_vida_data.xlsx@Scenario6@1
 
 
-  @ConsultarDeudasSaldoVidaFlexible @TestCaseKey:
+  @ConsultarDeudasSaldoVidaFlexible @TestCaseKey:TDARA-T422
   Scenario Outline: Usuario consultar Deudas y Saldos de la Poliza del Producto Flexivida
     Given que "Daniel" inicia sesión correctamente
       | numeroUsuario   | contrasena   |
@@ -42,7 +42,7 @@ Feature: Consultas Vida - Plan Vida Flexible
     ##@externaldata@./src/test/resources/datadriven/consultasVida/Plan_vida_data.xlsx@Scenario7@1
 
 
-  @ConsultarInformacionPolizaVidaFlexible @TestCaseKey:
+  @ConsultarInformacionPolizaVidaFlexible @TestCaseKey:TDARA-T192
   Scenario Outline: Usuario consulta información de la póliza vida flexible
     Given que "Daniel" inicia sesión correctamente
       | numeroUsuario   | contrasena   |

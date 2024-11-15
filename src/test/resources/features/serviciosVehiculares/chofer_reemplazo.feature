@@ -3,7 +3,7 @@
 @ModuloServiciosVehiculares_7 @Regresion
 Feature: Servicios Vehiculares - Chofer Reemplazo
 
-  @ChoferReemplazo @SeguimientoChoferReemplazo @TestCaseKey:TDARA-T448
+  @ChoferReemplazo @SeguimientoChoferReemplazo @TestCaseKey:TDARA-T448 @TestCaseKey:TDARA-T450
   Scenario Outline: Usuario solicitar chofer de reemplazo
     Given que "Daniel" inicia sesión correctamente
       | numeroUsuario   | contrasena   |
