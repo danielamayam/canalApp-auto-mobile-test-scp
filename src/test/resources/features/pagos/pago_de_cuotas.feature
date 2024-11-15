@@ -17,7 +17,7 @@ Feature: Pagos
 
     Examples: Tabla
       | numeroUsuario | contrasena | placa | numtarjeta | fecha | cvv | vigencia |
-    ##@externaldata@/Users/chm3572/Documents/datadriven/Pagos/Pago_de_cuotas_data.xlsx@PagoSinTarjetaAsociada@1
+    ##@externaldata@./src/test/resources/datadriven/Pagos/Pago_de_cuotas_data.xlsx@PagoSinTarjetaAsociada@1
 
 
   @PagoAfiliadoDebitoAuto @TestCaseKey:TDARA-T197
@@ -33,7 +33,7 @@ Feature: Pagos
 
     Examples: Tabla
       | numeroUsuario | contrasena | placa | numtarjeta | fecha | cvv | vigencia |
-    ##@externaldata@/Users/chm3572/Documents/datadriven/Pagos/Pago_de_cuotas_data.xlsx@PagoAfiliadoDebitoAuto@1
+    ##@externaldata@./src/test/resources/datadriven/Pagos/Pago_de_cuotas_data.xlsx@PagoAfiliadoDebitoAuto@1
 
 
   @PagoConValidacionHistorial @TestCaseKey:TDARA-T198
@@ -50,7 +50,7 @@ Feature: Pagos
 
     Examples: Tabla
       | numeroUsuario | contrasena | placa | numtarjeta | fecha | cvv | vigencia |
-    ##@externaldata@/Users/chm3572/Documents/datadriven/Pagos/Pago_de_cuotas_data.xlsx@PagoConValidacionHistorial@1
+    ##@externaldata@./src/test/resources/datadriven/Pagos/Pago_de_cuotas_data.xlsx@PagoConValidacionHistorial@1
 
 
   @PagoConTarjetaAsociada @TestCaseKey:TDARA-T199
@@ -64,7 +64,7 @@ Feature: Pagos
 
     Examples: Tabla
       | numeroUsuario | contrasena | placa | numtarjeta | vigencia |
-     ##@externaldata@/Users/chm3572/Documents/datadriven/Pagos/Pago_de_cuotas_data.xlsx@PagoConTarjetaAsociada@1
+     ##@externaldata@./src/test/resources/datadriven/Pagos/Pago_de_cuotas_data.xlsx@PagoConTarjetaAsociada@1
 
 
   @PagoAsociandoTarjeta @TestCaseKey:TDARA-T200
@@ -80,7 +80,7 @@ Feature: Pagos
 
     Examples: Tabla
       | numeroUsuario | contrasena | placa | numtarjeta | fecha | cvv | vigencia |
-         ##@externaldata@/Users/chm3572/Documents/datadriven/Pagos/Pago_de_cuotas_data.xlsx@PagoAsociandoTarjeta@1
+         ##@externaldata@./src/test/resources/datadriven/Pagos/Pago_de_cuotas_data.xlsx@PagoAsociandoTarjeta@1
 
 
   @PagoPolizaSoat @TestCaseKey:TDARA-T201
@@ -93,7 +93,7 @@ Feature: Pagos
 
     Examples: Tabla
       | numeroUsuario | contrasena | placa | vigencia |
-    ##@externaldata@/Users/chm3572/Documents/datadriven/Pagos/Pago_de_cuotas_data.xlsx@PagoPolizaSoat@1
+    ##@externaldata@./src/test/resources/datadriven/Pagos/Pago_de_cuotas_data.xlsx@PagoPolizaSoat@1
 
 
   @PagoInfoNoDisponible @TestCaseKey:TDARA-T202
@@ -106,4 +106,4 @@ Feature: Pagos
 
     Examples: Tabla
       | numeroUsuario | contrasena | mensaje |
-##@externaldata@/Users/chm3572/Documents/datadriven/Pagos/Pago_de_cuotas_data.xlsx@PagoInfoNoDisponible@1
+##@externaldata@./src/test/resources/datadriven/Pagos/Pago_de_cuotas_data.xlsx@PagoInfoNoDisponible@1

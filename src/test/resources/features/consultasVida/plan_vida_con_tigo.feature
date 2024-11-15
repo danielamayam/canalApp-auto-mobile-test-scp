@@ -13,7 +13,7 @@ Feature: Consultas Vida - Plan Vida Contigo
 
     Examples: Tabla
       | numeroUsuario | contrasena | vigencia   |
-    ##@externaldata@/Users/chm3572/Documents/datadriven/consultasVida/Plan_vida_data.xlsx@Scenario1@1
+    ##@externaldata@./src/test/resources/datadriven/consultasVida/Plan_vida_data.xlsx@Scenario1@1
 
 
 
@@ -27,7 +27,7 @@ Feature: Consultas Vida - Plan Vida Contigo
 
     Examples: Tabla
       | numeroUsuario | contrasena | vigencia   |
-    ##@externaldata@/Users/chm3572/Documents/datadriven/consultasVida/Plan_vida_data.xlsx@Scenario2@1
+    ##@externaldata@./src/test/resources/datadriven/consultasVida/Plan_vida_data.xlsx@Scenario2@1
 
 
 
@@ -41,7 +41,7 @@ Feature: Consultas Vida - Plan Vida Contigo
 
     Examples: Tabla
       | numeroUsuario | contrasena | vigencia   |
-    ##@externaldata@/Users/chm3572/Documents/datadriven/consultasVida/Plan_vida_data.xlsx@Scenario3@1
+    ##@externaldata@./src/test/resources/datadriven/consultasVida/Plan_vida_data.xlsx@Scenario3@1
 
 
 
@@ -55,7 +55,7 @@ Feature: Consultas Vida - Plan Vida Contigo
 
     Examples: Tabla
       | numeroUsuario | contrasena | vigencia   | numeroPoliza | contratantePoliza         | intermediarioPoliza          |vigenciaDesde|
-##@externaldata@/Users/chm3572/Documents/datadriven/consultasVida/Plan_vida_data.xlsx@Scenario4@1
+##@externaldata@./src/test/resources/datadriven/consultasVida/Plan_vida_data.xlsx@Scenario4@1
 
 
   @ConsultarInformacionDelBeneficiario @TestCaseKey:TDARA-T421

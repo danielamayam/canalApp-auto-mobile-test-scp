@@ -13,7 +13,7 @@ Feature: Consultas Vida - Plan Vida Flexible
 
     Examples: Tabla
       | numeroUsuario | contrasena | month | year | vigencia   |
-    ##@externaldata@/Users/chm3572/Documents/datadriven/consultasVida/Plan_vida_data.xlsx@Scenario5@1
+    ##@externaldata@./src/test/resources/datadriven/consultasVida/Plan_vida_data.xlsx@Scenario5@1
 
 
   @ConsultarCoberturasPolizaVidaFlexible @TestCaseKey:TDARA-T191
@@ -26,7 +26,7 @@ Feature: Consultas Vida - Plan Vida Flexible
 
     Examples: Tabla
       | numeroUsuario | contrasena | vigencia   |
-    ##@externaldata@/Users/chm3572/Documents/datadriven/consultasVida/Plan_vida_data.xlsx@Scenario6@1
+    ##@externaldata@./src/test/resources/datadriven/consultasVida/Plan_vida_data.xlsx@Scenario6@1
 
 
   @ConsultarDeudasSaldoVidaFlexible @TestCaseKey:TDARA-T422
@@ -39,7 +39,7 @@ Feature: Consultas Vida - Plan Vida Flexible
 
     Examples: Tabla
       | numeroUsuario | contrasena | vigencia   |
-    ##@externaldata@/Users/chm3572/Documents/datadriven/consultasVida/Plan_vida_data.xlsx@Scenario7@1
+    ##@externaldata@./src/test/resources/datadriven/consultasVida/Plan_vida_data.xlsx@Scenario7@1
 
 
   @ConsultarInformacionPolizaVidaFlexible @TestCaseKey:TDARA-T192
@@ -52,5 +52,5 @@ Feature: Consultas Vida - Plan Vida Flexible
 
     Examples: Tabla
       | numeroUsuario | contrasena | vigencia   | numeroPoliza | contratantePoliza        | vigenciaDesde       |
-    ##@externaldata@/Users/chm3572/Documents/datadriven/consultasVida/Plan_vida_data.xlsx@Scenario8@1
+    ##@externaldata@./src/test/resources/datadriven/consultasVida/Plan_vida_data.xlsx@Scenario8@1
 

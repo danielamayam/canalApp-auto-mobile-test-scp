@@ -42,7 +42,7 @@ Feature: Servicios Vehiculares - Asistencia Vehicular
 
     Examples: Tabla
       | numeroUsuario | contrasena | placa   |
-    ##@externaldata@/Users/chm3572/Documents/datadriven/serviciosVehiculares/Asistencia_vehicular.xlsx@AsistenciaVehicularProblema@1
+    ##@externaldata@./src/test/resources/datadriven/serviciosVehiculares/Asistencia_vehicular.xlsx@AsistenciaVehicularProblema@1
 
 
 
@@ -57,7 +57,7 @@ Feature: Servicios Vehiculares - Asistencia Vehicular
 
     Examples: Tabla
       | numeroUsuario | contrasena | placa   |
-    ##@externaldata@/Users/chm3572/Documents/datadriven/serviciosVehiculares/Asistencia_vehicular.xlsx@NecesitoAyudaAuxilioMecanico@1
+    ##@externaldata@./src/test/resources/datadriven/serviciosVehiculares/Asistencia_vehicular.xlsx@NecesitoAyudaAuxilioMecanico@1
 
 
   @NecesitoAyudaGrua @TestCaseKey:TDARA-T447
@@ -71,5 +71,5 @@ Feature: Servicios Vehiculares - Asistencia Vehicular
 
     Examples: Tabla
       | numeroUsuario | contrasena |
-    ##@externaldata@/Users/chm3572/Documents/datadriven/serviciosVehiculares/Asistencia_vehicular.xlsx@NecesitoAyudaGrua@1
+    ##@externaldata@./src/test/resources/datadriven/serviciosVehiculares/Asistencia_vehicular.xlsx@NecesitoAyudaGrua@1
 

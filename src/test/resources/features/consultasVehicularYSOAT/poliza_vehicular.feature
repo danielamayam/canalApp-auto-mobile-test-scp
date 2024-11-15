@@ -14,7 +14,7 @@ Feature: Consulta vehicular y soat - Poliza Vehicular
 
     Examples: Tabla
       | numeroUsuario | contrasena | placa | numeroPoliza |
-    ##@externaldata@/Users/chm3572/Documents/datadriven/consultasVehicularYSOAT/Poliza_vehicular_data.xlsx@ConsultaNumeroDePolizaVehiSoat@1
+    ##@externaldata@./src/test/resources/datadriven/consultasVehicularYSOAT/Poliza_vehicular_data.xlsx@ConsultaNumeroDePolizaVehiSoat@1
 
 
 
@@ -28,7 +28,7 @@ Feature: Consulta vehicular y soat - Poliza Vehicular
 
     Examples: Tabla
       | numeroUsuario | contrasena | placa | vigencia |
-    ##@externaldata@/Users/chm3572/Documents/datadriven/consultasVehicularYSOAT/Poliza_vehicular_data.xlsx@ConsultarDeudasSaldosdePoliza@1
+    ##@externaldata@./src/test/resources/datadriven/consultasVehicularYSOAT/Poliza_vehicular_data.xlsx@ConsultarDeudasSaldosdePoliza@1
 
 
 
@@ -42,7 +42,7 @@ Feature: Consulta vehicular y soat - Poliza Vehicular
 
     Examples: Tabla
       | numeroUsuario | contrasena | placa | vigencia |
-    ##@externaldata@/Users/chm3572/Documents/datadriven/consultasVehicularYSOAT/Poliza_vehicular_data.xlsx@DescargaPolizaVehicularDigital@1
+    ##@externaldata@./src/test/resources/datadriven/consultasVehicularYSOAT/Poliza_vehicular_data.xlsx@DescargaPolizaVehicularDigital@1
 
 
 
@@ -56,5 +56,5 @@ Feature: Consulta vehicular y soat - Poliza Vehicular
 
     Examples: Tabla
       | numeroUsuario | contrasena | placa | vigencia |
-      ##@externaldata@/Users/chm3572/Documents/datadriven/consultasVehicularYSOAT/Poliza_vehicular_data.xlsx@ConsultaCoberturas@1
+      ##@externaldata@./src/test/resources/datadriven/consultasVehicularYSOAT/Poliza_vehicular_data.xlsx@ConsultaCoberturas@1
 
