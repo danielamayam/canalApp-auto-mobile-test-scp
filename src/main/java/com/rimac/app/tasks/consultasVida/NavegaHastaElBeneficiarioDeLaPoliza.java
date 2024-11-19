@@ -27,7 +27,7 @@ public class NavegaHastaElBeneficiarioDeLaPoliza implements Task {
             actor.attemptsTo(
                     MenuItem.seguros(),
                     WaitUntil.the(BTN_VIDA, WebElementStateMatchers.isVisible()).forNoMoreThan(120).seconds(),
-                    //Tap.on(BTN_VIDA),
+                    Tap.siElElementoEsVisible(BTN_VIDA),
                     Scroll.on(CARD_SEGURO_VIDA_CONTIGO(vigencia)),
                     Tap.on(CARD_SEGURO_VIDA_CONTIGO(vigencia)),
                     Tap.on(BTN_BENEFICIARIO),
