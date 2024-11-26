@@ -65,10 +65,10 @@ pipeline {
 
         stage('Build') {
             steps {
-                script {
+               // script {
                     // Configura el nombre de la construcción
-                    currentBuild.displayName = "MobileTesting-Rimac-SauceLabs [#${env.BUILD_NUMBER}]"
-                }
+                   // currentBuild.displayName = "MobileTesting-Rimac-SauceLabs [#${env.BUILD_NUMBER}]"
+               // }
                 // Ejecuta Maven para la construcción
                 sh 'mvn -X clean verify'
             }
