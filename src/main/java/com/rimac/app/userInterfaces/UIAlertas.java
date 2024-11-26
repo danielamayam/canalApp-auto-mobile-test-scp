@@ -74,7 +74,7 @@ public class UIAlertas {
     };
 
     public static final Target[] logsButtons = {
-            Target.the("Cerrar log").located(By.xpath("(//XCUIElementTypeApplication[@name=\"RIMAC\"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[2]/XCUIElementTypeOther/XCUIElementTypeCollectionView/XCUIElementTypeScrollView/XCUIElementTypeCell[1]/XCUIElementTypeOther/XCUIElementTypeButton[2]) | (//android.widget.ImageButton[@resource-id=\"com.rimac.rimac_surrogas.qa:id/dialog_close\"])"))
+            Target.the("Cerrar log").located(By.xpath("(//XCUIElementTypeApplication[@name=\"RIMAC\"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[2]/XCUIElementTypeOther/XCUIElementTypeCollectionView/XCUIElementTypeScrollView/XCUIElementTypeCell[1]/XCUIElementTypeOther/XCUIElementTypeButton[2]) | (//android.widget.ImageButton[@resource-id=\"com.rimac.rimac_surrogas.qa:id/dialog_close\"]) | (//androidx.cardview.widget.CardView[@resource-id=\"com.rimac.rimac_surrogas.qa:id/btnClose\"]) | (//android.widget.ImageButton[@content-desc=\"Cerrar modal\"])"))
     };
 
     public static final Target LBL_SEGUROS = Target.the("Label home seguros")

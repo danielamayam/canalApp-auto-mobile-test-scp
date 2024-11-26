@@ -17,7 +17,8 @@ Feature: Pagos
 
     Examples: Tabla
       | numeroUsuario | contrasena | placa | numtarjeta | fecha | cvv | vigencia |
-    ##@externaldata@./src/test/resources/datadriven/Pagos/Pago_de_cuotas_data.xlsx@PagoSinTarjetaAsociada@1
+    ##@externaldata@/Users/chm3572/Documents/datadriven/Pagos/Pago_de_cuotas_data.xlsx@PagoSinTarjetaAsociada@1
+
 
 
   @PagoAfiliadoDebitoAuto @TestCaseKey:TDARA-T197
@@ -34,6 +35,7 @@ Feature: Pagos
     Examples: Tabla
       | numeroUsuario | contrasena | placa | numtarjeta | fecha | cvv | vigencia |
     ##@externaldata@/Users/chm3572/Documents/datadriven/Pagos/Pago_de_cuotas_data.xlsx@PagoAfiliadoDebitoAuto@1
+
 
 
   @PagoConValidacionHistorial @TestCaseKey:TDARA-T198
@@ -53,6 +55,7 @@ Feature: Pagos
     ##@externaldata@/Users/chm3572/Documents/datadriven/Pagos/Pago_de_cuotas_data.xlsx@PagoConValidacionHistorial@1
 
 
+
   @PagoConTarjetaAsociada @TestCaseKey:TDARA-T199
   Scenario Outline: Usuario realiza el pago del seguro vehicular con tarjeta asociada
     Given que "Daniel" inicia sesión correctamente
@@ -65,6 +68,7 @@ Feature: Pagos
     Examples: Tabla
       | numeroUsuario | contrasena | placa | numtarjeta | vigencia |
      ##@externaldata@/Users/chm3572/Documents/datadriven/Pagos/Pago_de_cuotas_data.xlsx@PagoConTarjetaAsociada@1
+
 
 
   @PagoAsociandoTarjeta @TestCaseKey:TDARA-T200
@@ -83,6 +87,7 @@ Feature: Pagos
          ##@externaldata@/Users/chm3572/Documents/datadriven/Pagos/Pago_de_cuotas_data.xlsx@PagoAsociandoTarjeta@1
 
 
+
   @PagoPolizaSoat @TestCaseKey:TDARA-T201
   Scenario Outline: Usuario valida pago de poliza SOAT
     Given que "Daniel" inicia sesión correctamente
@@ -94,6 +99,7 @@ Feature: Pagos
     Examples: Tabla
       | numeroUsuario | contrasena | placa | vigencia |
     ##@externaldata@/Users/chm3572/Documents/datadriven/Pagos/Pago_de_cuotas_data.xlsx@PagoPolizaSoat@1
+
 
 
   @PagoInfoNoDisponible @TestCaseKey:TDARA-T202
