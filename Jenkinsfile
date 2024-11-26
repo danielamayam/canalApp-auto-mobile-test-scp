@@ -6,8 +6,22 @@ def defTimestamp = defDateFormat.format(defDate).toString()
 
 pipeline {
     agent any
-
+    environment {
+        CLIENT = 'Rimac'
+        PLATFORM = 'SauceLabs'
+    }
     stages {
+
+    stage('Set Build Info') {
+                steps {
+                    script {
+                        def buildName = "${ESCENARIO} [#${BUILD_NUMBER}]"
+                        currentBuild.displayName = buildName
+                        currentBuild.description = "Regresión para ${env.CLIENT} en ${env.PLATFORM}"
+                    }
+                }
+            }
+
         stage('SonarQube Analysis') {
             when {
                 anyOf {
