@@ -42,8 +42,8 @@ public class UiServiciosDeSalud {
             .locatedForIOS(AppiumBy.xpath("//XCUIElementTypeStaticText[@name=\"Reembolso de salud\"]"));
 
     public static final Target LBL_TUS_TRAMITES= Target.the("Label Bienestar")
-            .locatedForAndroid(AppiumBy.xpath("//android.widget.TextView[@text='Tus trámites']"))
-            .locatedForIOS(AppiumBy.xpath("//XCUIElementTypeStaticText[@name=\"Tus trámites\"]"));
+            .locatedForAndroid(AppiumBy.xpath("//android.widget.TextView[@text='Mis trámites']"))
+            .locatedForIOS(AppiumBy.xpath("//XCUIElementTypeStaticText[@name=\"Mis trámites\"]"));
 
 
     public static final Target BTN_DESCUENTOS = Target.the("Botón descuentos")

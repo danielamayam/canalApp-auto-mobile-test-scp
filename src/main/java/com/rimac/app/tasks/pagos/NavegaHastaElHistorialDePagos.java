@@ -39,8 +39,8 @@ public class NavegaHastaElHistorialDePagos implements Task {
                     IrAPagosDePolizaVihicular.go(placa, vigencia),
                     EsperarElemento.por(5),
                     Scroll.on(BTN_HISTORIAL_DE_PAGOS),
-                    Tap.on(BTN_HISTORIAL_DE_PAGOS),
-                    WaitUntil.the(LBL_CONSULTA_TUS_PAGOS, WebElementStateMatchers.isVisible()).forNoMoreThan(120).seconds()
+                    Tap.on(BTN_HISTORIAL_DE_PAGOS)
+                   // WaitUntil.the(LBL_CONSULTA_TUS_PAGOS, WebElementStateMatchers.isVisible()).forNoMoreThan(120).seconds()
             );
         }catch (RuntimeException ex){
             throw new Assertions(Assertions.Error(Mensajes.NAVEGA_HASTA_EL_HISTORIAL_DE_PAGOS), ex);

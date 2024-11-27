@@ -5,6 +5,7 @@ import com.rimac.app.interactions.EsperarElemento;
 import com.rimac.app.interactions.Hide;
 import com.rimac.app.interactions.app.AdjuntarDocumento;
 import com.rimac.app.interactions.app.MenuItem;
+import com.rimac.app.interactions.app.SkipLog;
 import com.rimac.app.interactions.app.TomarFoto;
 import com.rimac.app.interactions.builders.Scroll;
 import com.rimac.app.interactions.builders.Tap;
@@ -233,6 +234,10 @@ public class AdjuntarDocumentos implements Task {
                 Tap.siElElementoEsVisible(BTN_ALERTA),
 
                 Tap.on(BTN_IR_AL_INICIO),
+
+                EsperarElemento.por(10),
+
+                SkipLog.dismissAlerts(),
 
                 WaitUntil.the(BTN_HOME, WebElementStateMatchers.isClickable()).forNoMoreThan(120).seconds(),
 
