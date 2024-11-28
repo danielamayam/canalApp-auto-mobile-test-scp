@@ -12,10 +12,10 @@ import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 
 public class VentaSoatStepDefinitions {
 
-    @When("navega y diligencia el formulario de registro tu soat en 2 minutos {string}")
-    public void navegaYDiligenciaElFormularioDeRegistroTuSoatEnMinutos(String placa, DataTable dataTable) {
+    @When("navega y diligencia el formulario de registro tu soat en 2 minutos")
+    public void navegaYDiligenciaElFormularioDeRegistroTuSoatEnMinutos( DataTable dataTable) {
         OnStage.theActorInTheSpotlight().attemptsTo(
-                DiligenciarFormularioSoat.go(placa, SuscripcionDesdePagos.setData(dataTable).get(0))
+                DiligenciarFormularioSoat.go(SuscripcionDesdePagos.setData(dataTable).get(0))
         );
     }
 

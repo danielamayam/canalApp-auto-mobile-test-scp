@@ -10,6 +10,7 @@ import com.rimac.app.interactions.app.MenuItem;
 import com.rimac.app.interactions.builders.Scroll;
 import com.rimac.app.interactions.builders.Tap;
 import com.rimac.app.models.SuscripcionDesdePagos;
+import com.rimac.app.util.VehicleIdentifierGenerator;
 import com.rimac.app.util.constantes.Mensajes;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
@@ -19,23 +20,26 @@ import net.serenitybdd.screenplay.conditions.Check;
 import net.serenitybdd.screenplay.matchers.WebElementStateMatchers;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 
+import java.util.Arrays;
+
 import static com.rimac.app.userInterfaces.UiCrossellRenovacion.*;
 import static com.rimac.app.userInterfaces.UiSeguros.*;
 
 public class DiligenciarFormularioSoat implements Task {
 
-    private String placa;
+
     private SuscripcionDesdePagos suscripcionDesdePagos;
 
-    public DiligenciarFormularioSoat(String placa, SuscripcionDesdePagos suscripcionDesdePagos) {
+    public DiligenciarFormularioSoat(SuscripcionDesdePagos suscripcionDesdePagos) {
         this.suscripcionDesdePagos = suscripcionDesdePagos;
-        this.placa = placa;
     }
 
     @Override
     public <T extends Actor> void performAs(T actor) {
         try {
-            char[] charArray = placa.toCharArray();
+            //String placa = VehicleIdentifierGenerator.generateLicensePlate();
+            String placa = "MIM-288";
+            String[] charArray = placa.replace("-", "").split("");
             actor.attemptsTo(
                     MenuItem.paraMi(),
                     Swipe.as(actor).fromBottom().toLeft(),
@@ -60,22 +64,80 @@ public class DiligenciarFormularioSoat implements Task {
                             EsperarElemento.por(1)
                     ),
                     Tap.on(BTN_GUARDAR_TARJETA),
-                    EsperarElemento.por(20),
-                    WaitUntil.the(LBL_TIEMPO_DE_ESPERA, WebElementStateMatchers.isVisible()).forNoMoreThan(120).seconds()
+                    EsperarElemento.por(30)
             );
-            actor.attemptsTo(
-                    Check.whether(LBL_ELIGE_TU_PLAN.resolveFor(actor).isVisible()).andIfSo(
-                            Scroll.on(LBL_AFILIA_TU_TARJETA),
-                            Tap.on(BTNR_AFILIAR),
+            do {
+                if (LBL_DATOS_ADICIONALES.isVisibleFor(actor)) {
+                    actor.attemptsTo(
+                            WaitUntil.the(LBL_DATOS_ADICIONALES, WebElementStateMatchers.isVisible()).forNoMoreThan(120).seconds(),
+                            Tap.on(TXT_TIPO_USO),
+                            Tap.on(RB_PARTICULAR),
+                            Tap.on(TXT_TIPO_VEHICULO),
+                            Tap.on(RB_AUTO),
+                            Tap.on(TXT_MARCA),
+                            Check.whether(ComandosCapabilities.isiOS(actor)).andIfSo(
+                                    Swipe.as(actor).fromBottom().toTop(),
+                                    Swipe.as(actor).fromBottom().toTop(),
+                                    Swipe.as(actor).fromBottom().toTop()
+                            ).otherwise(
+                                    Scroll.on(RB_CHEVROLET),
+                                    Swipe.as(actor).fromBottom().toTop()
+                            ),
+                            Tap.on(RB_CHEVROLET),
+                            Tap.on(TXT_MODELO),
+                            Scroll.on(RB_MODELO),
+                            Tap.on(RB_MODELO),
+                            Tap.on(TXT_ANIO_FABRICACION),
+                            Check.whether(ComandosCapabilities.isiOS(actor)).andIfSo(
+                                    Enter.theValue("2020").into(LBL_FECHA)
+                            ).otherwise(
+                                    Swipe.as(actor).fromTop().toBottom()
+                            ),
+                            Tap.on(BTN_ACEPTAR_FECHA),
+                            Tap.on(TXT_NUMERO_DE_SERIE),
+                            Enter.theValue("12345678").into(TXT_NUMERO_DE_SERIE),
+                            Hide.keyboard(),
+                            Tap.on(TXT_NUMERO_ASIENTOS),
+                            Enter.theValue("5").into(TXT_NUMERO_ASIENTOS),
+                            Hide.keyboard(),
+                            EsperarElemento.por(1),
                             Tap.on(BTN_CONTINUAR),
-                            EsperarElemento.por(5),
-                            Scroll.on(BTN_ANADIR_NUEVA_TARJETA),
-                            Tap.on(BTN_ANADIR_NUEVA_TARJETA)
-                    ),
+                            EsperarElemento.por(30)
+                    );
+                }
+                System.out.println(LBL_DATOS_ADICIONALES.isVisibleFor(actor));
+            }while (LBL_DATOS_ADICIONALES.isVisibleFor(actor));
+
+            actor.attemptsTo(
+                    EsperarElemento.por(30),
+                    Swipe.as(actor).fromBottom().toTop(),
+                    Swipe.as(actor).fromBottom().toTop(),
+                    Tap.on(BTNR_AFILIAR),
+                    Tap.on(BTN_CONTINUAR),
+                    EsperarElemento.por(30)
+            );
+            if (TXT_DEPARTAMENTO.isVisibleFor(actor)) {
+                actor.attemptsTo(Tap.on(TXT_DEPARTAMENTO),
+                        Tap.on(TXT_AMAZONAS),
+                        EsperarElemento.por(1),
+                        Tap.on(TXT_PROVINCIA),
+                        Tap.on(TXT_BAGUA),
+                        EsperarElemento.por(1),
+                        Tap.on(TXT_DISTRITO),
+                        Tap.on(TXT_ARAMANGO),
+                        EsperarElemento.por(1),
+                        Tap.on(DIRECCION),
+                        Enter.theValue("Santiago").into(DIRECCION),
+                        Hide.keyboard(),
+                        EsperarElemento.por(1),
+                        Tap.on(BTN_CONTINUAR)
+                );
+            };
+            actor.attemptsTo(
+                    Tap.on(BTN_ANADIR_NUEVA_TARJETA),
                     FormularioCrearTarjeta.go(suscripcionDesdePagos),
                     Tap.on(BTN_PAGAR),
                     WaitUntil.the(LBL_MENSAJE, WebElementStateMatchers.isVisible()).forNoMoreThan(120).seconds()
-
             );
         } catch (RuntimeException ex) {
             throw new Assertions(Assertions.Error(Mensajes.DILIGENCIA_EL_FORMULARIO_DE_SOAT), ex);
@@ -83,7 +145,7 @@ public class DiligenciarFormularioSoat implements Task {
 
     }
 
-    public static DiligenciarFormularioSoat go(String placa, SuscripcionDesdePagos suscripcionDesdePagos) {
-        return Tasks.instrumented(DiligenciarFormularioSoat.class, placa, suscripcionDesdePagos);
+    public static DiligenciarFormularioSoat go(SuscripcionDesdePagos suscripcionDesdePagos) {
+        return Tasks.instrumented(DiligenciarFormularioSoat.class, suscripcionDesdePagos);
     }
 }
