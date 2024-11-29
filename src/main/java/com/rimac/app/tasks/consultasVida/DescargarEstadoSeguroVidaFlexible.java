@@ -33,6 +33,7 @@ public class DescargarEstadoSeguroVidaFlexible implements Task {
                     MenuItem.seguros(),
                     WaitUntil.the(BTN_VIDA, WebElementStateMatchers.isVisible()).forNoMoreThan(120).seconds(),
                     Tap.siElElementoEsVisible(BTN_VIDA),
+                    EsperarElemento.por(5),
                     Tap.on(CARD_VIDA_FLEXIBLE(vigencia)),
                     Scroll.on(BTN_IR_A_ESTADO_DE_CUENTA),
                     Tap.on(BTN_IR_A_ESTADO_DE_CUENTA),

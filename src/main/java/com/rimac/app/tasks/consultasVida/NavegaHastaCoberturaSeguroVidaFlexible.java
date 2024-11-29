@@ -1,6 +1,7 @@
 package com.rimac.app.tasks.consultasVida;
 
 import com.rimac.app.exceptions.Assertions;
+import com.rimac.app.interactions.EsperarElemento;
 import com.rimac.app.interactions.TakeScreenshot;
 import com.rimac.app.interactions.app.MenuItem;
 import com.rimac.app.interactions.builders.Tap;
@@ -29,6 +30,7 @@ public class NavegaHastaCoberturaSeguroVidaFlexible implements Task {
                     MenuItem.seguros(),
                     WaitUntil.the(BTN_VIDA, WebElementStateMatchers.isVisible()).forNoMoreThan(120).seconds(),
                     Tap.on(BTN_VIDA),
+                    EsperarElemento.por(5),
                     Tap.on(CARD_VIDA_FLEXIBLE(vigencia)),
                     Tap.on(BTN_COBERTURA),
                     WaitUntil.the(LBL_DATOS_DEL_ASEGURADO, WebElementStateMatchers.isVisible()).forNoMoreThan(120).seconds(),

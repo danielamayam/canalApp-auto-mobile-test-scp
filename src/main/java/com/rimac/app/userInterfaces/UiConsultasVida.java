@@ -63,7 +63,7 @@ public class UiConsultasVida {
 
     public static final Target BTN_VIDA = Target.the("Botón vida")
             .locatedForAndroid(AppiumBy.xpath("//android.widget.CompoundButton[@text='Vida']"))
-            .locatedForIOS(AppiumBy.xpath("(//XCUIElementTypeStaticText[@name='Vida']//preceding::XCUIElementTypeButton)[2]"));
+            .locatedForIOS(AppiumBy.xpath("(//XCUIElementTypeStaticText[@name='Vida']//preceding::XCUIElementTypeButton)[3]"));
 
     public static final Target CARD_VIDA_FLEXIBLE(String vigencia) {
         return Target.the("Card vida flexible")

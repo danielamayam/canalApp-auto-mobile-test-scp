@@ -1,6 +1,7 @@
 package com.rimac.app.tasks.consultasVida;
 
 import com.rimac.app.exceptions.Assertions;
+import com.rimac.app.interactions.EsperarElemento;
 import com.rimac.app.interactions.app.MenuItem;
 import com.rimac.app.interactions.builders.Scroll;
 import com.rimac.app.interactions.builders.Tap;
@@ -28,6 +29,7 @@ public class NavegaHastaElBeneficiarioDeLaPoliza implements Task {
                     MenuItem.seguros(),
                     WaitUntil.the(BTN_VIDA, WebElementStateMatchers.isVisible()).forNoMoreThan(120).seconds(),
                     Tap.siElElementoEsVisible(BTN_VIDA),
+                    EsperarElemento.por(5),
                     Scroll.on(CARD_SEGURO_VIDA_CONTIGO(vigencia)),
                     Tap.on(CARD_SEGURO_VIDA_CONTIGO(vigencia)),
                     Tap.on(BTN_BENEFICIARIO),

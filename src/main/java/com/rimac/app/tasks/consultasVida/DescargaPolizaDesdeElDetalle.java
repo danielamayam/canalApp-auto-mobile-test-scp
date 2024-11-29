@@ -3,6 +3,7 @@ package com.rimac.app.tasks.consultasVida;
 
 import com.rimac.app.exceptions.Assertions;
 import com.rimac.app.interactions.ComandosCapabilities;
+import com.rimac.app.interactions.EsperarElemento;
 import com.rimac.app.interactions.Swipe;
 import com.rimac.app.interactions.app.MenuItem;
 import com.rimac.app.interactions.builders.Scroll;
@@ -33,6 +34,7 @@ public class DescargaPolizaDesdeElDetalle implements Task {
                     MenuItem.seguros(),
                     WaitUntil.the(BTN_VIDA, WebElementStateMatchers.isVisible()).forNoMoreThan(120).seconds(),
                     Tap.siElElementoEsVisible(BTN_VIDA),
+                    EsperarElemento.por(5),
                     Scroll.on(CARD_SEGURO_VIDA_CONTIGO(vigencia)),
                     Tap.on(CARD_SEGURO_VIDA_CONTIGO(vigencia)),
                     Scroll.on(LBL_MANUAL_DE_USO),

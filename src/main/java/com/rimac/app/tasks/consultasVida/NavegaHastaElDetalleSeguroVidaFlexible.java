@@ -1,6 +1,7 @@
 package com.rimac.app.tasks.consultasVida;
 
 import com.rimac.app.exceptions.Assertions;
+import com.rimac.app.interactions.EsperarElemento;
 import com.rimac.app.interactions.app.MenuItem;
 import com.rimac.app.interactions.builders.Tap;
 import com.rimac.app.util.constantes.Mensajes;
@@ -28,6 +29,7 @@ public class NavegaHastaElDetalleSeguroVidaFlexible implements Task {
                     MenuItem.seguros(),
                     WaitUntil.the(BTN_VIDA, WebElementStateMatchers.isVisible()).forNoMoreThan(120).seconds(),
                     Tap.on(BTN_VIDA),
+                    EsperarElemento.por(5),
                     Tap.on(CARD_VIDA_FLEXIBLE(vigencia)),
                     WaitUntil.the(LBL_DETALLE_DE_MI_POLIZA, WebElementStateMatchers.isVisible()).forNoMoreThan(120).seconds()
             );

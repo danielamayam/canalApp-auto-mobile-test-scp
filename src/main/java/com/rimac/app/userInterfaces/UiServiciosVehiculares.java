@@ -39,7 +39,7 @@ public class UiServiciosVehiculares {
 
     public static final Target LBL_MENSAJE_CHOFER = Target.the("Label mensaje")
             .locatedForAndroid(AppiumBy.id("com.rimac.rimac_surrogas.qa:id/congratsTitle"))
-            .locatedForIOS(AppiumBy.xpath("//XCUIElementTypeStaticText[@name='Hemos recibido tu solicitud']"));
+            .locatedForIOS(AppiumBy.xpath("(//XCUIElementTypeStaticText[@name='Hemos recibido tu solicitud']) | (//XCUIElementTypeStaticText[@name=\"Solicitud recibida\"])"));
 
 
     public static final Target BTN_SEGUIMIENTO = Target.the("Label mensaje")

@@ -32,6 +32,7 @@ public class NavegaHastaPagos implements Task {
                     MenuItem.seguros(),
                     WaitUntil.the(BTN_VIDA, WebElementStateMatchers.isVisible()).forNoMoreThan(120).seconds(),
                     Tap.siElElementoEsVisible(BTN_VIDA),
+                    EsperarElemento.por(5),
                     Scroll.on(CARD_SEGURO_VIDA_CONTIGO(vigencia)),
                     Tap.on(CARD_SEGURO_VIDA_CONTIGO(vigencia)),
                     WaitUntil.the(BTN_COBERTURA, WebElementStateMatchers.isVisible()).forNoMoreThan(120).seconds(),

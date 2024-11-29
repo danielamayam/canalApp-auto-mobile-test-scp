@@ -5,10 +5,10 @@ import com.rimac.app.interactions.EsperarElemento;
 import com.rimac.app.interactions.Hide;
 import com.rimac.app.interactions.Swipe;
 import com.rimac.app.interactions.app.MenuItem;
-import com.rimac.app.interactions.app.TapByCoordinates;
 import com.rimac.app.interactions.builders.Scroll;
 import com.rimac.app.interactions.builders.Tap;
 import net.serenitybdd.screenplay.Actor;
+import net.serenitybdd.screenplay.Performable;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.Tasks;
 import net.serenitybdd.screenplay.actions.Click;
@@ -16,12 +16,11 @@ import net.serenitybdd.screenplay.actions.Enter;
 import net.serenitybdd.screenplay.conditions.Check;
 import net.serenitybdd.screenplay.matchers.WebElementStateMatchers;
 import net.serenitybdd.screenplay.waits.WaitUntil;
-
-
+import net.thucydides.core.annotations.findby.By;
+import static com.rimac.app.interactions.app.SerenitySwipeAction.swipeUntilTextFound;
 import static com.rimac.app.userInterfaces.UiCrossellRenovacion.*;
 import static com.rimac.app.userInterfaces.UiCrossellRenovacion.BTN_INICIAR_SOLICITUD;
 import static com.rimac.app.userInterfaces.UiMenu.BTN_VEHICULAR;
-import static com.rimac.app.userInterfaces.UiSeguros.BTN_GUARDAR_TARJETA;
 import static com.rimac.app.userInterfaces.UiServiciosVehiculares.*;
 
 public class GestionarChoferRemplazo implements Task {
@@ -36,11 +35,12 @@ public class GestionarChoferRemplazo implements Task {
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
                 MenuItem.tramites(),
-                //WaitUntil.the(BTN_VEHICULAR, WebElementStateMatchers.isVisible()).forNoMoreThan(120).seconds(),
-                //Tap.on(BTN_VEHICULAR),
+                EsperarElemento.por(10),
+                Tap.siElElementoEsVisible(BTN_VEHICULAR),
                 Scroll.on(BTN_CHOFER_DE_REMPLAZO),
                 Tap.on(BTN_CHOFER_DE_REMPLAZO),
-                Check.whether(!TXT_PUNTO_DE_PARTIDA.isVisibleFor(actor)).andIfSo(
+                EsperarElemento.por(10),
+                Check.whether(TXT_PUNTO_DE_PARTIDA.isVisibleFor(actor)).andIfSo(
                         WaitUntil.the(BTN_INICIAR_SOLICITUD, WebElementStateMatchers.isVisible()).forNoMoreThan(120).seconds(),
                         Tap.on(BTN_INICIAR_SOLICITUD)
                 ),
@@ -85,17 +85,15 @@ public class GestionarChoferRemplazo implements Task {
                 Tap.on(BTN_CONTINUAR),
                 WaitUntil.the(BTN_CONTINUAR, WebElementStateMatchers.isClickable()).forNoMoreThan(120).seconds(),
                 Tap.on(BTN_CONTINUAR),
-                EsperarElemento.por(5),
+                EsperarElemento.por(10),
                 Swipe.as(actor).fromTop().toTop(),
-                Tap.on(BTN_GUARDAR_TARJETA),
                 WaitUntil.the(LBL_MENSAJE_CHOFER, WebElementStateMatchers.isVisible()).forNoMoreThan(120).seconds(),
                 Tap.on(BTN_VOLVER_AL_INICIO),
                 MenuItem.home(),
                 WaitUntil.the(LBL_SOLICITUD_CHOFER_REMPLAZO, WebElementStateMatchers.isVisible()).forNoMoreThan(120).seconds()
-
-
         );
     }
+
 
     public static GestionarChoferRemplazo go(String placa) {
         return Tasks.instrumented(GestionarChoferRemplazo.class, placa);

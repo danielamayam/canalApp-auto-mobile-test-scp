@@ -1,6 +1,7 @@
 package com.rimac.app.tasks.consultasVida;
 
 import com.rimac.app.interactions.DesplazarEnLimitesDelElementoHorizontal;
+import com.rimac.app.interactions.EsperarElemento;
 import com.rimac.app.interactions.HorizontalSwipeByCoordinates;
 import com.rimac.app.interactions.Swipe;
 import com.rimac.app.interactions.app.MenuItem;
@@ -28,6 +29,7 @@ public class NavegaHastaPagosVidaFlexible implements Task {
                 MenuItem.seguros(),
                 WaitUntil.the(BTN_VIDA, WebElementStateMatchers.isVisible()).forNoMoreThan(120).seconds(),
                 Tap.on(BTN_VIDA),
+                EsperarElemento.por(5),
                 Tap.on(CARD_VIDA_FLEXIBLE(vigencia)),
                 Swipe.as(actor).fromBottom().toLeft(),
                 HorizontalSwipeByCoordinates.go(300, 164, 25),
