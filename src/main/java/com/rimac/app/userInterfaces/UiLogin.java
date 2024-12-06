@@ -43,5 +43,14 @@ public class UiLogin {
             .locatedForIOS(AppiumBy.xpath("//XCUIElementTypeOther[@name=\"Enviar código por correo electrónico aut******@hotmail.com\"]"));
 
 
+    public static final Target ALERTA_MINIMO_REQUERIDA = Target.the("Alerta minima requerida")
+            .locatedForAndroid(AppiumBy.xpath("//android.widget.FrameLayout[@resource-id=\"android:id/content\"]/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup"))
+            .locatedForIOS(AppiumBy.xpath("//XCUIElementTypeWindow/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[2]/XCUIElementTypeOther/XCUIElementTypeOther[2]"));
+
+
+    public static final Target ALERTA_MINIMA_RECOMENDADA = Target.the("Alerta minima recomendada")
+            .locatedForAndroid(AppiumBy.xpath("//android.widget.TextView[@resource-id=\"com.rimac.rimac_surrogas.qa:id/dialog_btn_negative\"]"))
+            .locatedForIOS(AppiumBy.xpath("//XCUIElementTypeStaticText[@name=\"Más tarde\"]"));
+
 
 }

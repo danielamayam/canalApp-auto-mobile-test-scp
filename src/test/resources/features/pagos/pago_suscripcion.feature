@@ -1,6 +1,6 @@
 #Author: Daniel Amaya Marín
 
-@ModuloPagos_15 @PagoSuscripcion
+@ModuloPagos @PagoSuscripcion
 Feature: pagos
 
 
@@ -17,7 +17,6 @@ Feature: pagos
     Examples: Tabla
       | numeroUsuario | contrasena | numtarjeta       | cvv | fecha | placa   | vigencia   |
       ##@externaldata@/Users/chm3572/Documents/datadriven/Pagos/Pago_suscripcion_data.xlsx@SucripcionDesdePagos@1
-
 
   @SucripcionDesdePerfil @TestCaseKey:TDARA-T207
   Scenario Outline: Usuario suscribe su tarjeta desde mi perfil

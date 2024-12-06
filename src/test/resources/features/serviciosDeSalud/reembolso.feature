@@ -1,6 +1,6 @@
 #Author: Daniel Amaya Marín
 
-@ModuloServiciosDeSalud_7 @Reembolso
+@ModuloServiciosDeSalud @Reembolso
 Feature: Servicios de Salud - Reembolso
 
   @reembolsoSaludSinBeneficiarioDesdeMenuTramites @seguimientoReembolsoSinBeneficiariosDesdeTramite @TestCaseKey:TDARA-T437 @TestCaseKey:TDARA-T438

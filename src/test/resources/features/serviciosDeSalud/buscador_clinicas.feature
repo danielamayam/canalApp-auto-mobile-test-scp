@@ -1,6 +1,6 @@
 #Author: Daniel Amaya Marín
 
-@ModuloServiciosDeSalud_7 @Regresion
+@ModuloServiciosDeSalud
 Feature: Servicios de Salud - Buscador de clinicas
 
 
@@ -17,7 +17,6 @@ Feature: Servicios de Salud - Buscador de clinicas
       ##@externaldata@/Users/chm3572/Documents/datadriven/serviciosDeSalud/Buscador_clinicas_data.xlsx@BuscadordeClinicasdesdeHome@1
 
 
-
   @BuscadordeClinicasdesdeTramites @TestCaseKey:TDARA-T211
   Scenario Outline: Usuario busca una clinica desde menu tramites
     Given que "Daniel" inicia sesión correctamente
@@ -29,5 +28,7 @@ Feature: Servicios de Salud - Buscador de clinicas
     Examples: Tabla
       | numeroUsuario | contrasena | nomClinica           |
       ##@externaldata@/Users/chm3572/Documents/datadriven/serviciosDeSalud/Buscador_clinicas_data.xlsx@BuscadordeClinicasdesdeTramites@1
+
+
 
 

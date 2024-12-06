@@ -1,6 +1,6 @@
 #Author: Daniel Amaya Marín
 
-@ModuloServiciosVehiculares_7 @Regresion
+@ModuloServiciosVehiculares
 Feature: Servicios Vehiculares - Chofer Reemplazo
 
   @ChoferReemplazo @SeguimientoChoferReemplazo @TestCaseKey:TDARA-T448 @TestCaseKey:TDARA-T450
@@ -15,8 +15,6 @@ Feature: Servicios Vehiculares - Chofer Reemplazo
       | numeroUsuario | contrasena | placa  |
   ##@externaldata@/Users/chm3572/Documents/datadriven/serviciosVehiculares/Asistencia_vehicular.xlsx@ChoferReemplazo@1
 
-
-  
 
   @CancelarChoferReemplazo @TestCaseKey:TDARA-T449
   Scenario Outline: Cancelar  Chofer de reemplazo

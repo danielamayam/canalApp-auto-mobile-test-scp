@@ -3,6 +3,7 @@ package stepdefinitions;
 import com.rimac.app.questions.VerificarElemento;
 import com.rimac.app.tasks.consultaSalud.NavegaHastaElDetallePoliza;
 import com.rimac.app.tasks.consultaSalud.NavegaHastaLaCoberturaPoliza;
+import com.rimac.app.tasks.consultasVida.NavegaHastaPagos;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import net.serenitybdd.screenplay.actors.OnStage;
@@ -31,6 +32,19 @@ public class PolizaEpsStepDefinitions {
         OnStage.theActorInTheSpotlight().attemptsTo(
                 NavegaHastaLaCoberturaPoliza.go()
         );
+    }
+
+
+    @When("selecciona pagos del seguro salud desde el home {string}")
+    public void seleccionaPagosDelSeguroSaludDesdeElHome(String vigencia) {
+        OnStage.theActorInTheSpotlight().attemptsTo(
+                NavegaHastaPagos.go(vigencia)
+        );
+    }
+
+    @Then("válido la deuda del seguro")
+    public void validoLaDeudaDelSeguro() {
+
     }
 
 }

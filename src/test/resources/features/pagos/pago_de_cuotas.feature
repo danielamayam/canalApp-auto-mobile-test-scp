@@ -1,6 +1,6 @@
 #Author: Daniel Amaya Marín
 
-@ModuloPagos_15 @PagoDeCuotas
+@ModuloPagos @PagoDeCuotas
 Feature: Pagos
 
 
@@ -18,8 +18,7 @@ Feature: Pagos
     Examples: Tabla
       | numeroUsuario | contrasena | placa | numtarjeta | fecha | cvv | vigencia |
     ##@externaldata@/Users/chm3572/Documents/datadriven/Pagos/Pago_de_cuotas_data.xlsx@PagoSinTarjetaAsociada@1
-
-
+   |75372366   |Rimac2020   |AAF-258   |4551708161768059   |03/28   |111   |23/07/2025|
 
   @PagoAfiliadoDebitoAuto @TestCaseKey:TDARA-T197
   Scenario Outline: Usuario realiza el pago estando afiliado a debito automatico
@@ -35,8 +34,7 @@ Feature: Pagos
     Examples: Tabla
       | numeroUsuario | contrasena | placa | numtarjeta | fecha | cvv | vigencia |
     ##@externaldata@/Users/chm3572/Documents/datadriven/Pagos/Pago_de_cuotas_data.xlsx@PagoAfiliadoDebitoAuto@1
-
-
+   |75372366   |Rimac2020   |AAF-258   |4551708161768059   |03/28   |111   |23/07/2025|
 
   @PagoConValidacionHistorial @TestCaseKey:TDARA-T198
   Scenario Outline: Usuario realiza el pago del seguro vehicular validando el historial de pago
@@ -53,8 +51,7 @@ Feature: Pagos
     Examples: Tabla
       | numeroUsuario | contrasena | placa | numtarjeta | fecha | cvv | vigencia |
     ##@externaldata@/Users/chm3572/Documents/datadriven/Pagos/Pago_de_cuotas_data.xlsx@PagoConValidacionHistorial@1
-
-
+   |75372366   |Rimac2020   |AAF-258   |4551708161768059   |03/28   |111   |23/07/2025|
 
   @PagoConTarjetaAsociada @TestCaseKey:TDARA-T199
   Scenario Outline: Usuario realiza el pago del seguro vehicular con tarjeta asociada
@@ -68,7 +65,6 @@ Feature: Pagos
     Examples: Tabla
       | numeroUsuario | contrasena | placa | numtarjeta | vigencia |
      ##@externaldata@/Users/chm3572/Documents/datadriven/Pagos/Pago_de_cuotas_data.xlsx@PagoConTarjetaAsociada@1
-
 
 
   @PagoAsociandoTarjeta @TestCaseKey:TDARA-T200
@@ -87,7 +83,6 @@ Feature: Pagos
          ##@externaldata@/Users/chm3572/Documents/datadriven/Pagos/Pago_de_cuotas_data.xlsx@PagoAsociandoTarjeta@1
 
 
-
   @PagoPolizaSoat @TestCaseKey:TDARA-T201
   Scenario Outline: Usuario valida pago de poliza SOAT
     Given que "Daniel" inicia sesión correctamente
@@ -99,7 +94,6 @@ Feature: Pagos
     Examples: Tabla
       | numeroUsuario | contrasena | placa | vigencia |
     ##@externaldata@/Users/chm3572/Documents/datadriven/Pagos/Pago_de_cuotas_data.xlsx@PagoPolizaSoat@1
-
 
 
   @PagoInfoNoDisponible @TestCaseKey:TDARA-T202

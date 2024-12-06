@@ -1,6 +1,7 @@
 package com.rimac.app.tasks.serviciosVehiculares;
 
 import com.rimac.app.interactions.EsperarElemento;
+import com.rimac.app.interactions.app.EsperaExplicita;
 import com.rimac.app.interactions.app.MenuItem;
 import com.rimac.app.interactions.builders.Scroll;
 import com.rimac.app.interactions.builders.Tap;
@@ -19,8 +20,8 @@ public class NavegaHastaAsistenciasVehiculares implements Task {
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
                 MenuItem.tramites(),
-                //WaitUntil.the(BTN_VEHICULAR, WebElementStateMatchers.isVisible()).forNoMoreThan(120).seconds(),
-                //Tap.on(BTN_VEHICULAR),
+                EsperaExplicita.empleada(10),
+                Tap.siElElementoEsVisible(BTN_VEHICULAR),
                 Scroll.on(BTN_ASISTENCIAS_VEHICULARES),
                 Tap.on(BTN_ASISTENCIAS_VEHICULARES),
                 WaitUntil.the(BTN_INICIAR_SOLICITUD, WebElementStateMatchers.isVisible()).forNoMoreThan(120).seconds()

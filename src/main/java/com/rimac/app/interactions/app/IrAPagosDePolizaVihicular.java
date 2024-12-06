@@ -32,13 +32,13 @@ public class IrAPagosDePolizaVihicular implements Interaction {
         try{
             actor.attemptsTo(
                     MenuItem.seguros(),
-
+                    EsperarElemento.por(10),
                     Check.whether(ComandosCapabilities.isiOS(actor)).andIfSo(
                             Tap.siElElementoEsVisible(BTN_VEHICULAR_IOS.of(MenuSeguros.ITEM_VEHICULAR.getClave()))
                     ).otherwise(
                             Tap.siElElementoEsVisible(BTN_VEHICULAR_ANDROID.of(MenuSeguros.ITEM_VEHICULAR.getClave()))
                     ),
-                    EsperarElemento.por(10),
+                    EsperarElemento.por(20),
                     Check.whether(SEGURO_VEHICULAR_CARD(vigencia, placa).resolveFor(actor).isVisible()).otherwise(
                             Swipe.as(actor).fromBottom().toTop()
                     ),

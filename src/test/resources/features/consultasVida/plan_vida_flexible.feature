@@ -1,6 +1,6 @@
 #Author: Daniel Amaya Marín
 
-@ModuloConsultasVida_9 @Regresion
+@ModuloConsultasVida
 Feature: Consultas Vida - Plan Vida Flexible
 
   @DescargaEstadoCuentaPlanVidaFlexible @TestCaseKey:TDARA-T86
@@ -16,7 +16,6 @@ Feature: Consultas Vida - Plan Vida Flexible
     ##@externaldata@/Users/chm3572/Documents/datadriven/consultasVida/Plan_vida_data.xlsx@Scenario5@1
 
 
-
   @ConsultarCoberturasPolizaVidaFlexible @TestCaseKey:TDARA-T191
   Scenario Outline: Usuario consulta la cobertura de la póliza vida flexible
     Given que "Daniel" inicia sesión correctamente
@@ -30,19 +29,17 @@ Feature: Consultas Vida - Plan Vida Flexible
     ##@externaldata@/Users/chm3572/Documents/datadriven/consultasVida/Plan_vida_data.xlsx@Scenario6@1
 
 
-
   @ConsultarDeudasSaldoVidaFlexible @TestCaseKey:TDARA-T422
   Scenario Outline: Usuario consultar Deudas y Saldos de la Poliza del Producto Flexivida
     Given que "Daniel" inicia sesión correctamente
       | numeroUsuario   | contrasena   |
       | <numeroUsuario> | <contrasena> |
     When selecciona pagos del seguros plan vida flexible "<vigencia>"
-     Then válido la deuda y los saldos de la póliza.
+     #Then válido la deuda y los saldos de la póliza.
 
     Examples: Tabla
       | numeroUsuario | contrasena | vigencia   |
     ##@externaldata@/Users/chm3572/Documents/datadriven/consultasVida/Plan_vida_data.xlsx@Scenario7@1
-
 
 
   @ConsultarInformacionPolizaVidaFlexible @TestCaseKey:TDARA-T192

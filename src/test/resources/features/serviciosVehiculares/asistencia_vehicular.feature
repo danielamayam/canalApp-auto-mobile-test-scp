@@ -1,6 +1,6 @@
 #Author: Daniel Amaya Marín
 
-@ModuloServiciosVehiculares_7 @Regresion
+@ModuloServiciosVehiculares
 Feature: Servicios Vehiculares - Asistencia Vehicular
 
   @AsistenciaVehicularRepuesto @SeguimientoAsistenciaVehicularRepuesto @TestCaseKey:TDARA-T212 @TestCaseKey:TDARA-T444
@@ -17,7 +17,6 @@ Feature: Servicios Vehiculares - Asistencia Vehicular
     ##@externaldata@/Users/chm3572/Documents/datadriven/serviciosVehiculares/Asistencia_vehicular.xlsx@AsistenciaVehicularRepuesto@1
 
 
-
   @AsistenciaVehicularGrua @SeguimientodeGrua @TestCaseKey:TDARA-T213 @TestCaseKey:TDARA-T445
   Scenario Outline: Usuario realizar una solicitud de Grua
     Given que "Daniel" inicia sesión correctamente
@@ -30,7 +29,6 @@ Feature: Servicios Vehiculares - Asistencia Vehicular
     Examples: Tabla
       | numeroUsuario | contrasena | placa   |
     ##@externaldata@/Users/chm3572/Documents/datadriven/serviciosVehiculares/Asistencia_vehicular.xlsx@AsistenciaVehicularGrua@1
-
 
 
   @AsistenciaVehicularProblema @SeguimientoAsistenciaVehicularProblema @TestCaseKey:TDARA-T214 @TestCaseKey:TDARA-T446
@@ -47,8 +45,6 @@ Feature: Servicios Vehiculares - Asistencia Vehicular
     ##@externaldata@/Users/chm3572/Documents/datadriven/serviciosVehiculares/Asistencia_vehicular.xlsx@AsistenciaVehicularProblema@1
 
 
-
-
   @NecesitoAyudaAuxilioMecanico @TestCaseKey:TDARA-T215
   Scenario Outline: Usuario necesita ayuda para seleccionar la asistencia Vehicular - Auxilio Mecanico
     Given que "Daniel" inicia sesión correctamente
@@ -63,7 +59,6 @@ Feature: Servicios Vehiculares - Asistencia Vehicular
     ##@externaldata@/Users/chm3572/Documents/datadriven/serviciosVehiculares/Asistencia_vehicular.xlsx@NecesitoAyudaAuxilioMecanico@1
 
 
-
   @NecesitoAyudaGrua @TestCaseKey:TDARA-T447
   Scenario Outline: Usuario necesita ayuda para seleccionar la asistencia Vehicular - Grua
     Given que "Daniel" inicia sesión correctamente
@@ -76,5 +71,6 @@ Feature: Servicios Vehiculares - Asistencia Vehicular
     Examples: Tabla
       | numeroUsuario | contrasena |
     ##@externaldata@/Users/chm3572/Documents/datadriven/serviciosVehiculares/Asistencia_vehicular.xlsx@NecesitoAyudaGrua@1
+
 
 

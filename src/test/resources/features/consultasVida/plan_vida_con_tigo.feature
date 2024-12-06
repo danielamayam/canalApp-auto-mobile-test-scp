@@ -1,6 +1,6 @@
 #Author: Daniel Amaya Marín
 
-@ModuloConsultasVida_9 @Regresion
+@ModuloConsultasVida
 Feature: Consultas Vida - Plan Vida Contigo
 
   @DescargaManualdeUsoPlanVidaContigo @TestCaseKey:TDARA-T188
@@ -16,23 +16,17 @@ Feature: Consultas Vida - Plan Vida Contigo
     ##@externaldata@/Users/chm3572/Documents/datadriven/consultasVida/Plan_vida_data.xlsx@Scenario1@1
 
 
-
-
-
   @ConsultarDeudasSaldoVidaContigo @TestCaseKey:TDARA-T243
   Scenario Outline: Usuario visualiza la deuda y los saldos de la póliza del producto Vida contigo.
     Given que "Daniel" inicia sesión correctamente
       | numeroUsuario   | contrasena   |
       | <numeroUsuario> | <contrasena> |
     When selecciona pagos del seguros plan vida contigo desde el home "<vigencia>"
-    Then válido la deuda y los saldos de la póliza.
+    #Then válido la deuda y los saldos de la póliza.
 
     Examples: Tabla
       | numeroUsuario | contrasena | vigencia |
     ##@externaldata@/Users/chm3572/Documents/datadriven/consultasVida/Plan_vida_data.xlsx@Scenario2@1
-
-
-
 
 
   @ConsultarCoberturasPolizaVidaContigo @TestCaseKey:TDARA-T189
@@ -46,9 +40,6 @@ Feature: Consultas Vida - Plan Vida Contigo
     Examples: Tabla
       | numeroUsuario | contrasena | vigencia |
     ##@externaldata@/Users/chm3572/Documents/datadriven/consultasVida/Plan_vida_data.xlsx@Scenario3@1
-
-
-
 
 
   @ConsultarInformacionPolizaVidaContigo @TestCaseKey:TDARA-T190

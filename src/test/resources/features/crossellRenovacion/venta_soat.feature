@@ -1,6 +1,6 @@
 #Author: Daniel Amaya Marín
 
-@ModuloCrossellRenovacion_1 @Regresion
+@ModuloCrossellRenovacion
 Feature: Venta SOAT
 
   @CompraSOATDigital @TestCaseKey:TDARA-T193
@@ -8,12 +8,13 @@ Feature: Venta SOAT
     Given que "Daniel" inicia sesión correctamente
       | numeroUsuario   | contrasena   |
       | <numeroUsuario> | <contrasena> |
-    When navega y diligencia el formulario de registro tu soat en 2 minutos "<placa>"
+    When navega y diligencia el formulario de registro tu soat en 2 minutos
       | numtarjeta   | cvv   | fecha   |
       | <numtarjeta> | <cvv> | <fecha> |
     Then válido la compra del plan exitosamente "¡Listo! Estamos por enviar tu SOAT"
 
     Examples: Tabla
-      | numeroUsuario | contrasena | placa  | numtarjeta       | cvv | fecha |
+      | numeroUsuario | contrasena | numtarjeta       | cvv | fecha |
     ##@externaldata@/Users/chm3572/Documents/datadriven/crossellRenovacion/Venta_soat_data.xlsx@CompraSOATDigital@1
+
 

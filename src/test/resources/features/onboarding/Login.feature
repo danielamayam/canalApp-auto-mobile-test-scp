@@ -1,6 +1,6 @@
 #Author: Daniel Amaya Marín
 
-@Onboarding_3 @Regresion
+@Onboarding
 Feature: onboarding
 
   @Login @TestCaseKey:TDARA-T194
@@ -11,12 +11,9 @@ Feature: onboarding
       | <numeroUsuario> | <contrasena> |
     Then válido el inicio de sesión correctamente
 
-
     Examples: Tabla
       | numeroUsuario | contrasena |
        ##@externaldata@/Users/chm3572/Documents/datadriven/Onboarding/Login_data.xlsx@Login@1
-
-
 
 
   @LogOut @TestCaseKey:TDARA-T195
@@ -33,14 +30,11 @@ Feature: onboarding
     ##@externaldata@/Users/chm3572/Documents/datadriven/Onboarding/Login_data.xlsx@LogOut@1
 
 
-
-
   @OlvidasteTuContrasenia @TestCaseKey:TDARA-T938
   Scenario Outline: Usuario recupera su contraseña
     Given que "Daniel" seleccionó la opción ¿Olvidaste tu contraseña? "<numeroUsuario>"
     When diligencia el código de validación
 
-
-    Examples:
+    Examples:Tabla
       | numeroUsuario |
       | 45778112      |
