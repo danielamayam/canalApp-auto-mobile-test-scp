@@ -3,10 +3,7 @@ package com.rimac.app.tasks.serviciosDeSalud;
 import com.rimac.app.interactions.ComandosCapabilities;
 import com.rimac.app.interactions.EsperarElemento;
 import com.rimac.app.interactions.Hide;
-import com.rimac.app.interactions.app.AdjuntarDocumento;
-import com.rimac.app.interactions.app.MenuItem;
-import com.rimac.app.interactions.app.SkipLog;
-import com.rimac.app.interactions.app.TomarFoto;
+import com.rimac.app.interactions.app.*;
 import com.rimac.app.interactions.builders.Scroll;
 import com.rimac.app.interactions.builders.Tap;
 import net.serenitybdd.screenplay.Actor;
@@ -59,6 +56,7 @@ public class AdjuntarDocumentos implements Task {
                 Check.whether(ComandosCapabilities.isAndroid(actor)).andIfSo(
                         EsperarElemento.por(5)
                 ),
+                EsperaExplicita.empleada(30),
                 Scroll.on(BTN_RECIBO_POR_HONORARIOS),
                 WaitUntil.the(BTN_RECIBO_POR_HONORARIOS, WebElementStateMatchers.isClickable()).forNoMoreThan(120).seconds(),
                 Tap.on(BTN_RECIBO_POR_HONORARIOS),
@@ -87,6 +85,7 @@ public class AdjuntarDocumentos implements Task {
                         EsperarElemento.por(5)
                 ),
 
+                EsperaExplicita.empleada(30),
                 Scroll.on(BTN_BOLETA),
                 WaitUntil.the(BTN_BOLETA, WebElementStateMatchers.isClickable()).forNoMoreThan(120).seconds(),
                 Tap.on(BTN_BOLETA),
@@ -118,7 +117,7 @@ public class AdjuntarDocumentos implements Task {
                 Check.whether(ComandosCapabilities.isAndroid(actor)).andIfSo(
                         EsperarElemento.por(5)
                 ),
-
+                EsperaExplicita.empleada(30),
                 Scroll.on(BTN_HOJA_DE_ATENCION),
                 WaitUntil.the(BTN_HOJA_DE_ATENCION, WebElementStateMatchers.isClickable()).forNoMoreThan(120).seconds(),
                 Tap.on(BTN_HOJA_DE_ATENCION),
@@ -131,6 +130,7 @@ public class AdjuntarDocumentos implements Task {
                 Check.whether(ComandosCapabilities.isAndroid(actor)).andIfSo(
                         EsperarElemento.por(5)
                 ),
+                EsperaExplicita.empleada(30),
                 Scroll.on(BTN_ORDEN_MEDICA),
                 WaitUntil.the(BTN_ORDEN_MEDICA, WebElementStateMatchers.isClickable()).forNoMoreThan(120).seconds(),
                 Tap.on(BTN_ORDEN_MEDICA),
@@ -143,6 +143,7 @@ public class AdjuntarDocumentos implements Task {
                 Check.whether(ComandosCapabilities.isAndroid(actor)).andIfSo(
                         EsperarElemento.por(5)
                 ),
+                EsperaExplicita.empleada(30),
                 Scroll.on(BTN_HOJA_DE_LIQUIDACION),
                 WaitUntil.the(BTN_HOJA_DE_LIQUIDACION, WebElementStateMatchers.isClickable()).forNoMoreThan(120).seconds(),
                 Tap.on(BTN_HOJA_DE_LIQUIDACION),
@@ -155,6 +156,7 @@ public class AdjuntarDocumentos implements Task {
                 Check.whether(ComandosCapabilities.isAndroid(actor)).andIfSo(
                         EsperarElemento.por(5)
                 ),
+                EsperaExplicita.empleada(30),
                 Scroll.on(BTN_INFORME_MEDICO),
                 WaitUntil.the(BTN_INFORME_MEDICO, WebElementStateMatchers.isClickable()).forNoMoreThan(120).seconds(),
                 Tap.on(BTN_INFORME_MEDICO),
@@ -167,6 +169,7 @@ public class AdjuntarDocumentos implements Task {
                 Check.whether(ComandosCapabilities.isAndroid(actor)).andIfSo(
                         EsperarElemento.por(5)
                 ),
+                EsperaExplicita.empleada(30),
                 Scroll.on(BTN_RESULTADO_EXAMENES),
                 WaitUntil.the(BTN_RESULTADO_EXAMENES, WebElementStateMatchers.isClickable()).forNoMoreThan(120).seconds(),
                 Tap.on(BTN_RESULTADO_EXAMENES),
@@ -179,6 +182,7 @@ public class AdjuntarDocumentos implements Task {
                 Check.whether(ComandosCapabilities.isAndroid(actor)).andIfSo(
                         EsperarElemento.por(5)
                 ),
+                EsperaExplicita.empleada(30),
                 Scroll.on(BTN_EPICRISIS),
                 WaitUntil.the(BTN_EPICRISIS, WebElementStateMatchers.isClickable()).forNoMoreThan(120).seconds(),
                 Tap.on(BTN_EPICRISIS),
@@ -191,6 +195,7 @@ public class AdjuntarDocumentos implements Task {
                 Check.whether(ComandosCapabilities.isAndroid(actor)).andIfSo(
                         EsperarElemento.por(5)
                 ),
+                EsperaExplicita.empleada(30),
                 Scroll.on(BTN_REPORTE_OPERATORIO),
                 WaitUntil.the(BTN_REPORTE_OPERATORIO, WebElementStateMatchers.isClickable()).forNoMoreThan(120).seconds(),
                 Tap.on(BTN_REPORTE_OPERATORIO),
@@ -201,6 +206,7 @@ public class AdjuntarDocumentos implements Task {
                 Check.whether(ComandosCapabilities.isAndroid(actor)).andIfSo(
                         EsperarElemento.por(5)
                 ),
+                EsperaExplicita.empleada(30),
                 Scroll.on(BTN_ANATOMIA_PATOLOGICO),
                 WaitUntil.the(BTN_ANATOMIA_PATOLOGICO, WebElementStateMatchers.isClickable()).forNoMoreThan(120).seconds(),
                 Tap.on(BTN_ANATOMIA_PATOLOGICO),
@@ -213,6 +219,7 @@ public class AdjuntarDocumentos implements Task {
                 Check.whether(ComandosCapabilities.isAndroid(actor)).andIfSo(
                         EsperarElemento.por(5)
                 ),
+                EsperaExplicita.empleada(30),
 
                 WaitUntil.the(BTN_CONTINUAR, WebElementStateMatchers.isClickable()).forNoMoreThan(120).seconds(),
                 Tap.on(BTN_CONTINUAR),

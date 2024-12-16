@@ -3,6 +3,7 @@ package com.rimac.app.tasks.consultasVida;
 import com.rimac.app.exceptions.Assertions;
 import com.rimac.app.interactions.EsperarElemento;
 import com.rimac.app.interactions.TakeScreenshot;
+import com.rimac.app.interactions.app.EsperaExplicita;
 import com.rimac.app.interactions.app.MenuItem;
 import com.rimac.app.interactions.builders.Tap;
 import com.rimac.app.util.constantes.Mensajes;
@@ -28,8 +29,8 @@ public class NavegaHastaCoberturaSeguroVidaFlexible implements Task {
         try {
             actor.attemptsTo(
                     MenuItem.seguros(),
-                    WaitUntil.the(BTN_VIDA, WebElementStateMatchers.isVisible()).forNoMoreThan(120).seconds(),
-                    Tap.on(BTN_VIDA),
+                    EsperaExplicita.empleada(10),
+                    Tap.siElElementoEsVisible(BTN_VIDA),
                     EsperarElemento.por(5),
                     Tap.on(CARD_VIDA_FLEXIBLE(vigencia)),
                     Tap.on(BTN_COBERTURA),

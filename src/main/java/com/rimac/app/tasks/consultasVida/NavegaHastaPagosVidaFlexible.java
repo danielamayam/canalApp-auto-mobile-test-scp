@@ -4,6 +4,7 @@ import com.rimac.app.interactions.DesplazarEnLimitesDelElementoHorizontal;
 import com.rimac.app.interactions.EsperarElemento;
 import com.rimac.app.interactions.HorizontalSwipeByCoordinates;
 import com.rimac.app.interactions.Swipe;
+import com.rimac.app.interactions.app.EsperaExplicita;
 import com.rimac.app.interactions.app.MenuItem;
 import com.rimac.app.interactions.builders.Tap;
 import net.serenitybdd.screenplay.Actor;
@@ -27,8 +28,8 @@ public class NavegaHastaPagosVidaFlexible implements Task {
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
                 MenuItem.seguros(),
-                WaitUntil.the(BTN_VIDA, WebElementStateMatchers.isVisible()).forNoMoreThan(120).seconds(),
-                Tap.on(BTN_VIDA),
+                EsperaExplicita.empleada(10),
+                Tap.siElElementoEsVisible(BTN_VIDA),
                 EsperarElemento.por(5),
                 Tap.on(CARD_VIDA_FLEXIBLE(vigencia)),
                 Swipe.as(actor).fromBottom().toLeft(),

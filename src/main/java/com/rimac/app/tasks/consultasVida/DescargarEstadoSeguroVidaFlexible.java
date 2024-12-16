@@ -2,6 +2,7 @@ package com.rimac.app.tasks.consultasVida;
 
 import com.rimac.app.exceptions.Assertions;
 import com.rimac.app.interactions.EsperarElemento;
+import com.rimac.app.interactions.app.EsperaExplicita;
 import com.rimac.app.interactions.app.MenuItem;
 import com.rimac.app.interactions.builders.Scroll;
 import com.rimac.app.interactions.builders.Tap;
@@ -31,7 +32,7 @@ public class DescargarEstadoSeguroVidaFlexible implements Task {
         try {
             actor.attemptsTo(
                     MenuItem.seguros(),
-                    WaitUntil.the(BTN_VIDA, WebElementStateMatchers.isVisible()).forNoMoreThan(120).seconds(),
+                    EsperaExplicita.empleada(10),
                     Tap.siElElementoEsVisible(BTN_VIDA),
                     EsperarElemento.por(5),
                     Tap.on(CARD_VIDA_FLEXIBLE(vigencia)),
