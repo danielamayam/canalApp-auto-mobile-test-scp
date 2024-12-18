@@ -6,7 +6,7 @@ import net.serenitybdd.screenplay.targets.Target;
 public class UiServiciosVehiculares {
 
     public static final Target BTN_CHOFER_DE_REMPLAZO = Target.the("Botón chofer remplazo")
-            .locatedForAndroid(AppiumBy.xpath("//android.widget.TextView[@text='Chofer de reemplazo']"))
+            .locatedForAndroid(AppiumBy.xpath("//android.widget.TextView[@text=\"Chofer de reemplazo\"]//parent::android.view.ViewGroup//following-sibling::android.widget.ImageView"))
             .locatedForIOS(AppiumBy.xpath("//XCUIElementTypeStaticText[@name='Chofer de reemplazo']"));
 
     public static final Target BTN_CANCELAR = Target.the("Botón cancelar")
@@ -141,7 +141,7 @@ public class UiServiciosVehiculares {
             .locatedForIOS(AppiumBy.xpath("//XCUIElementTypeImage[@name=\"gl-sm-arrow-back\"]"));
 
     public static final Target BTN_VOLVER_AL_INICIO = Target.the("Botón volver al inicio")
-            .locatedForAndroid(AppiumBy.id("com.rimac.rimac_surrogas.qa:id/materialBtn"))
+            .locatedForAndroid(AppiumBy.xpath("//android.widget.TextView[@resource-id=\"com.rimac.rimac_surrogas.qa:id/tv_title\" and @text=\"Ir al inicio\"]"))
             .locatedForIOS(AppiumBy.xpath("//XCUIElementTypeStaticText[@name=\"Volver al inicio\"]//parent::XCUIElementTypeButton"));
 
     public static final Target LBL_SOLICITUD_AUXILIO_MECANICO = Target.the("Label auxilio mecanico")
@@ -155,4 +155,16 @@ public class UiServiciosVehiculares {
     public static final Target LBL_SOLICITUD_CHOFER_REMPLAZO = Target.the("Label chofer remplazo")
             .locatedForAndroid(AppiumBy.xpath("(//android.widget.TextView[@text='CHOFER DE REEMPLAZO'])[1]"))
             .locatedForIOS(AppiumBy.xpath("(//XCUIElementTypeStaticText[@name=\"CHOFER DE REEMPLAZO\"])[1]"));
+
+
+
+
+
+    /** Nueva UI **/
+
+    public static final Target BTN_VEHICULO = Target.the("Botón vehiculo")
+            .locatedForAndroid(AppiumBy.xpath("(//android.widget.TextView[@resource-id=\"com.rimac.rimac_surrogas.qa:id/row_plate_plate_tv\"])[1]"))
+            .locatedForIOS(AppiumBy.xpath("//XCUIElementTypeTable/XCUIElementTypeCell[1]/XCUIElementTypeOther[1]"));
+
+
 }

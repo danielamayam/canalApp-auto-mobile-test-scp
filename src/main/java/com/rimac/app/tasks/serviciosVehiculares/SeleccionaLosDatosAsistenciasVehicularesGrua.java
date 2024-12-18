@@ -24,6 +24,7 @@ public class SeleccionaLosDatosAsistenciasVehicularesGrua implements Task {
         actor.attemptsTo(
                 Tap.on(BTN_INICIAR_SOLICITUD),
                 EsperarElemento.por(10),
+                Tap.on(BTN_VEHICULO),
                 Tap.siElElementoEsVisible(BTN_CANCELAR),
                 WaitUntil.the(BTN_CONFIRMAR, WebElementStateMatchers.isClickable()).forNoMoreThan(120).seconds(),
                 Tap.on(BTN_CONFIRMAR),

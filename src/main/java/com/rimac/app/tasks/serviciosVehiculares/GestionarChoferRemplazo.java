@@ -37,14 +37,15 @@ public class GestionarChoferRemplazo implements Task {
                 MenuItem.tramites(),
                 EsperarElemento.por(10),
                 Tap.siElElementoEsVisible(BTN_VEHICULAR),
-                Scroll.on(BTN_CHOFER_DE_REMPLAZO),
+                Swipe.as(actor).fromBottom().toTop(),
                 Tap.on(BTN_CHOFER_DE_REMPLAZO),
                 EsperarElemento.por(10),
-                Check.whether(TXT_PUNTO_DE_PARTIDA.isVisibleFor(actor)).andIfSo(
+                Check.whether(BTN_INICIAR_SOLICITUD.isVisibleFor(actor)).andIfSo(
                         WaitUntil.the(BTN_INICIAR_SOLICITUD, WebElementStateMatchers.isVisible()).forNoMoreThan(120).seconds(),
                         Tap.on(BTN_INICIAR_SOLICITUD)
                 ),
                 EsperarElemento.por(20),
+                /*Tap.on(BTN_VEHICULO),
                 Tap.siElElementoEsVisible(BTN_CANCELAR),
                 EsperarElemento.por(40),
 
@@ -89,7 +90,7 @@ public class GestionarChoferRemplazo implements Task {
                 Swipe.as(actor).fromTop().toTop(),
                 WaitUntil.the(LBL_MENSAJE_CHOFER, WebElementStateMatchers.isVisible()).forNoMoreThan(120).seconds(),
                 Tap.on(BTN_VOLVER_AL_INICIO),
-                MenuItem.home(),
+                MenuItem.home(),*/
                 WaitUntil.the(LBL_SOLICITUD_CHOFER_REMPLAZO, WebElementStateMatchers.isVisible()).forNoMoreThan(120).seconds()
         );
     }

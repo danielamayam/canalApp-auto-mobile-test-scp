@@ -8,6 +8,7 @@ import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.Tasks;
 import net.serenitybdd.screenplay.matchers.WebElementStateMatchers;
 import net.serenitybdd.screenplay.waits.WaitUntil;
+
 import static com.rimac.app.userInterfaces.UiServiciosVehiculares.*;
 import static com.rimac.app.userInterfaces.UiServiciosVehiculares.BTN_CONFIRMAR_SOLICITUD;
 
@@ -17,6 +18,7 @@ public class SeleccionaLosDatosAsistenciasVehiculares implements Task {
         actor.attemptsTo(
                 Tap.on(BTN_INICIAR_SOLICITUD),
                 EsperarElemento.por(15),
+                Tap.on(BTN_VEHICULO),
                 Tap.siElElementoEsVisible(BTN_CANCELAR),
                 WaitUntil.the(BTN_CONFIRMAR, WebElementStateMatchers.isClickable()).forNoMoreThan(120).seconds(),
                 Tap.on(BTN_CONFIRMAR),
@@ -33,13 +35,10 @@ public class SeleccionaLosDatosAsistenciasVehiculares implements Task {
                 MenuItem.home(),
                 WaitUntil.the(LBL_SOLICITUD_AUXILIO_MECANICO, WebElementStateMatchers.isVisible()).forNoMoreThan(120).seconds()
 
-
-
-
         );
     }
 
-    public static SeleccionaLosDatosAsistenciasVehiculares go(){
+    public static SeleccionaLosDatosAsistenciasVehiculares go() {
         return Tasks.instrumented(SeleccionaLosDatosAsistenciasVehiculares.class);
     }
 }
